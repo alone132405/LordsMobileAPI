@@ -257,6 +257,7 @@ namespace LordsMobile_by_Nekiplay
                 {
 
                 }
+                sharp.Dispose();
             }
             Thread.Sleep(500);
             if (1 != 0)
@@ -272,7 +273,7 @@ namespace LordsMobile_by_Nekiplay
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                 Bitmap find = AForge.Imaging.Image.FromFile(@"game\\handall.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = utils.Find(game, find, 0.4);
+                List<Rectangle> done = utils.Find(game, find, 1.0);
                 if (done.Count >= 1)
                 {
                     window.Activate();
@@ -283,6 +284,7 @@ namespace LordsMobile_by_Nekiplay
                 {
 
                 }
+                sharp.Dispose();
             }
         }
         private void button8_Click(object sender, EventArgs e)
@@ -325,7 +327,8 @@ namespace LordsMobile_by_Nekiplay
                     Bitmap crop = utils.Crop(game, new Rectangle(done[0].X + 155, done[0].Y + 55, 200, 30));
                     crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
                     string power = utils.GetTextFromImage(crop);
-                    label2.Text = "Самоцветы: " + power.Replace("Mt ", "");
+                    label2.Text = "Самоцветы: " + power.Replace("Mt ", "").Replace("‘", "");
+                    Console.WriteLine(power);
                 }
                 else
                 {
@@ -368,6 +371,72 @@ namespace LordsMobile_by_Nekiplay
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (1 != 0)
+            {
+                Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
+                MemorySharp sharp = new MemorySharp(process);
+                // Get the window
+                var window = sharp.Windows.MainWindow;
+                Utils utils = new Utils();
+                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+
+                Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 235, game.Height - 185, 100, 30));
+                crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
+                string power = utils.GetTextFromImage(crop);
+                string power2 = utils.TruncateLongString(power, 7, "");
+                if (power2 == "3a6paTs" && power.Contains("3a6paTs"))
+                {
+                    label4.Text = "Коробка: готова";
+                }
+                else if (power.Contains(":"))
+                {
+                    power2 = utils.TruncateLongString(power, 5, "");
+                    label4.Text= "Коробка: " + power2;
+                }
+                Console.WriteLine(power);
+                sharp.Dispose();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (1 != 0)
+            {
+                Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
+                MemorySharp sharp = new MemorySharp(process);
+                // Get the window
+                var window = sharp.Windows.MainWindow;
+                Utils utils = new Utils();
+                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+
+                Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 235, game.Height - 185, 100, 30));
+                crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
+                string power = utils.GetTextFromImage(crop);
+                string power2 = utils.TruncateLongString(power, 7, "");
+                if (power2 == "3a6paTs" && power.Contains("3a6paTs"))
+                {
+                    game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                    window.Activate();
+                    window.Mouse.MoveTo(game.Width - 175, game.Height - 225);
+                    window.Mouse.ClickLeft();
+                }
+                else if (power.Contains(":"))
+                {
+                    power2 = utils.TruncateLongString(power, 5, "");
+                    label4.Text = "Коробка: " + power2;
+                }
+                Console.WriteLine(power);
+                sharp.Dispose();
+            }
         }
     }
 }
