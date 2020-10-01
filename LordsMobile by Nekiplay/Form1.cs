@@ -302,31 +302,10 @@ namespace LordsMobile_by_Nekiplay
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (1 != 0)
+            string location = api.Get(API.GetTypes.Location);
+            if (location == "Castle")
             {
-                Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
-                MemorySharp sharp = new MemorySharp(process);
-                // Get the window
-                var window = sharp.Windows.MainWindow;
-                Utils utils = new Utils();
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-
-                Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 235, game.Height - 185, 100, 30));
-                crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
-                string power = utils.GetTextFromImage(crop);
-                string power2 = utils.TruncateLongString(power, 7, "");
-                power = power.Replace("L", "");
-                if (power2 == "3a6paTs" && power.Contains("3a6paTs"))
-                {
-                    label4.Text = "Коробка: готова";
-                }
-                else if (power.Contains(":"))
-                {
-                    power2 = utils.TruncateLongString(power, 5, "");
-                    label4.Text= "Коробка: " + power2;
-                }
-                Console.WriteLine(power);
-                sharp.Dispose();
+                label4.Text = "Коробка: " + api.Get(API.GetTypes.MysteryBox);
             }
         }
 
