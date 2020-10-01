@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tesseract;
 
-namespace LordsMobile_by_Nekiplay
+namespace LordsAPI_Example
 {
     public partial class Form1 : Form
     {

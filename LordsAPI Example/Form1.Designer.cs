@@ -1,4 +1,4 @@
-﻿namespace LordsMobile_by_Nekiplay
+﻿namespace LordsAPI_Example
 {
     partial class Form1
     {

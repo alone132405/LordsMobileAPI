@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LordsMobile_by_Nekiplay
+namespace LordsAPI_Example
 {
     static class Program
     {
