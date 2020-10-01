@@ -85,7 +85,29 @@ namespace LordsMobile_by_Nekiplay
                     {
                         return Locations.Map.ToString();
                     }
-                    else return string.Empty;
+                    else
+                    {
+                        Bitmap game3 = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                        game3.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                        Bitmap find3 = utils.ConvertImagePixelType(AForge.Imaging.Image.FromFile("game\\BarracksMenuDetect.png"));
+                        List<Rectangle> done3 = utils.Find(game3, find3);
+                        if (done3.Count >= 1)
+                        {
+                            return Locations.Barracks.ToString();
+                        }
+                        else
+                        {
+                            Bitmap game4 = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                            game4.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            Bitmap find4 = utils.ConvertImagePixelType(AForge.Imaging.Image.FromFile("game\\SacredTowerMenuDetect.png"));
+                            List<Rectangle> done4 = utils.Find(game4, find4);
+                            if (done4.Count >= 1)
+                            {
+                                return Locations.SacredTower.ToString();
+                            }
+                            else return string.Empty;
+                        }
+                    }
                 }
             }
             else  return string.Empty;
@@ -94,6 +116,13 @@ namespace LordsMobile_by_Nekiplay
         { 
             Castle,
             Map,
+            MerchantShip,
+            Coliseum,
+            Menagerie,
+            SacredTower,
+            Aviary,
+            Academy,
+            Barracks,
         }
 
         public enum GetTypes
