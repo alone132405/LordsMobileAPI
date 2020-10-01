@@ -8,8 +8,10 @@ API для Lords Mobile (Steam)
 
 Работает только на разршеней окна: 1600x900
 
+Вы можете использовать сторонние библиотеки для отслежования нажатий кнопок клавиатуры, для создания макросов.
+
 Только для Windows
 
-![alt text](https://i.ibb.co/JxR49Fw/image.png)
+![alt text](https://i.ibb.co/sP1NFDK/image.png)
 
 ![alt text](https://i.ibb.co/C70XNBC/image.png)
