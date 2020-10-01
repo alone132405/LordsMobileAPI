@@ -1,9 +1,11 @@
 ﻿using Binarysharp.MemoryManagement;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LordsAPI
@@ -144,6 +146,10 @@ namespace LordsAPI
                 }
             }
             else return string.Empty;
+        }
+        public async Task<string> GetAsync(GetTypes type)
+        {
+            return await Task.Run(() => Get(type));
         }
         public string Action(Actions action, bool WindowStateBack)
         {

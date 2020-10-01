@@ -36,3 +36,4 @@ C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI\obj\x86\Release\LordsAPI.
 C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI\obj\x86\Release\LordsAPI.csproj.CopyComplete
 C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI\obj\x86\Release\LordsAPI.dll
 C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI\obj\x86\Release\LordsAPI.pdb
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI\obj\x86\Release\LordsAPI.csprojAssemblyReference.cache

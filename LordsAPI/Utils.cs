@@ -106,7 +106,7 @@ namespace LordsAPI
                 Image<Bgr, byte> sourceImage = new Image<Bgr, byte>(fromimg);
                 Image<Bgr, byte> templateImage = new Image<Bgr, byte>(img);
                 Image<Bgr, byte> imageToShow = sourceImage.Copy();
-                using (Image<Gray, float> result = sourceImage.MatchTemplate(templateImage, Emgu.CV.CvEnum.TemplateMatchingType.CcoeffNormed))
+                using (Image<Gray, float> result = sourceImage.MatchTemplate(templateImage, TemplateMatchingType.CcoeffNormed))
                 {
                     double[] minValues, maxValues;
                     Point[] minLocations, maxLocations;

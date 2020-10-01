@@ -270,14 +270,15 @@ namespace LordsAPI_Example
                 sharp.Dispose();
             }
         }
-        private void button8_Click(object sender, EventArgs e)
+        private async void button8_Click(object sender, EventArgs e)
         {
-            string location = api.Get(LordsMobileAPI.GetTypes.Location);
+            string location = await api.GetAsync(LordsMobileAPI.GetTypes.Location);
+            Console.WriteLine(location);
             if (location == "Castle" || location == "Map")
             {
-                label1.Text = "Сила: " + api.Get(LordsMobileAPI.GetTypes.PlayerPower);
-                label2.Text = "Самоцветов: " + api.Get(LordsMobileAPI.GetTypes.PlayerGems);
-                label3.Text = "Уровень: " + api.Get(LordsMobileAPI.GetTypes.PlayerLevel);
+                label1.Text = "Сила: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerPower);
+                label2.Text = "Самоцветов: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerGems);
+                label3.Text = "Уровень: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerLevel);
             }
             else
             {
