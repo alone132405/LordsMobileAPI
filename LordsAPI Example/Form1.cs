@@ -272,13 +272,13 @@ namespace LordsAPI_Example
         }
         private async void button8_Click(object sender, EventArgs e)
         {
-            string location = await api.GetAsync(LordsMobileAPI.GetTypes.Location);
+            LordsMobileAPI.Location location = await LordsMobileAPI.Location.GetLocationAsync();
             Console.WriteLine(location);
-            if (location == "Castle" || location == "Map")
+            if (location.type == LordsMobileAPI.Location.Locations.Castle || location.type == LordsMobileAPI.Location.Locations.Map)
             {
                 label1.Text = "Сила: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerPower);
-                label2.Text = "Самоцветов: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerGems);
                 label3.Text = "Уровень: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerLevel);
+                label2.Text = "Самоцветов: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerGems);
             }
             else
             {
@@ -302,8 +302,8 @@ namespace LordsAPI_Example
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            string location = await api.GetAsync(LordsMobileAPI.GetTypes.Location);
-            if (location == "Castle")
+            LordsMobileAPI.Location location = await LordsMobileAPI.Location.GetLocationAsync();
+            if (location.type == LordsMobileAPI.Location.Locations.Castle)
             {
                 label4.Text = "Коробка: " + await api.GetAsync(LordsMobileAPI.GetTypes.MysteryBox);
             }
@@ -349,6 +349,24 @@ namespace LordsAPI_Example
         private async void button3_Click_1(object sender, EventArgs e)
         {
             await api.ActionAsync(LordsMobileAPI.Actions.EnterTheMap, true);
+        }
+
+        private async void button10_Click(object sender, EventArgs e)
+        {
+            LordsMobileAPI.Location location = await LordsMobileAPI.Location.GetLocationAsync();
+            if (location.type == LordsMobileAPI.Location.Locations.Map || location.type == LordsMobileAPI.Location.Locations.Castle)
+            {
+                string food = await LordsMobileAPI.Resources.Food.GetCountAsync();
+                label5.Text = "Еда: " + food;
+                string stone = await LordsMobileAPI.Resources.Stone.GetCountAsync();
+                label7.Text = "Камень: " + stone;
+                string wood = await LordsMobileAPI.Resources.Wood.GetCountAsync();
+                label6.Text = "Дерево: " + wood;
+                string ore = await LordsMobileAPI.Resources.Ore.GetCountAsync();
+                label8.Text = "Руда: " + ore;
+                string gold = await LordsMobileAPI.Resources.Gold.GetCountAsync();
+                label9.Text = "Золото: " + gold;
+            }
         }
     }
 }

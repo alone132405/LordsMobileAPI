@@ -12,6 +12,214 @@ namespace LordsAPI
 {
     public class LordsMobileAPI
     {
+        public class Settings
+        {
+            public static Process GetProcess()
+            {
+                return Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
+            }
+        }
+        public class Location
+        {
+            public string name;
+            public Locations type;
+            public enum Locations
+            {
+                Unknown,
+
+                Castle,
+                Map,
+                MerchantShip,
+                Coliseum,
+                Menagerie,
+                SacredTower,
+                Aviary,
+                Academy,
+                Barracks,
+                Quests,
+            }
+            public static Location GetLocation()
+            {
+                Utils utils = new Utils();
+                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                Bitmap find = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\gomap.png"));
+                List<Rectangle> done = utils.Find(game, find);
+                if (done.Count >= 1)
+                {
+                    return new Location { name = Locations.Castle.ToString(), type = Locations.Castle };
+                }
+                else
+                {
+                    Bitmap game2 = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                    game2.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                    Bitmap find2 = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\gocastle.png"));
+                    List<Rectangle> done2 = utils.Find(game2, find2);
+                    if (done2.Count >= 1)
+                    {
+                        return new Location { name = Locations.Map.ToString(), type = Locations.Map };
+                    }
+                    else
+                    {
+                        Bitmap game3 = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                        game3.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                        Bitmap find3 = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\BarracksMenuDetect.png"));
+                        List<Rectangle> done3 = utils.Find(game3, find3);
+                        if (done3.Count >= 1)
+                        {
+                            return new Location { name = Locations.Barracks.ToString(), type = Locations.Barracks };
+                        }
+                        else
+                        {
+                            Bitmap game4 = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                            game4.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                            Bitmap find4 = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\SacredTowerMenuDetect.png"));
+                            List<Rectangle> done4 = utils.Find(game4, find4);
+                            if (done4.Count >= 1)
+                            {
+                                return new Location { name = Locations.SacredTower.ToString(), type = Locations.SacredTower };
+                            }
+                            else
+                            {
+                                Bitmap game5 = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                                game5.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                                Bitmap find5 = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\QuestsMenuDetect.png"));
+                                List<Rectangle> done5 = utils.Find(game5, find5);
+                                if (done5.Count >= 1)
+                                {
+                                    return new Location { name = Locations.Quests.ToString(), type = Locations.Quests };
+                                }
+                                else
+                                {
+                                    return new Location { name = Locations.Unknown.ToString(), type = Locations.Unknown };
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            public static async Task<Location> GetLocationAsync()
+            {
+                return await Task.Run(() => GetLocation());
+            }
+        }
+
+        public class Resources
+        {
+            public class Food
+            {
+                public static string GetCount()
+                {
+                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                    Utils utils = new Utils();
+                    Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                    var window = sharp.Windows.MainWindow;
+                    //window.Mouse.MoveTo(game.Width - 170, game.Height - 893);
+                    Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 170, game.Height - 893, 108, 30));
+                    crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
+                    string power = utils.GetTextFromImage(crop);
+                    crop.Dispose();
+                    sharp.Dispose();
+                    game.Dispose();
+                    return power.Replace(" ", "").Replace(Environment.NewLine, "").Trim();
+                }
+                public static async Task<string> GetCountAsync()
+                {
+                    return await Task.Run(() => GetCount());
+                }
+            }
+            public class Stone
+            {
+                public static string GetCount()
+                {
+                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                    Utils utils = new Utils();
+                    Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                    var window = sharp.Windows.MainWindow;
+                    //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50);
+                    Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 170, game.Height - 893 + 50, 108, 30));
+                    crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
+                    string power = utils.GetTextFromImage(crop);
+                    crop.Dispose();
+                    sharp.Dispose();
+                    game.Dispose();
+                    return power.Replace(" ", "").Replace(Environment.NewLine, "").Trim();
+                }
+                public static async Task<string> GetCountAsync()
+                {
+                    return await Task.Run(() => GetCount());
+                }
+            }
+            public class Wood
+            {
+                public static string GetCount()
+                {
+                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                    Utils utils = new Utils();
+                    Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                    var window = sharp.Windows.MainWindow;
+                    //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50 + 50);
+                    Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 170, game.Height - 893 + 50 + 50, 108, 30));
+                    crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
+                    string power = utils.GetTextFromImage(crop);
+                    crop.Dispose();
+                    sharp.Dispose();
+                    game.Dispose();
+                    return power.Replace(" ", "").Replace(Environment.NewLine, "").Trim();
+                }
+                public static async Task<string> GetCountAsync()
+                {
+                    return await Task.Run(() => GetCount());
+                }
+
+            }
+            public class Ore
+            {
+                public static string GetCount()
+                {
+                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                    Utils utils = new Utils();
+                    Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                    var window = sharp.Windows.MainWindow;
+                    //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50 + 50 + 50);
+                    Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 170, game.Height - 893 + 50 + 50 + 50, 108, 30));
+                    crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
+                    string power = utils.GetTextFromImage(crop);
+                    crop.Dispose();
+                    sharp.Dispose();
+                    game.Dispose();
+                    return power.Replace(" ", "").Replace(Environment.NewLine, "").Trim();
+                }
+                public static async Task<string> GetCountAsync()
+                {
+                    return await Task.Run(() => GetCount());
+                }
+            }
+            public class Gold
+            {
+                public static string GetCount()
+                {
+                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                    Utils utils = new Utils();
+                    Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                    var window = sharp.Windows.MainWindow;
+                    //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50 + 50 + 50 + 50);
+                    Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 170, game.Height - 893 + 50 + 50 + 50 + 50, 108, 30));
+                    crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
+                    string power = utils.GetTextFromImage(crop);
+                    crop.Dispose();
+                    sharp.Dispose();
+                    game.Dispose();
+                    return power.Replace(" ", "").Replace(Environment.NewLine, "").Trim();
+                }
+                public static async Task<string> GetCountAsync()
+                {
+                    return await Task.Run(() => GetCount());
+                }
+            }
+        }
+
+
         public string Get(GetTypes type)
         {
             Utils utils = new Utils();
@@ -42,7 +250,7 @@ namespace LordsAPI
                 List<Rectangle> done = utils.Find(game, find, 0.7);
                 if (done.Count >= 1)
                 {
-                    Bitmap crop = utils.Crop(game, new Rectangle(done[0].X + 155, done[0].Y + 55, 200, 30));
+                    Bitmap crop = utils.Crop(game, new Rectangle(done[0].X + 155, done[0].Y + 57, 200, 30));
                     crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
                     string power = utils.GetTextFromImage(crop);
                     return power.Replace("Mt ", "").Replace("‘", "");
@@ -86,65 +294,6 @@ namespace LordsAPI
                 }
                 else return string.Empty;
             }
-            else if (type == GetTypes.Location)
-            {
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                Bitmap find = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\gomap.png"));
-                List<Rectangle> done = utils.Find(game, find);
-                if (done.Count >= 1)
-                {
-                    return Locations.Castle.ToString();
-                }
-                else
-                {
-                    Bitmap game2 = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                    game2.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                    Bitmap find2 = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\gocastle.png"));
-                    List<Rectangle> done2 = utils.Find(game2, find2);
-                    if (done2.Count >= 1)
-                    {
-                        return Locations.Map.ToString();
-                    }
-                    else
-                    {
-                        Bitmap game3 = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                        game3.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                        Bitmap find3 = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\BarracksMenuDetect.png"));
-                        List<Rectangle> done3 = utils.Find(game3, find3);
-                        if (done3.Count >= 1)
-                        {
-                            return Locations.Barracks.ToString();
-                        }
-                        else
-                        {
-                            Bitmap game4 = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                            game4.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                            Bitmap find4 = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\SacredTowerMenuDetect.png"));
-                            List<Rectangle> done4 = utils.Find(game4, find4);
-                            if (done4.Count >= 1)
-                            {
-                                return Locations.SacredTower.ToString();
-                            }
-                            else
-                            {
-                                Bitmap game5 = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                                game5.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                                Bitmap find5 = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\QuestsMenuDetect.png"));
-                                List<Rectangle> done5 = utils.Find(game5, find5);
-                                if (done5.Count >= 1)
-                                {
-                                    return Locations.Quests.ToString();
-                                }
-                                else
-                                {
-                                    return string.Empty;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
             else return string.Empty;
         }
         public async Task<string> GetAsync(GetTypes type)
@@ -161,8 +310,8 @@ namespace LordsAPI
             Utils utils = new Utils();
             if (action == Actions.EnterTheCastle)
             {
-                string location = Get(GetTypes.Location);
-                if (location == "Map")
+                LordsMobileAPI.Location location = LordsMobileAPI.Location.GetLocation();
+                if (location.type == LordsMobileAPI.Location.Locations.Map)
                 {
                     MemorySharp sharp = new MemorySharp(process);
                     var window = sharp.Windows.MainWindow;
@@ -187,8 +336,8 @@ namespace LordsAPI
             }
             else if (action == Actions.EnterTheMap)
             {
-                string location = Get(GetTypes.Location);
-                if (location == "Castle")
+                LordsMobileAPI.Location location = LordsMobileAPI.Location.GetLocation();
+                if (location.type == LordsMobileAPI.Location.Locations.Castle)
                 {
                     MemorySharp sharp = new MemorySharp(process);
                     var window = sharp.Windows.MainWindow;
@@ -219,23 +368,8 @@ namespace LordsAPI
             EnterTheMap,
         }
 
-        public enum Locations
-        {
-            Castle,
-            Map,
-            MerchantShip,
-            Coliseum,
-            Menagerie,
-            SacredTower,
-            Aviary,
-            Academy,
-            Barracks,
-            Quests,
-        }
-
         public enum GetTypes
         {
-            Location,
             PlayerPower,
             PlayerGems,
             PlayerLevel,
