@@ -15,8 +15,8 @@ namespace LordsMobile_by_Nekiplay
     {
         public string Get(GetTypes type)
         {
-            Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
             Utils utils = new Utils();
+            Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
             if (type == GetTypes.PlayerPower)
             {
                 Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
@@ -128,7 +128,21 @@ namespace LordsMobile_by_Nekiplay
                             {
                                 return Locations.SacredTower.ToString();
                             }
-                            else return string.Empty;
+                            else
+                            {
+                                Bitmap game5 = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                                game5.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                                Bitmap find5 = utils.ConvertImagePixelType(AForge.Imaging.Image.FromFile("game\\QuestsMenuDetect.png"));
+                                List<Rectangle> done5 = utils.Find(game5, find5);
+                                if (done5.Count >= 1)
+                                {
+                                    return Locations.Quests.ToString();
+                                }
+                                else
+                                {
+                                    return string.Empty;
+                                }
+                            }
                         }
                     }
                 }
@@ -154,9 +168,11 @@ namespace LordsMobile_by_Nekiplay
                     }
                     window.Mouse.MoveTo(window.Width - 1500, window.Height - 85);
                     window.Mouse.ClickLeft();
-                    Thread.Sleep(15);
                     if (!activate && WindowStateBack)
+                    {
+                        Thread.Sleep(15);
                         window.State = Binarysharp.MemoryManagement.Native.WindowStates.Minimize;
+                    }
                     Cursor.Position = cursor2;
                     sharp.Dispose();
                     return "Object pressed";
@@ -178,9 +194,11 @@ namespace LordsMobile_by_Nekiplay
                     }
                     window.Mouse.MoveTo(window.Width - 1500, window.Height - 85);
                     window.Mouse.ClickLeft();
-                    Thread.Sleep(15);
                     if (!activate && WindowStateBack)
+                    {
+                        Thread.Sleep(15);
                         window.State = Binarysharp.MemoryManagement.Native.WindowStates.Minimize;
+                    }
                     Cursor.Position = cursor2;
                     sharp.Dispose();
                     return "Object pressed";
@@ -206,6 +224,7 @@ namespace LordsMobile_by_Nekiplay
             Aviary,
             Academy,
             Barracks,
+            Quests,
         }
 
         public enum GetTypes
@@ -216,6 +235,5 @@ namespace LordsMobile_by_Nekiplay
             PlayerLevel,
             MysteryBox,
         }
-
     }
 }

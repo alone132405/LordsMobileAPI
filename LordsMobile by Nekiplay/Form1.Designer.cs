@@ -48,8 +48,9 @@
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -63,7 +64,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Крепость";
+            this.button1.Text = "Попасть в крепость";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -144,7 +145,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(6, 24);
+            this.button7.Location = new System.Drawing.Point(6, 16);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(123, 23);
             this.button7.TabIndex = 5;
@@ -235,6 +236,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button10);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Location = new System.Drawing.Point(174, 12);
             this.groupBox1.Name = "groupBox1";
@@ -254,6 +256,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Карта";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(7, 44);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(123, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Попасть на карту";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label4);
@@ -266,15 +278,15 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Крепость";
             // 
-            // button3
+            // button10
             // 
-            this.button3.Location = new System.Drawing.Point(7, 44);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 23);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Карта";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.button10.Location = new System.Drawing.Point(6, 42);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(123, 23);
+            this.button10.TabIndex = 6;
+            this.button10.Text = "Выполнить квесты";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Form1
             // 
@@ -326,6 +338,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button10;
     }
 }
 
