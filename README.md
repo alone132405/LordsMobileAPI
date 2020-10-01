@@ -1,6 +1,6 @@
 # LordsMobileAPI
 
-![alt text](https://ci.appveyor.com/project/Nekiplay/lordsmobileapi)
+[![Build status](https://ci.appveyor.com/api/projects/status/gnrlqsxr2xda5c5l?svg=true)](https://ci.appveyor.com/project/Nekiplay/lordsmobileapi)
 
 API для Lords Mobile (Steam)
 
