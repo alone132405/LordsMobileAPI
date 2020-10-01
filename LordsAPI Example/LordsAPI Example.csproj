@@ -54,9 +54,6 @@
     <ManifestCertificateThumbprint>5587422F757C84F5B5ACC13DAACB4F699D1E73F8</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>LordsMobile by Nekiplay_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
