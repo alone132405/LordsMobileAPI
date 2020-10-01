@@ -4,6 +4,7 @@
 [![HitCount](http://hits.dwyl.com/Nekiplay/https://githubcom/Nekiplay/LordsMobileAPI.svg)](http://hits.dwyl.com/Nekiplay/https://githubcom/Nekiplay/LordsMobileAPI)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/gnrlqsxr2xda5c5l?svg=true)](https://ci.appveyor.com/project/Nekiplay/lordsmobileapi)
+[![Coverage Status](https://coveralls.io/repos/github/Nekiplay/LordsMobileAPI/badge.svg?branch=master)](https://coveralls.io/github/Nekiplay/LordsMobileAPI?branch=master)
 
 API для Lords Mobile (Steam)
 
