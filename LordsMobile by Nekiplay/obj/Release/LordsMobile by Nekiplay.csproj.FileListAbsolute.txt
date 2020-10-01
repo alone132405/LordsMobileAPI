@@ -54,3 +54,55 @@ C:\Users\Nekiplay\source\repos\LordsMobile by Nekiplay\LordsMobile by Nekiplay\b
 C:\Users\Nekiplay\source\repos\LordsMobile by Nekiplay\LordsMobile by Nekiplay\bin\Release\LordsMobile by Nekiplay.application
 C:\Users\Nekiplay\source\repos\LordsMobile by Nekiplay\LordsMobile by Nekiplay\obj\Release\LordsMobile by Nekiplay.exe.manifest
 C:\Users\Nekiplay\source\repos\LordsMobile by Nekiplay\LordsMobile by Nekiplay\obj\Release\LordsMobile by Nekiplay.application
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\x86\liblept1753.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\x86\libtesseract3052.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\x64\liblept1753.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\x64\libtesseract3052.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\LordsMobile by Nekiplay.exe.config
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\LordsMobile by Nekiplay.exe
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\LordsMobile by Nekiplay.pdb
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\AForge.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\AForge.Imaging.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\AForge.Math.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\Emgu.CV.UI.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\Emgu.CV.UI.GL.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\Emgu.CV.World.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\Fasm.NET.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\IronOcr.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\MemorySharp.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\OpenTK.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\OpenTK.GLControl.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\Tesseract.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\tessnet2_32.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\ZedGraph.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\AForge.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\AForge.Imaging.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\AForge.Math.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\Emgu.CV.UI.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\Emgu.CV.UI.GL.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\Emgu.CV.World.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\IronOcr.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\OpenTK.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\OpenTK.GLControl.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\ZedGraph.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\de\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\es\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\fr\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\hu\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\it\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\ja\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\pt\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\ru\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\sk\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\sv\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\tr\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\zh-cn\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\bin\Release\zh-tw\ZedGraph.resources.dll
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\obj\Release\LordsMobile by Nekiplay.csprojAssemblyReference.cache
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\obj\Release\LordsMobile_by_Nekiplay.Form1.resources
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\obj\Release\LordsMobile_by_Nekiplay.Properties.Resources.resources
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\obj\Release\LordsMobile by Nekiplay.csproj.GenerateResource.cache
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\obj\Release\LordsMobile by Nekiplay.csproj.CoreCompileInputs.cache
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\obj\Release\LordsMobile by Nekiplay.csproj.CopyComplete
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\obj\Release\LordsMobile by Nekiplay.exe
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsMobile by Nekiplay\obj\Release\LordsMobile by Nekiplay.pdb

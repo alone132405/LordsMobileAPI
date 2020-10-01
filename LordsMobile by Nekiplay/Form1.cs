@@ -1,6 +1,6 @@
-﻿using AForge.Imaging;
+﻿
 using Binarysharp.MemoryManagement;
-using IronOcr;
+using LordsAPI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,10 +27,10 @@ namespace LordsMobile_by_Nekiplay
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            api.Action(API.Actions.EnterTheCastle, true);
+            api.Action(LordsMobileAPI.Actions.EnterTheCastle, true);
 
         }
-
+        private LordsMobileAPI api = new LordsMobileAPI();
         private void button3_Click(object sender, EventArgs e)
         {
             Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
@@ -42,7 +42,7 @@ namespace LordsMobile_by_Nekiplay
             //Console.WriteLine(game.Width);
             //Console.WriteLine(game.Height);
             game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-            Bitmap find = utils.ConvertImagePixelType(AForge.Imaging.Image.FromFile(@"game\\gotocastle.png"));
+            Bitmap find = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile(@"game\\gotocastle.png"));
             List<Rectangle> done = utils.Find(game, find);
             if (done.Count == 1)
             {
@@ -72,7 +72,7 @@ namespace LordsMobile_by_Nekiplay
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                Bitmap find = AForge.Imaging.Image.FromFile(@"game\\wood2.png");
+                Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\wood2.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
                 List<Rectangle> done = utils.Find(game, find, 0.5);
                 Console.WriteLine("Деревьев: " + done.Count);
@@ -98,7 +98,7 @@ namespace LordsMobile_by_Nekiplay
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                Bitmap find = AForge.Imaging.Image.FromFile(@"game\\gold2.png");
+                Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\gold2.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
                 List<Rectangle> done = utils.Find(game, find, 0.5f);
                 if (done.Count >= 1)
@@ -125,7 +125,7 @@ namespace LordsMobile_by_Nekiplay
             //Console.WriteLine(game.Width);
             //Console.WriteLine(game.Height);
             game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-            Bitmap find = AForge.Imaging.Image.FromFile(@"game\\gaterbutton.png");
+            Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\gaterbutton.png");
             find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
             List<Rectangle> done = utils.Find(game, find, 0.6);
             if (done.Count >= 1)
@@ -153,7 +153,7 @@ namespace LordsMobile_by_Nekiplay
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game2.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                Bitmap find2 = AForge.Imaging.Image.FromFile(@"game\\armyhave1.png");
+                Bitmap find2 = (Bitmap)Bitmap.FromFile(@"game\\armyhave1.png");
                 find2.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
                 List<Rectangle> done2 = utils2.Find(game2, find2, 0.6);
                 if (done2.Count >= 1)
@@ -172,7 +172,7 @@ namespace LordsMobile_by_Nekiplay
                         //Console.WriteLine(game.Width);
                         //Console.WriteLine(game.Height);
                         game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                        Bitmap find = AForge.Imaging.Image.FromFile(@"game\\typevishkabutton.png");
+                        Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\typevishkabutton.png");
                         find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
                         List<Rectangle> done = utils.Find(game, find, 0.6);
                         if (done.Count >= 1)
@@ -196,7 +196,7 @@ namespace LordsMobile_by_Nekiplay
                         //Console.WriteLine(game.Width);
                         //Console.WriteLine(game.Height);
                         game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                        Bitmap find = AForge.Imaging.Image.FromFile(@"game\\goattackbutton.png");
+                        Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\goattackbutton.png");
                         find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
                         List<Rectangle> done = utils.Find(game, find, 0.6);
                         if (done.Count >= 1)
@@ -227,7 +227,7 @@ namespace LordsMobile_by_Nekiplay
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                Bitmap find = AForge.Imaging.Image.FromFile(@"game\\hand.png");
+                Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\hand.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
                 List<Rectangle> done = utils.Find(game, find, 0.4);
                 if (done.Count >= 1)
@@ -254,7 +254,7 @@ namespace LordsMobile_by_Nekiplay
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                Bitmap find = AForge.Imaging.Image.FromFile(@"game\\handall.png");
+                Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\handall.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
                 List<Rectangle> done = utils.Find(game, find, 0.6);
                 if (done.Count >= 1)
@@ -270,15 +270,14 @@ namespace LordsMobile_by_Nekiplay
                 sharp.Dispose();
             }
         }
-        private API api = new API();
         private void button8_Click(object sender, EventArgs e)
         {
-            string location = api.Get(API.GetTypes.Location);
+            string location = api.Get(LordsMobileAPI.GetTypes.Location);
             if (location == "Castle" || location == "Map")
             {
-                label1.Text = "Сила: " + api.Get(API.GetTypes.PlayerPower);
-                label2.Text = "Самоцветов: " + api.Get(API.GetTypes.PlayerGems);
-                label3.Text = "Уровень: " + api.Get(API.GetTypes.PlayerLevel);
+                label1.Text = "Сила: " + api.Get(LordsMobileAPI.GetTypes.PlayerPower);
+                label2.Text = "Самоцветов: " + api.Get(LordsMobileAPI.GetTypes.PlayerGems);
+                label3.Text = "Уровень: " + api.Get(LordsMobileAPI.GetTypes.PlayerLevel);
             }
             else
             {
@@ -302,10 +301,10 @@ namespace LordsMobile_by_Nekiplay
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string location = api.Get(API.GetTypes.Location);
+            string location = api.Get(LordsMobileAPI.GetTypes.Location);
             if (location == "Castle")
             {
-                label4.Text = "Коробка: " + api.Get(API.GetTypes.MysteryBox);
+                label4.Text = "Коробка: " + api.Get(LordsMobileAPI.GetTypes.MysteryBox);
             }
         }
 
@@ -348,7 +347,7 @@ namespace LordsMobile_by_Nekiplay
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            api.Action(API.Actions.EnterTheMap, true);
+            api.Action(LordsMobileAPI.Actions.EnterTheMap, true);
         }
     }
 }
