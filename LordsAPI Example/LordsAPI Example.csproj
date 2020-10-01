@@ -66,12 +66,16 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>igg_android_lordsmobile.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fasm.NET, Version=1.0.4939.27955, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LordsAPI\bin\Release\Fasm.NET.dll</HintPath>
+    </Reference>
     <Reference Include="LordsAPI">
       <HintPath>..\LordsAPI\bin\Release\LordsAPI.dll</HintPath>
     </Reference>
@@ -138,6 +142,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.manifest" />
     <None Include="LordsAPI Example.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
