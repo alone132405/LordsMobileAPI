@@ -1,0 +1,37 @@
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\x86\liblept1753.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\x86\libtesseract3052.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\x64\liblept1753.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\x64\libtesseract3052.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\LordsAPI Example.exe.config
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\LordsAPI Example.exe
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\LordsAPI Example.pdb
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\Fasm.NET.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\LordsAPI.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\MemorySharp.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\Tesseract.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\ZedGraph.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\Emgu.CV.World.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\LordsAPI.pdb
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\ZedGraph.xml
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\Emgu.CV.World.xml
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\de\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\es\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\fr\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\hu\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\it\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\ja\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\pt\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\ru\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\sk\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\sv\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\tr\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\zh-cn\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x86\Release\zh-tw\ZedGraph.resources.dll
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x86\Release\LordsAPI_Example.Form1.resources
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x86\Release\LordsAPI_Example.Properties.Resources.resources
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x86\Release\LordsAPI Example.csproj.GenerateResource.cache
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x86\Release\LordsAPI Example.csproj.CoreCompileInputs.cache
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x86\Release\LordsAPI Example.csproj.CopyComplete
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x86\Release\LordsAPI Example.exe
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x86\Release\LordsAPI Example.pdb
+C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x86\Release\LordsAPI Example.csprojAssemblyReference.cache
