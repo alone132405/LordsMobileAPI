@@ -292,73 +292,17 @@ namespace LordsMobile_by_Nekiplay
         }
         private void button8_Click(object sender, EventArgs e)
         {
-            Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
-            MemorySharp sharp = new MemorySharp(process);
-            var window = sharp.Windows.MainWindow;
-            Utils utils = new Utils();
-            if (1 != 0)
+            API api = new API();
+            string location = api.Get(API.GetTypes.Location);
+            if (location == "Castle" || location == "Map")
             {
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                // Get the window
-                Bitmap find = AForge.Imaging.Image.FromFile(@"game\\power.png");
-                find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = utils.Find(game, find, 0.7);
-                string energy = "";
-                if (done.Count >= 1)
-                {
-                    //window.Mouse.MoveTo(done[0].X + 135, done[0].Y + 3);
-                    Bitmap crop = utils.Crop(game, new Rectangle(done[0].X + 135, done[0].Y + 3, 200, 30));
-                    crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
-                    string power = utils.GetTextFromImage(crop);
-                    label1.Text = "Сила: " + power;
-                }
-                else
-                {
-
-                }
-                sharp.Dispose();
+                label1.Text = "Сила: " + api.Get(API.GetTypes.PlayerPower);
+                label2.Text = "Самоцветов: " + api.Get(API.GetTypes.PlayerGems);
+                label3.Text = "Уровень: " + api.Get(API.GetTypes.PlayerLevel);
             }
-            if (1 != 0)
+            else
             {
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                // Get the window
-                Bitmap find = AForge.Imaging.Image.FromFile(@"game\\power.png");
-                find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = utils.Find(game, find, 0.7);
-                if (done.Count >= 1)
-                {
-                    Bitmap crop = utils.Crop(game, new Rectangle(done[0].X + 155, done[0].Y + 55, 200, 30));
-                    crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
-                    string power = utils.GetTextFromImage(crop);
-                    label2.Text = "Самоцветы: " + power.Replace("Mt ", "").Replace("‘", "");
-                    Console.WriteLine(power);
-                }
-                else
-                {
-            
-                }
-                sharp.Dispose();
-            }
-            if (1 != 0)
-            {
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                // Get the window
-                Bitmap find = AForge.Imaging.Image.FromFile(@"game\\power.png");
-                find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = utils.Find(game, find, 0.7);
-                if (done.Count >= 1)
-                {
-                    //window.Mouse.MoveTo(done[0].X + 10, done[0].Y + 156);
-                    Bitmap crop = utils.Crop(game, new Rectangle(done[0].X + 10, done[0].Y + 156, 33, 25));
-                    crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
-                    string power = utils.GetTextFromImage(crop);
-                    label3.Text = "Уровень: " + utils.TruncateLongString(power, 2, "");
-                }
-                else
-                {
-            
-                }
-                sharp.Dispose();
+                Console.WriteLine(location);
             }
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
