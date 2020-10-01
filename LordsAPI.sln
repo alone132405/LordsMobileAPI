@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LordsAPI Example", "LordsMobile by Nekiplay\LordsAPI Example.csproj", "{1E6878AE-342E-42F8-A876-C2847E4B2624}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LordsAPI Example", "LordsAPI Example\LordsAPI Example.csproj", "{1E6878AE-342E-42F8-A876-C2847E4B2624}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LordsAPI", "LordsAPI\LordsAPI.csproj", "{E6950BC1-D186-4954-AAD4-3CED484249A9}"
 EndProject
