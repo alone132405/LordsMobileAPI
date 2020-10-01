@@ -1,12 +1,9 @@
 ﻿using Binarysharp.MemoryManagement;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LordsAPI
@@ -24,7 +21,6 @@ namespace LordsAPI
                 Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\power.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
                 List<Rectangle> done = utils.Find(game, find, 0.7);
-                string energy = "";
                 if (done.Count >= 1)
                 {
                     //window.Mouse.MoveTo(done[0].X + 135, done[0].Y + 3);

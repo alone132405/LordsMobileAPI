@@ -43,11 +43,12 @@
     <Reference Include="Emgu.CV.World, Version=3.1.0.2282, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
       <HintPath>..\packages\EmguCV.3.1.0.1\lib\net30\Emgu.CV.World.dll</HintPath>
     </Reference>
-    <Reference Include="Fasm.NET">
-      <HintPath>..\LordsMobile by Nekiplay\bin\Debug\Fasm.NET.dll</HintPath>
+    <Reference Include="Fasm.NET, Version=1.0.4939.27955, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\Fasm.NET.dll</HintPath>
     </Reference>
     <Reference Include="MemorySharp">
-      <HintPath>..\LordsMobile by Nekiplay\bin\Debug\MemorySharp.dll</HintPath>
+      <HintPath>bin\Release\MemorySharp.dll</HintPath>
     </Reference>
     <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenTK.1.1.2225.0\lib\net20\OpenTK.dll</HintPath>
