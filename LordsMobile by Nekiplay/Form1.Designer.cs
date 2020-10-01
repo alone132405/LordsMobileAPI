@@ -123,9 +123,9 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(203, 19);
+            this.button6.Location = new System.Drawing.Point(202, 19);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(82, 23);
+            this.button6.Size = new System.Drawing.Size(89, 23);
             this.button6.TabIndex = 6;
             this.button6.Text = "Распределить";
             this.button6.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(124, 19);
+            this.button5.Location = new System.Drawing.Point(123, 19);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(73, 23);
             this.button5.TabIndex = 5;
@@ -273,7 +273,7 @@
             this.groupBox5.Size = new System.Drawing.Size(98, 94);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Замок";
+            this.groupBox5.Text = "Крепость";
             // 
             // Form1
             // 

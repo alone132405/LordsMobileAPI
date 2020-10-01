@@ -66,9 +66,12 @@ namespace LordsMobile_by_Nekiplay
             List<Rectangle> done = utils.Find(game, find);
             if (done.Count == 1)
             {
+                Point cursor = Cursor.Position;
                 window.Activate();
                 window.Mouse.MoveTo(done[0].X, done[0].Y);
                 window.Mouse.ClickLeft();
+                Thread.Sleep(5);
+                window.Mouse.MoveTo(cursor.X, cursor.Y);
             }
             else
             {
@@ -388,6 +391,7 @@ namespace LordsMobile_by_Nekiplay
                 crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
                 string power = utils.GetTextFromImage(crop);
                 string power2 = utils.TruncateLongString(power, 7, "");
+                power = power.Replace("L", "");
                 if (power2 == "3a6paTs" && power.Contains("3a6paTs"))
                 {
                     label4.Text = "Коробка: готова";
