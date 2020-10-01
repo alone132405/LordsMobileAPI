@@ -12,6 +12,6 @@ API для Lords Mobile (Steam)
 
 Только для Windows
 
-![alt text](https://i.ibb.co/X8D79sQ/image.png)
+![alt text](https://i.ibb.co/qJsjhtd/image.png)
 
-![alt text](https://i.ibb.co/C70XNBC/image.png)
+![alt text](https://i.ibb.co/w04WHRC/image.png)
