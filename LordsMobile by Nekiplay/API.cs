@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Binarysharp.MemoryManagement;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -90,6 +91,50 @@ namespace LordsMobile_by_Nekiplay
             }
             else  return string.Empty;
         }
+        public string Action(Actions action)
+        {
+            Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
+            Utils utils = new Utils();
+            if (action == Actions.EnterTheCastle)
+            {
+                string location = Get(GetTypes.Location);
+                if (location == "Map")
+                {
+                    MemorySharp sharp = new MemorySharp(process);
+                    var window = sharp.Windows.MainWindow;
+                    if (!window.IsActivated)
+                        window.Activate();
+                    window.Mouse.MoveTo(window.Width - 1500, window.Height - 85);
+                    window.Mouse.ClickLeft();
+                    sharp.Dispose();
+                    return "Object pressed";
+                }
+                else { return "You need to be on the map for this action"; }
+            }
+            else if (action == Actions.EnterTheMap)
+            {
+                string location = Get(GetTypes.Location);
+                if (location == "Castle")
+                {
+                    MemorySharp sharp = new MemorySharp(process);
+                    var window = sharp.Windows.MainWindow;
+                    if (!window.IsActivated)
+                        window.Activate();
+                    window.Mouse.MoveTo(window.Width - 1500, window.Height - 85);
+                    window.Mouse.ClickLeft();
+                    sharp.Dispose();
+                    return "Object pressed";
+                }
+                else { return "You need to be on the castle for this action"; }
+            }
+            else { return "Unknown action"; }
+        }
+        public enum Actions
+        {
+            EnterTheCastle,
+            EnterTheMap,
+        }
+
         public enum Locations
         { 
             Castle,

@@ -27,27 +27,7 @@ namespace LordsMobile_by_Nekiplay
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
-            MemorySharp sharp = new MemorySharp(process);
-            // Get the window
-            var window = sharp.Windows.MainWindow;
-            Utils utils = new Utils();
-            Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-            //Console.WriteLine(game.Width);
-            //Console.WriteLine(game.Height);
-            game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-            Bitmap find = utils.ConvertImagePixelType(AForge.Imaging.Image.FromFile("game\\gomap.png"));
-            List<Rectangle> done = utils.Find(game, find);
-            foreach (Rectangle rec in done)
-            {
-                window.Activate();
-                window.Mouse.MoveTo(rec.X + 64, rec.Y + 32);
-                window.Mouse.ClickLeft();
-                Console.WriteLine(rec.X);
-                Console.WriteLine(rec.Y);
-
-            }
-            //done.Save("test.jpg");
+            api.Action(API.Actions.EnterTheCastle);
 
         }
 
@@ -262,7 +242,7 @@ namespace LordsMobile_by_Nekiplay
                 }
                 sharp.Dispose();
             }
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
             if (1 != 0)
             {
                 Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
@@ -276,11 +256,11 @@ namespace LordsMobile_by_Nekiplay
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                 Bitmap find = AForge.Imaging.Image.FromFile(@"game\\handall.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = utils.Find(game, find, 1.0);
+                List<Rectangle> done = utils.Find(game, find, 0.6);
                 if (done.Count >= 1)
                 {
                     window.Activate();
-                    window.Mouse.MoveTo(done[0].X, done[0].Y);
+                    window.Mouse.MoveTo(done[0].X + 12, done[0].Y + 12);
                     window.Mouse.ClickLeft();
                 }
                 else
@@ -290,9 +270,9 @@ namespace LordsMobile_by_Nekiplay
                 sharp.Dispose();
             }
         }
+        private API api = new API();
         private void button8_Click(object sender, EventArgs e)
         {
-            API api = new API();
             string location = api.Get(API.GetTypes.Location);
             if (location == "Castle" || location == "Map")
             {
@@ -385,6 +365,11 @@ namespace LordsMobile_by_Nekiplay
                 Console.WriteLine(power);
                 sharp.Dispose();
             }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            api.Action(API.Actions.EnterTheMap);
         }
     }
 }
