@@ -50,7 +50,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -236,7 +235,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button10);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Location = new System.Drawing.Point(174, 12);
             this.groupBox1.Name = "groupBox1";
@@ -277,16 +275,6 @@
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Крепость";
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(6, 42);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(123, 23);
-            this.button10.TabIndex = 6;
-            this.button10.Text = "Выполнить квесты";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Form1
             // 
@@ -338,7 +326,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button10;
     }
 }
 

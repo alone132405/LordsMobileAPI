@@ -350,27 +350,5 @@ namespace LordsMobile_by_Nekiplay
         {
             api.Action(API.Actions.EnterTheMap, true);
         }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
-            MemorySharp sharp = new MemorySharp(process);
-            // Get the window
-            var window = sharp.Windows.MainWindow;
-            string location = api.Get(API.GetTypes.Location);
-            if (location == "Quests")
-            {
-                API.Quests questsapi = new API.Quests();
-                List<Rectangle> quests = questsapi.FindQuests();
-                Console.WriteLine(quests.Count);
-                //foreach (Rectangle rectangle in quests)
-                //{
-                //    window.Mouse.MoveTo(rectangle.X, rectangle.Y);
-                //    window.Mouse.ClickLeft();
-                //    Thread.Sleep(5000);
-                //}
-            }
-            sharp.Dispose();
-        }
     }
 }
