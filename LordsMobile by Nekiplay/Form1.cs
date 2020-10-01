@@ -27,7 +27,7 @@ namespace LordsMobile_by_Nekiplay
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            api.Action(API.Actions.EnterTheCastle);
+            api.Action(API.Actions.EnterTheCastle, true);
 
         }
 
@@ -348,7 +348,7 @@ namespace LordsMobile_by_Nekiplay
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            api.Action(API.Actions.EnterTheMap);
+            api.Action(API.Actions.EnterTheMap, true);
         }
     }
 }

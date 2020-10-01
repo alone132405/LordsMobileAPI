@@ -5,7 +5,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LordsMobile_by_Nekiplay
 {
@@ -133,7 +135,7 @@ namespace LordsMobile_by_Nekiplay
             }
             else  return string.Empty;
         }
-        public string Action(Actions action)
+        public string Action(Actions action, bool WindowStateBack)
         {
             Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
             Utils utils = new Utils();
@@ -144,13 +146,18 @@ namespace LordsMobile_by_Nekiplay
                 {
                     MemorySharp sharp = new MemorySharp(process);
                     var window = sharp.Windows.MainWindow;
-                    bool windowstate = window.IsActivated;
-                    if (!windowstate)
-                        window.Activate(); windowstate = !windowstate;
+                    bool activate = window.IsActivated;
+                    Point cursor2 = Cursor.Position;
+                    if (window.State != Binarysharp.MemoryManagement.Native.WindowStates.Show && window.State != Binarysharp.MemoryManagement.Native.WindowStates.ShowDefault)
+                    {
+                        window.Activate();
+                    }
                     window.Mouse.MoveTo(window.Width - 1500, window.Height - 85);
                     window.Mouse.ClickLeft();
-                    if (windowstate)
+                    Thread.Sleep(15);
+                    if (!activate && WindowStateBack)
                         window.State = Binarysharp.MemoryManagement.Native.WindowStates.Minimize;
+                    Cursor.Position = cursor2;
                     sharp.Dispose();
                     return "Object pressed";
                 }
@@ -163,10 +170,18 @@ namespace LordsMobile_by_Nekiplay
                 {
                     MemorySharp sharp = new MemorySharp(process);
                     var window = sharp.Windows.MainWindow;
-                    if (!window.IsActivated)
+                    bool activate = window.IsActivated;
+                    Point cursor2 = Cursor.Position;
+                    if (window.State != Binarysharp.MemoryManagement.Native.WindowStates.Show && window.State != Binarysharp.MemoryManagement.Native.WindowStates.ShowDefault)
+                    {
                         window.Activate();
+                    }
                     window.Mouse.MoveTo(window.Width - 1500, window.Height - 85);
                     window.Mouse.ClickLeft();
+                    Thread.Sleep(15);
+                    if (!activate && WindowStateBack)
+                        window.State = Binarysharp.MemoryManagement.Native.WindowStates.Minimize;
+                    Cursor.Position = cursor2;
                     sharp.Dispose();
                     return "Object pressed";
                 }
@@ -184,6 +199,13 @@ namespace LordsMobile_by_Nekiplay
         { 
             Castle,
             Map,
+            MerchantShip,
+            Coliseum,
+            Menagerie,
+            SacredTower,
+            Aviary,
+            Academy,
+            Barracks,
         }
 
         public enum GetTypes
