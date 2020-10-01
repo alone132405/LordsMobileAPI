@@ -4,7 +4,7 @@
   <description asmv2:iconFile="igg_android_lordsmobile.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="LordsAPI Example" version="1.0.0.0" publicKeyToken="0BE707A2B4FD1EC7" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="LordsAPI Example" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
     <commandLine file="LordsAPI Example.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="560112">
-      <assemblyIdentity name="LordsAPI Example" version="1.0.0.0" publicKeyToken="0BE707A2B4FD1EC7" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="559600">
+      <assemblyIdentity name="LordsAPI Example" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QA3N6lkEmuHD5v6TvWx+uorsOlRjil8kap/v13vtOyA=</dsig:DigestValue>
+        <dsig:DigestValue>NiXhnKRR/3pTdqoAL2OYQ4ea3DOkr8HvGk+oEHjl8pg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
