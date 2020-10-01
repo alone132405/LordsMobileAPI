@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="LordsAPI Example.exe.manifest" size="18385">
+    <dependentAssembly dependencyType="install" codebase="LordsAPI Example.exe.manifest" size="18453">
       <assemblyIdentity name="LordsAPI Example.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7Px0McDTRa7MD7frt/vZ8t2RE/1lb653MR0vKp6apIc=</dsig:DigestValue>
+        <dsig:DigestValue>YOgxdFiThR+Nxvz7i8bsF8mSpaZaR1njqMGxgK5StNw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
