@@ -72,3 +72,8 @@ C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Release\Lords
 C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI Example.csproj.CopyComplete
 C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI Example.exe
 C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI Example.pdb
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsAPI Example\bin\Release\LordsAPI Example.exe.manifest
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsAPI Example\bin\Release\LordsAPI Example.application
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI Example.TrustInfo.xml
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI Example.exe.manifest
+C:\Users\Nekiplay\source\repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI Example.application

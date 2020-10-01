@@ -25,9 +25,9 @@ namespace LordsAPI_Example
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            api.Action(LordsMobileAPI.Actions.EnterTheCastle, true);
+            await api.ActionAsync(LordsMobileAPI.Actions.EnterTheCastle, true);
 
         }
         private LordsMobileAPI api = new LordsMobileAPI();
@@ -300,12 +300,12 @@ namespace LordsAPI_Example
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
-            string location = api.Get(LordsMobileAPI.GetTypes.Location);
+            string location = await api.GetAsync(LordsMobileAPI.GetTypes.Location);
             if (location == "Castle")
             {
-                label4.Text = "Коробка: " + api.Get(LordsMobileAPI.GetTypes.MysteryBox);
+                label4.Text = "Коробка: " + await api.GetAsync(LordsMobileAPI.GetTypes.MysteryBox);
             }
         }
 
@@ -346,9 +346,9 @@ namespace LordsAPI_Example
             }
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private async void button3_Click_1(object sender, EventArgs e)
         {
-            api.Action(LordsMobileAPI.Actions.EnterTheMap, true);
+            await api.ActionAsync(LordsMobileAPI.Actions.EnterTheMap, true);
         }
     }
 }

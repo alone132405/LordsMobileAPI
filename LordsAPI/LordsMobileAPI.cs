@@ -151,6 +151,10 @@ namespace LordsAPI
         {
             return await Task.Run(() => Get(type));
         }
+        public async Task<string> ActionAsync(Actions action, bool WindowStateBack)
+        {
+            return await Task.Run(() => Action(action, WindowStateBack));
+        }
         public string Action(Actions action, bool WindowStateBack)
         {
             Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
