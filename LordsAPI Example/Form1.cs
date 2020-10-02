@@ -272,15 +272,31 @@ namespace LordsAPI_Example
             Console.WriteLine(location);
             if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle || location.type == LordsMobileAPI.UserInfo.Location.Locations.Map)
             {
+                string level = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Level);
+                Console.WriteLine("Уровень: " + level);
+                label3.Text = "Уровень: " + level;
                 string power = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Power);
                 Console.WriteLine("Сила: " + power);
                 label1.Text = "Сила: " + power;
                 string gems = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Gems);
                 Console.WriteLine("Самоцветы: " + gems);
                 label2.Text = "Самоцветы: " + gems;
-                string level = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Level);
-                Console.WriteLine("Уровень: " + level);
-                label3.Text = "Уровень: " + level;
+                /* Resource */
+                string food = await LordsMobileAPI.UserInfo.Resources.Food.GetCountAsync();
+                Console.WriteLine("Еда: " + food);
+                label5.Text = "Еда: " + food;
+                string stone = await LordsMobileAPI.UserInfo.Resources.Stone.GetCountAsync();
+                Console.WriteLine("Камень: " + stone);
+                label7.Text = "Камень: " + stone;
+                string wood = await LordsMobileAPI.UserInfo.Resources.Wood.GetCountAsync();
+                Console.WriteLine("Дерево: " + wood);
+                label6.Text = "Дерево: " + wood;
+                string ore = await LordsMobileAPI.UserInfo.Resources.Ore.GetCountAsync();
+                Console.WriteLine("Руда: " + ore);
+                label8.Text = "Руда: " + ore;
+                string gold = await LordsMobileAPI.UserInfo.Resources.Gold.GetCountAsync();
+                Console.WriteLine("Золото: " + gold);
+                label9.Text = "Золото: " + gold;
             }
             else
             {

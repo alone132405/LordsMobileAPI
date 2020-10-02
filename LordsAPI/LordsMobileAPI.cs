@@ -125,6 +125,7 @@ namespace LordsAPI
                         var window = sharp.Windows.MainWindow;
                         //window.Mouse.MoveTo(game.Width - 170, game.Height - 893);
                         Bitmap crop = utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893, X, 30));
+                        crop.ImageToGray();
                         crop.Save("Food.png", System.Drawing.Imaging.ImageFormat.Png);
                         string power = utils.GetTextFromImage(crop, mode);
                         crop.Dispose();
@@ -147,6 +148,7 @@ namespace LordsAPI
                         var window = sharp.Windows.MainWindow;
                         //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50);
                         Bitmap crop = utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893 + 50, X, 30));
+                        crop.ImageToGray();
                         crop.Save("Stone.png", System.Drawing.Imaging.ImageFormat.Png);
                         string power = utils.GetTextFromImage(crop, mode);
                         crop.Dispose();
@@ -169,6 +171,7 @@ namespace LordsAPI
                         var window = sharp.Windows.MainWindow;
                         //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50 + 50);
                         Bitmap crop = utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893 + 50 + 50, X, 30));
+                        crop.ImageToGray();
                         crop.Save("Wood.png", System.Drawing.Imaging.ImageFormat.Png);
                         string power = utils.GetTextFromImage(crop, mode);
                         crop.Dispose();
@@ -192,6 +195,7 @@ namespace LordsAPI
                         var window = sharp.Windows.MainWindow;
                         //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50 + 50 + 50);
                         Bitmap crop = utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893 + 50 + 50 + 50, X, 30));
+                        crop.ImageToGray();
                         crop.Save("Ore.png", System.Drawing.Imaging.ImageFormat.Png);
                         string power = utils.GetTextFromImage(crop, mode);
                         crop.Dispose();
@@ -214,6 +218,7 @@ namespace LordsAPI
                         var window = sharp.Windows.MainWindow;
                         //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50 + 50 + 50 + 50);
                         Bitmap crop = utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893 + 50 + 50 + 50 + 50, X, 30));
+                        crop.ImageToGray();
                         crop.Save("Gold.png", System.Drawing.Imaging.ImageFormat.Png);
                         string power = utils.GetTextFromImage(crop, mode);
                         crop.Dispose();

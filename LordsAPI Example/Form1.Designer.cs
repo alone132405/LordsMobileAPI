@@ -48,7 +48,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -149,7 +148,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(6, 69);
+            this.button8.Location = new System.Drawing.Point(21, 77);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(84, 23);
             this.button8.TabIndex = 9;
@@ -162,10 +161,9 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.button8);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(156, 98);
+            this.groupBox3.Size = new System.Drawing.Size(156, 61);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Статистика";
@@ -259,27 +257,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Крепость";
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(9, 86);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(82, 23);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "Обновить";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label5);
-            this.groupBox6.Controls.Add(this.button10);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Location = new System.Drawing.Point(174, 12);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(156, 114);
+            this.groupBox6.Size = new System.Drawing.Size(156, 89);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ресурсы";
@@ -337,6 +324,7 @@
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -381,7 +369,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

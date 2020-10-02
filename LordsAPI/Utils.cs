@@ -15,6 +15,24 @@ using Tesseract;
 
 namespace LordsAPI
 {
+    public static class ImageUtils
+    {
+        public static Bitmap ImageToGray(this Bitmap map)
+        {
+            int rgb;
+            Color c;
+
+            for (int y = 0; y < map.Height; y++)
+                for (int x = 0; x < map.Width; x++)
+                {
+                    c = map.GetPixel(x, y);
+                    rgb = (int)Math.Round(.299 * c.R + .587 * c.G + .114 * c.B);
+                    map.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
+                }
+            return map;
+        }
+    }
+
     public class Utils
     {
         [DllImport("user32.dll", SetLastError = true)]
@@ -69,20 +87,6 @@ namespace LordsAPI
             }
 
             return ocrtext;
-        }
-        public Bitmap ImageToGray(Bitmap map)
-        {
-            int rgb;
-            Color c;
-
-            for (int y = 0; y < map.Height; y++)
-                for (int x = 0; x < map.Width; x++)
-                {
-                    c = map.GetPixel(x, y);
-                    rgb = (int)Math.Round(.299 * c.R + .587 * c.G + .114 * c.B);
-                    map.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
-                }
-            return map;
         }
         public Bitmap ResizeImage(Bitmap imgToResize, Size size)
         {
