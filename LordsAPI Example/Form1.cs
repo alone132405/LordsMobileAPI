@@ -25,11 +25,7 @@ namespace LordsAPI_Example
         {
             InitializeComponent();
         }
-        private async void button1_Click(object sender, EventArgs e)
-        {
-            await api.ActionAsync(LordsMobileAPI.Actions.EnterTheCastle, true);
 
-        }
         private LordsMobileAPI api = new LordsMobileAPI();
         private void button3_Click(object sender, EventArgs e)
         {
@@ -272,13 +268,19 @@ namespace LordsAPI_Example
         }
         private async void button8_Click(object sender, EventArgs e)
         {
-            LordsMobileAPI.Location location = await LordsMobileAPI.Location.GetLocationAsync();
+            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
             Console.WriteLine(location);
-            if (location.type == LordsMobileAPI.Location.Locations.Castle || location.type == LordsMobileAPI.Location.Locations.Map)
+            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle || location.type == LordsMobileAPI.UserInfo.Location.Locations.Map)
             {
-                label1.Text = "Сила: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerPower);
-                label3.Text = "Уровень: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerLevel);
-                label2.Text = "Самоцветов: " + await api.GetAsync(LordsMobileAPI.GetTypes.PlayerGems);
+                string power = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Power);
+                Console.WriteLine("Сила: " + power);
+                label1.Text = "Сила: " + power;
+                string gems = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Gems);
+                Console.WriteLine("Самоцветы: " + gems);
+                label2.Text = "Самоцветы: " + gems;
+                string level = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Level);
+                Console.WriteLine("Уровень: " + level);
+                label3.Text = "Уровень: " + level;
             }
             else
             {
@@ -302,10 +304,10 @@ namespace LordsAPI_Example
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            LordsMobileAPI.Location location = await LordsMobileAPI.Location.GetLocationAsync();
-            if (location.type == LordsMobileAPI.Location.Locations.Castle)
+            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
+            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle)
             {
-                label4.Text = "Коробка: " + await api.GetAsync(LordsMobileAPI.GetTypes.MysteryBox);
+                label4.Text = "Коробка: " + await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.MysteryBox);
             }
         }
 
@@ -346,25 +348,25 @@ namespace LordsAPI_Example
             }
         }
 
-        private async void button3_Click_1(object sender, EventArgs e)
-        {
-            await api.ActionAsync(LordsMobileAPI.Actions.EnterTheMap, true);
-        }
-
         private async void button10_Click(object sender, EventArgs e)
         {
-            LordsMobileAPI.Location location = await LordsMobileAPI.Location.GetLocationAsync();
-            if (location.type == LordsMobileAPI.Location.Locations.Map || location.type == LordsMobileAPI.Location.Locations.Castle)
+            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
+            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Map || location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle)
             {
-                string food = await LordsMobileAPI.Resources.Food.GetCountAsync();
+                string food = await LordsMobileAPI.UserInfo.Resources.Food.GetCountAsync();
+                Console.WriteLine("Еда: " + food);
                 label5.Text = "Еда: " + food;
-                string stone = await LordsMobileAPI.Resources.Stone.GetCountAsync();
+                string stone = await LordsMobileAPI.UserInfo.Resources.Stone.GetCountAsync();
+                Console.WriteLine("Камень: " + stone);
                 label7.Text = "Камень: " + stone;
-                string wood = await LordsMobileAPI.Resources.Wood.GetCountAsync();
+                string wood = await LordsMobileAPI.UserInfo.Resources.Wood.GetCountAsync();
+                Console.WriteLine("Дерево: " + wood);
                 label6.Text = "Дерево: " + wood;
-                string ore = await LordsMobileAPI.Resources.Ore.GetCountAsync();
+                string ore = await LordsMobileAPI.UserInfo.Resources.Ore.GetCountAsync();
+                Console.WriteLine("Руда: " + ore);
                 label8.Text = "Руда: " + ore;
-                string gold = await LordsMobileAPI.Resources.Gold.GetCountAsync();
+                string gold = await LordsMobileAPI.UserInfo.Resources.Gold.GetCountAsync();
+                Console.WriteLine("Золото: " + gold);
                 label9.Text = "Золото: " + gold;
             }
         }
