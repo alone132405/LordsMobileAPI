@@ -54,10 +54,10 @@ namespace LordsAPI
             }
             return clone;
         }
-        public string GetTextFromImage(Bitmap imgsource)
+        public string GetTextFromImage(Bitmap imgsource, EngineMode mode = EngineMode.TesseractAndCube)
         {
             var ocrtext = string.Empty;
-            using (var engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.TesseractAndCube))
+            using (var engine = new TesseractEngine(@"./tessdata", "eng", mode))
             {
                 using (var img = PixConverter.ToPix(imgsource))
                 {
@@ -103,25 +103,25 @@ namespace LordsAPI
         public List<Rectangle> Find(Bitmap fromimg, Bitmap img, double quality = 0.9)
         {
             List<Rectangle> rectangles = new List<Rectangle>();
-                Image<Bgr, byte> sourceImage = new Image<Bgr, byte>(fromimg);
-                Image<Bgr, byte> templateImage = new Image<Bgr, byte>(img);
-                Image<Bgr, byte> imageToShow = sourceImage.Copy();
-                using (Image<Gray, float> result = sourceImage.MatchTemplate(templateImage, TemplateMatchingType.CcoeffNormed))
-                {
-                    double[] minValues, maxValues;
-                    Point[] minLocations, maxLocations;
-                    result.MinMax(out minValues, out maxValues, out minLocations, out maxLocations);
+            Image<Bgr, byte> sourceImage = new Image<Bgr, byte>(fromimg);
+            Image<Bgr, byte> templateImage = new Image<Bgr, byte>(img);
+            Image<Bgr, byte> imageToShow = sourceImage.Copy();
+            using (Image<Gray, float> result = sourceImage.MatchTemplate(templateImage, TemplateMatchingType.CcoeffNormed))
+            {
+                double[] minValues, maxValues;
+                Point[] minLocations, maxLocations;
+                result.MinMax(out minValues, out maxValues, out minLocations, out maxLocations);
 
-                    // You can try different values of the threshold. I guess somewhere between 0.75 and 0.95 would be good.
-                    int int2 = 0;
-                    foreach (Point bd in maxLocations)
-                    {
-                        if (maxValues[int2] > quality)
-                            rectangles.Add(new Rectangle(bd, templateImage.Size));
-                        int2++;
-                    }
+                // You can try different values of the threshold. I guess somewhere between 0.75 and 0.95 would be good.
+                int int2 = 0;
+                foreach (Point bd in maxLocations)
+                {
+                    if (maxValues[int2] > quality)
+                        rectangles.Add(new Rectangle(bd, templateImage.Size));
+                    int2++;
                 }
-                imageToShow.Save("результат.bmp");
+            }
+            imageToShow.Save("результат.bmp");
             return rectangles;
         }
         public Bitmap Crop(Bitmap image, Rectangle selection)
