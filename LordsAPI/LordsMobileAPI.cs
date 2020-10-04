@@ -48,16 +48,20 @@ namespace LordsAPI
         {
             public class MysteryBox
             {
-                public static bool ClickMysteryBox()
+                public static bool ClickMysteryBox(LordsMobileAPI.UserInfo.Location location)
                 {
-                    Utils utils = new Utils();
-                    Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
-                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
-                    Binarysharp.MemoryManagement.Windows.RemoteWindow window = sharp.Windows.MainWindow;
-                    window.Mouse.MoveTo(game.Width - 175, game.Height - 225);
-                    window.Mouse.ClickLeft();
-                    sharp.Dispose();
-                    return true;
+                    if (location.type == UserInfo.Location.Locations.Castle)
+                    {
+                        Utils utils = new Utils();
+                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                        MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                        Binarysharp.MemoryManagement.Windows.RemoteWindow window = sharp.Windows.MainWindow;
+                        window.Mouse.MoveTo(game.Width - 175, game.Height - 225);
+                        window.Mouse.ClickLeft();
+                        sharp.Dispose();
+                        return true;
+                    }
+                    else return false;
                 }
                 public static bool Colect()
                 {
@@ -70,13 +74,49 @@ namespace LordsAPI
                     sharp.Dispose();
                     return true;
                 }
-                public static async Task<bool> ClickMysteryBoxAsync()
+                public static async Task<bool> ClickMysteryBoxAsync(LordsMobileAPI.UserInfo.Location location)
                 {
-                    return await Task.Run(() => ClickMysteryBox());
+                    return await Task.Run(() => ClickMysteryBox(location));
                 }
                 public static async Task<bool> ColectAsync()
                 {
                     return await Task.Run(() => Colect());
+                }
+            }
+            public class MerchantShip
+            {
+                public enum BuySlots
+                {
+                    Slot1,
+                    Slot2,
+                    Slot3,
+                    Slot4,
+                }
+                public static bool Buy(LordsMobileAPI.UserInfo.Location location, BuySlots slot)
+                {
+                    if (location.type == UserInfo.Location.Locations.MerchantShip)
+                    {
+                        Utils utils = new Utils();
+                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                        MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                        Binarysharp.MemoryManagement.Windows.RemoteWindow window = sharp.Windows.MainWindow;
+                        if (slot == BuySlots.Slot1)
+                            window.Mouse.MoveTo(game.Width - (450 + 713), game.Height - 365);
+                        else if (slot == BuySlots.Slot2)
+                            window.Mouse.MoveTo(game.Width - 450, game.Height - 365);
+                        else if (slot == BuySlots.Slot3)
+                            window.Mouse.MoveTo(game.Width - (450 + 713), game.Height - (365 - 250));
+                        else if (slot == BuySlots.Slot4)
+                            window.Mouse.MoveTo(game.Width - 450, game.Height - (365 - 250));
+                        //window.Mouse.ClickLeft();
+                        sharp.Dispose();
+                        return true;
+                    }
+                    else return false;
+                }
+                public static async Task<bool> BuyAsync(LordsMobileAPI.UserInfo.Location location, BuySlots slot)
+                {
+                    return await Task.Run(() => Buy(location, slot));
                 }
             }
         }
@@ -157,7 +197,18 @@ namespace LordsAPI
                                     }
                                     else
                                     {
-                                        return new Location { name = Locations.Unknown.ToString(), type = Locations.Unknown };
+                                        Bitmap game6 = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                                        game6.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                                        Bitmap find6 = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile("game\\MerchantShipMenuDetect.png"));
+                                        List<Rectangle> done6 = utils.Find(game6, find6);
+                                        if (done6.Count >= 1)
+                                        {
+                                            return new Location { name = Locations.MerchantShip.ToString(), type = Locations.MerchantShip };
+                                        }
+                                        else
+                                        {
+                                            return new Location { name = Locations.Unknown.ToString(), type = Locations.Unknown };
+                                        }
                                     }
                                 }
                             }

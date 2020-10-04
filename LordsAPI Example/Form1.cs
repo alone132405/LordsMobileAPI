@@ -324,6 +324,10 @@ namespace LordsAPI_Example
 
         private async void button2_Click(object sender, EventArgs e)
         {
+            Size resolution = await LordsMobileAPI.Settings.Resolution.GetAsync();
+            if (resolution.Width != 1616 && resolution.Height != 939)
+                await LordsMobileAPI.Settings.Resolution.ChangeAsync(new Size(1616, 939));
+
             LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
             if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle)
             {
@@ -338,12 +342,41 @@ namespace LordsAPI_Example
 
         private async void button9_Click(object sender, EventArgs e)
         {
-            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
-            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle)
-            {
-                await LordsMobileAPI.Actions.MysteryBox.ClickMysteryBoxAsync();
+            bool click = await LordsMobileAPI.Actions.MysteryBox.ClickMysteryBoxAsync(await LordsMobileAPI.UserInfo.Location.GetLocationAsync());
+                if (click)
                 await LordsMobileAPI.Actions.MysteryBox.ColectAsync();
-            }
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
+            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.MerchantShip)
+                await LordsMobileAPI.Actions.MerchantShip.BuyAsync(location, LordsMobileAPI.Actions.MerchantShip.BuySlots.Slot1);
+            else MessageBox.Show("Вы не находитесь в торгов корабле");
+        }
+
+        private async void button10_Click(object sender, EventArgs e)
+        {
+            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
+            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.MerchantShip)
+                await LordsMobileAPI.Actions.MerchantShip.BuyAsync(location, LordsMobileAPI.Actions.MerchantShip.BuySlots.Slot2);
+            else MessageBox.Show("Вы не находитесь в торгов корабле");
+        }
+
+        private async void button3_Click_1(object sender, EventArgs e)
+        {
+            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
+            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.MerchantShip)
+                await LordsMobileAPI.Actions.MerchantShip.BuyAsync(location, LordsMobileAPI.Actions.MerchantShip.BuySlots.Slot3);
+            else MessageBox.Show("Вы не находитесь в торгов корабле");
+        }
+
+        private async void button11_Click(object sender, EventArgs e)
+        {
+            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
+            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.MerchantShip)
+                await LordsMobileAPI.Actions.MerchantShip.BuyAsync(location, LordsMobileAPI.Actions.MerchantShip.BuySlots.Slot4);
+            else MessageBox.Show("Вы не находитесь в торгов корабле");
         }
     }
 }
