@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace LordsAPI
 {
@@ -18,7 +16,71 @@ namespace LordsAPI
             {
                 return Process.GetProcessesByName("Lords Mobile").FirstOrDefault(); // Game process
             }
+            public class Resolution
+            {
+                public static bool Change(Size size)
+                {
+                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                    Binarysharp.MemoryManagement.Windows.RemoteWindow window = sharp.Windows.MainWindow;
+                    window.Width = size.Width;
+                    window.Height = size.Height;
+                    sharp.Dispose();
+                    return true;
+                }
+                public static async Task<bool> ChangeAsync(Size size)
+                {
+                    return await Task.Run(() => Change(size));
+                }
+                public static Size Get()
+                {
+                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                    Binarysharp.MemoryManagement.Windows.RemoteWindow window = sharp.Windows.MainWindow;
+                    sharp.Dispose();
+                    return new Size(window.Width, window.Height);
+                }
+                public static async Task<Size> GetAsync()
+                {
+                    return await Task.Run(() => Get());
+                }
+            }
         }
+        public class Actions
+        {
+            public class MysteryBox
+            {
+                public static bool ClickMysteryBox()
+                {
+                    Utils utils = new Utils();
+                    Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                    Binarysharp.MemoryManagement.Windows.RemoteWindow window = sharp.Windows.MainWindow;
+                    window.Mouse.MoveTo(game.Width - 175, game.Height - 225);
+                    window.Mouse.ClickLeft();
+                    sharp.Dispose();
+                    return true;
+                }
+                public static bool Colect()
+                {
+                    Utils utils = new Utils();
+                    Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                    MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                    Binarysharp.MemoryManagement.Windows.RemoteWindow window = sharp.Windows.MainWindow;
+                    window.Mouse.MoveTo(game.Width - 830, game.Height - 225);
+                    window.Mouse.ClickLeft();
+                    sharp.Dispose();
+                    return true;
+                }
+                public static async Task<bool> ClickMysteryBoxAsync()
+                {
+                    return await Task.Run(() => ClickMysteryBox());
+                }
+                public static async Task<bool> ColectAsync()
+                {
+                    return await Task.Run(() => Colect());
+                }
+            }
+        }
+
         public class UserInfo
         {
             public class Location
@@ -39,6 +101,8 @@ namespace LordsAPI
                     Academy,
                     Barracks,
                     Quests,
+                    Guild,
+                    GuildShop,
                 }
                 public static Location GetLocation()
                 {
@@ -108,9 +172,9 @@ namespace LordsAPI
 
             public class Resources
             {
-                private static int Width = 160;
-                private static int X = 99;
-                private static Tesseract.EngineMode mode = Tesseract.EngineMode.Default;
+                private static readonly int Width = 160;
+                private static readonly int X = 99;
+                private static readonly Tesseract.EngineMode mode = Tesseract.EngineMode.Default;
                 private static string Replacer(string text)
                 {
                     return text.Replace("|", "").Replace(" ", "").Replace(Environment.NewLine, "").Trim();
@@ -234,7 +298,7 @@ namespace LordsAPI
             }
             public class Statistic
             {
-                private static Tesseract.EngineMode mode = Tesseract.EngineMode.Default;
+                private static readonly Tesseract.EngineMode mode = Tesseract.EngineMode.Default;
                 private static string Replacer(string text)
                 {
                     if (text.StartsWith(".") || text.StartsWith(",") || text.StartsWith("\\"))
@@ -248,27 +312,16 @@ namespace LordsAPI
                 public static string GetInfomation(Statistics stat)
                 {
                     Utils utils = new Utils();
-                    Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
                     if (stat == Statistics.Power)
                     {
-                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                        // Get the window
-                        Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\power.png");
-                        find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                        List<Rectangle> done = utils.Find(game, find, 0.7);
-                        if (done.Count >= 1)
-                        {
-                            //window.Mouse.MoveTo(done[0].X + 135, done[0].Y + 3);
-                            Bitmap crop = utils.Crop(game, new Rectangle(done[0].X + 135, done[0].Y + 3, 200, 30));
-                            crop.Save("Power.png", System.Drawing.Imaging.ImageFormat.Png);
-                            string power = utils.GetTextFromImage(crop, mode);
-                            return Replacer(power);
-                        }
-                        else return string.Empty;
+                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
+                        Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 1480, game.Height - 892, 200, 30));
+                        string power = utils.GetTextFromImage(crop, mode);
+                        return Replacer(power);
                     }
                     else if (stat == Statistics.Gems)
                     {
-                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
                         // Get the window
                         Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\power.png");
                         find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
@@ -284,7 +337,7 @@ namespace LordsAPI
                     }
                     else if (stat == Statistics.Level)
                     {
-                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
                         // Get the window
                         Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\power.png");
                         find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
@@ -301,7 +354,7 @@ namespace LordsAPI
                     }
                     else if (stat == Statistics.MysteryBox)
                     {
-                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
 
                         Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 235, game.Height - 185, 100, 30));
                         crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);

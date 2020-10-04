@@ -268,6 +268,10 @@ namespace LordsAPI_Example
         }
         private async void button8_Click(object sender, EventArgs e)
         {
+            Size resolution = await LordsMobileAPI.Settings.Resolution.GetAsync();
+            if (resolution.Width != 1616 && resolution.Height != 939)
+                await LordsMobileAPI.Settings.Resolution.ChangeAsync(new Size(1616, 939));
+
             LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
             Console.WriteLine(location);
             if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle || location.type == LordsMobileAPI.UserInfo.Location.Locations.Map)
@@ -332,58 +336,13 @@ namespace LordsAPI_Example
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
-        {
-            if (1 != 0)
-            {
-                Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
-                MemorySharp sharp = new MemorySharp(process);
-                // Get the window
-                var window = sharp.Windows.MainWindow;
-                Utils utils = new Utils();
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-
-                Bitmap crop = utils.Crop(game, new Rectangle(game.Width - 235, game.Height - 185, 100, 30));
-                crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
-                string power = utils.GetTextFromImage(crop);
-                string power2 = utils.TruncateLongString(power, 7, "");
-                if (power2 == "3a6paTs" && power.Contains("3a6paTs"))
-                {
-                    game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
-                    window.Activate();
-                    window.Mouse.MoveTo(game.Width - 175, game.Height - 225);
-                    window.Mouse.ClickLeft();
-                }
-                else if (power.Contains(":"))
-                {
-                    power2 = utils.TruncateLongString(power, 5, "");
-                    label4.Text = "Коробка: " + power2;
-                }
-                Console.WriteLine(power);
-                sharp.Dispose();
-            }
-        }
-
-        private async void button10_Click(object sender, EventArgs e)
+        private async void button9_Click(object sender, EventArgs e)
         {
             LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
-            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Map || location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle)
+            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle)
             {
-                string food = await LordsMobileAPI.UserInfo.Resources.Food.GetCountAsync();
-                Console.WriteLine("Еда: " + food);
-                label5.Text = "Еда: " + food;
-                string stone = await LordsMobileAPI.UserInfo.Resources.Stone.GetCountAsync();
-                Console.WriteLine("Камень: " + stone);
-                label7.Text = "Камень: " + stone;
-                string wood = await LordsMobileAPI.UserInfo.Resources.Wood.GetCountAsync();
-                Console.WriteLine("Дерево: " + wood);
-                label6.Text = "Дерево: " + wood;
-                string ore = await LordsMobileAPI.UserInfo.Resources.Ore.GetCountAsync();
-                Console.WriteLine("Руда: " + ore);
-                label8.Text = "Руда: " + ore;
-                string gold = await LordsMobileAPI.UserInfo.Resources.Gold.GetCountAsync();
-                Console.WriteLine("Золото: " + gold);
-                label9.Text = "Золото: " + gold;
+                await LordsMobileAPI.Actions.MysteryBox.ClickMysteryBoxAsync();
+                await LordsMobileAPI.Actions.MysteryBox.ColectAsync();
             }
         }
     }
