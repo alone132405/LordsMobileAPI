@@ -4,13 +4,17 @@
 [![HitCount](http://hits.dwyl.com/Nekiplay/https://githubcom/Nekiplay/LordsMobileAPI.svg)](http://hits.dwyl.com/Nekiplay/https://githubcom/Nekiplay/LordsMobileAPI)
 [![Build status](https://ci.appveyor.com/api/projects/status/gnrlqsxr2xda5c5l?svg=true)](https://ci.appveyor.com/project/Nekiplay/lordsmobileapi)
 
-API для Lords Mobile (Steam)
+API Lords Mobile (Steam version for Windows)
 
-Работает только на разршеней окна: 1600x900
+Required Lords Mobile settings:
 
-Вы можете использовать сторонние библиотеки для отслежования нажатий кнопок клавиатуры, для создания макросов.
+![alt text](https://i.ibb.co/ZJDMswZ/image.png)
 
-Только для Windows
+![alt text](https://i.ibb.co/qY1HDYY/image.png)
+
+![alt text](https://i.ibb.co/tJ7p3v7/image.png)
+
+API Example screenshot:
 
 ![alt text](https://i.ibb.co/qJsjhtd/image.png)
 
