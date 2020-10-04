@@ -108,7 +108,7 @@ namespace LordsAPI
                             window.Mouse.MoveTo(game.Width - (450 + 713), game.Height - (365 - 250));
                         else if (slot == BuySlots.Slot4)
                             window.Mouse.MoveTo(game.Width - 450, game.Height - (365 - 250));
-                        //window.Mouse.ClickLeft();
+                        window.Mouse.ClickLeft();
                         sharp.Dispose();
                         return true;
                     }
