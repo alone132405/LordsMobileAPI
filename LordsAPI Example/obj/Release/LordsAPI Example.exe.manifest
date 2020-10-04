@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI.dll" size="24576">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI.dll" size="25088">
       <assemblyIdentity name="LordsAPI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zASvTgszKPa9HG+KphFcBHguWwmUz2gY6ibuCU8zluo=</dsig:DigestValue>
+        <dsig:DigestValue>ReK39WtfP/zMlHoAoUxw5xPDs5JeQnkyhGz+J6jTAJk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

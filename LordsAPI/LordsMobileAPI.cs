@@ -299,7 +299,10 @@ namespace LordsAPI
                         string power = Utils.GetTextFromImage(crop, mode);
                         crop.Dispose();
                         game.Dispose();
-                        return Replacer(power);
+                        power = Replacer(power);
+                        if (power != string.Empty)
+                            return power;
+                        else return "0";
                     }
                     public static async Task<string> GetCountAsync()
                     {
@@ -318,7 +321,10 @@ namespace LordsAPI
                         string power = Utils.GetTextFromImage(crop, mode);
                         crop.Dispose();
                         game.Dispose();
-                        return Replacer(power);
+                        power = Replacer(power);
+                        if (power != string.Empty)
+                            return power;
+                        else return "0";
                     }
                     public static async Task<string> GetCountAsync()
                     {
@@ -337,7 +343,10 @@ namespace LordsAPI
                         string power = Utils.GetTextFromImage(crop, mode);
                         crop.Dispose();
                         game.Dispose();
-                        return Replacer(power);
+                        power = Replacer(power);
+                        if (power != string.Empty)
+                            return power;
+                        else return "0";
                     }
                     public static async Task<string> GetCountAsync()
                     {
@@ -357,7 +366,10 @@ namespace LordsAPI
                         string power = Utils.GetTextFromImage(crop, mode);
                         crop.Dispose();
                         game.Dispose();
-                        return Replacer(power);
+                        power = Replacer(power);
+                        if (power != string.Empty)
+                            return power;
+                        else return "0";
                     }
                     public static async Task<string> GetCountAsync()
                     {
@@ -376,7 +388,10 @@ namespace LordsAPI
                         string power = Utils.GetTextFromImage(crop, mode);
                         crop.Dispose();
                         game.Dispose();
-                        return Replacer(power);
+                        power = Replacer(power);
+                        if (power != string.Empty)
+                            return power;
+                        else return "0";
                     }
                     public static async Task<string> GetCountAsync()
                     {
