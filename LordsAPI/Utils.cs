@@ -46,7 +46,7 @@ namespace LordsAPI
         {
             public int Left, Top, Right, Bottom;
         }
-        public Bitmap GetProgrammImage(Process process)
+        public static Bitmap GetProgrammImage(Process process)
         {
             if (process != null)
             {
@@ -62,7 +62,7 @@ namespace LordsAPI
             }
             else return null;
         }
-        public Bitmap ConvertImagePixelType(Bitmap orig, System.Drawing.Imaging.PixelFormat format = System.Drawing.Imaging.PixelFormat.Format24bppRgb)
+        public static Bitmap ConvertImagePixelType(Bitmap orig, System.Drawing.Imaging.PixelFormat format = System.Drawing.Imaging.PixelFormat.Format24bppRgb)
         {
             Bitmap clone = new Bitmap(orig.Width, orig.Height, format);
 
@@ -72,7 +72,7 @@ namespace LordsAPI
             }
             return clone;
         }
-        public string GetTextFromImage(Bitmap imgsource, EngineMode mode = EngineMode.TesseractAndCube)
+        public static string GetTextFromImage(Bitmap imgsource, EngineMode mode = EngineMode.TesseractAndCube)
         {
             var ocrtext = string.Empty;
             using (var engine = new TesseractEngine(@"./tessdata", "eng", mode))
@@ -88,11 +88,11 @@ namespace LordsAPI
 
             return ocrtext;
         }
-        public Bitmap ResizeImage(Bitmap imgToResize, Size size)
+        public static Bitmap ResizeImage(Bitmap imgToResize, Size size)
         {
             return (new Bitmap(imgToResize, size));
         }
-        public string TruncateLongString(string inputString, int maxChars, string postfix = "...")
+        public static string TruncateLongString(string inputString, int maxChars, string postfix = "...")
         {
             if (maxChars <= 0)
                 throw new ArgumentOutOfRangeException("maxChars");
@@ -104,7 +104,7 @@ namespace LordsAPI
             return truncatedString;
 
         }
-        public List<Rectangle> Find(Bitmap fromimg, Bitmap img, double quality = 0.9)
+        public static List<Rectangle> Find(Bitmap fromimg, Bitmap img, double quality = 0.9)
         {
             List<Rectangle> rectangles = new List<Rectangle>();
             Image<Bgr, byte> sourceImage = new Image<Bgr, byte>(fromimg);
@@ -128,7 +128,7 @@ namespace LordsAPI
             imageToShow.Save("результат.bmp");
             return rectangles;
         }
-        public Bitmap Crop(Bitmap image, Rectangle selection)
+        public static Bitmap Crop(Bitmap image, Rectangle selection)
         {
             Bitmap bmp = image;
 

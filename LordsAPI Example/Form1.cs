@@ -33,13 +33,12 @@ namespace LordsAPI_Example
             MemorySharp sharp = new MemorySharp(process);
             // Get the window
             var window = sharp.Windows.MainWindow;
-            Utils utils = new Utils();
-            Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+            Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
             //Console.WriteLine(game.Width);
             //Console.WriteLine(game.Height);
             game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-            Bitmap find = utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile(@"game\\gotocastle.png"));
-            List<Rectangle> done = utils.Find(game, find);
+            Bitmap find = Utils.ConvertImagePixelType((Bitmap)Bitmap.FromFile(@"game\\gotocastle.png"));
+            List<Rectangle> done = Utils.Find(game, find);
             if (done.Count == 1)
             {
                 Point cursor = Cursor.Position;
@@ -63,14 +62,13 @@ namespace LordsAPI_Example
                 MemorySharp sharp = new MemorySharp(process);
                 // Get the window
                 var window = sharp.Windows.MainWindow;
-                Utils utils = new Utils();
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                 Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\wood2.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = utils.Find(game, find, 0.5);
+                List<Rectangle> done = Utils.Find(game, find, 0.5);
                 Console.WriteLine("Деревьев: " + done.Count);
                 if (done.Count >= 1)
                 {
@@ -89,14 +87,13 @@ namespace LordsAPI_Example
                 MemorySharp sharp = new MemorySharp(process);
                 // Get the window
                 var window = sharp.Windows.MainWindow;
-                Utils utils = new Utils();
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                 Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\gold2.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = utils.Find(game, find, 0.5f);
+                List<Rectangle> done = Utils.Find(game, find, 0.5f);
                 if (done.Count >= 1)
                 {
                     window.Activate();
@@ -116,14 +113,13 @@ namespace LordsAPI_Example
             MemorySharp sharp = new MemorySharp(process);
             // Get the window
             var window = sharp.Windows.MainWindow;
-            Utils utils = new Utils();
-            Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+            Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
             //Console.WriteLine(game.Width);
             //Console.WriteLine(game.Height);
             game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
             Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\gaterbutton.png");
             find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-            List<Rectangle> done = utils.Find(game, find, 0.6);
+            List<Rectangle> done = Utils.Find(game, find, 0.6);
             if (done.Count >= 1)
             {
                 window.Activate();
@@ -144,14 +140,13 @@ namespace LordsAPI_Example
                 MemorySharp sharp = new MemorySharp(process2);
                 // Get the window
                 var window2 = sharp.Windows.MainWindow;
-                Utils utils2 = new Utils();
-                Bitmap game2 = utils2.ConvertImagePixelType(utils2.GetProgrammImage(process2));
+                Bitmap game2 = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process2));
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game2.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                 Bitmap find2 = (Bitmap)Bitmap.FromFile(@"game\\armyhave1.png");
                 find2.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done2 = utils2.Find(game2, find2, 0.6);
+                List<Rectangle> done2 = Utils.Find(game2, find2, 0.6);
                 if (done2.Count >= 1)
                 {
 
@@ -163,14 +158,13 @@ namespace LordsAPI_Example
                         Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
                         // Get the window
                         var window = sharp.Windows.MainWindow;
-                        Utils utils = new Utils();
-                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
                         //Console.WriteLine(game.Width);
                         //Console.WriteLine(game.Height);
                         game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\typevishkabutton.png");
                         find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                        List<Rectangle> done = utils.Find(game, find, 0.6);
+                        List<Rectangle> done = Utils.Find(game, find, 0.6);
                         if (done.Count >= 1)
                         {
                             window.Activate();
@@ -187,14 +181,13 @@ namespace LordsAPI_Example
                         Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
                         // Get the window
                         var window = sharp.Windows.MainWindow;
-                        Utils utils = new Utils();
-                        Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
                         //Console.WriteLine(game.Width);
                         //Console.WriteLine(game.Height);
                         game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                         Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\goattackbutton.png");
                         find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                        List<Rectangle> done = utils.Find(game, find, 0.6);
+                        List<Rectangle> done = Utils.Find(game, find, 0.6);
                         if (done.Count >= 1)
                         {
                             window.Activate();
@@ -218,14 +211,13 @@ namespace LordsAPI_Example
                 MemorySharp sharp = new MemorySharp(process);
                 // Get the window
                 var window = sharp.Windows.MainWindow;
-                Utils utils = new Utils();
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                 Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\hand.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = utils.Find(game, find, 0.4);
+                List<Rectangle> done = Utils.Find(game, find, 0.4);
                 if (done.Count >= 1)
                 {
                     window.Activate();
@@ -245,14 +237,13 @@ namespace LordsAPI_Example
                 MemorySharp sharp = new MemorySharp(process);
                 // Get the window
                 var window = sharp.Windows.MainWindow;
-                Utils utils = new Utils();
-                Bitmap game = utils.ConvertImagePixelType(utils.GetProgrammImage(process));
+                Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
                 //Console.WriteLine(game.Width);
                 //Console.WriteLine(game.Height);
                 game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
                 Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\handall.png");
                 find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = utils.Find(game, find, 0.6);
+                List<Rectangle> done = Utils.Find(game, find, 0.6);
                 if (done.Count >= 1)
                 {
                     window.Activate();
@@ -331,7 +322,7 @@ namespace LordsAPI_Example
             LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
             if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle)
             {
-                label4.Text = "Коробка: " + await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.MysteryBox);
+                label4.Text = "Коробка: " + await LordsMobileAPI.MysteryBox.Get.TimeAsync();
             }
         }
 
@@ -342,16 +333,16 @@ namespace LordsAPI_Example
 
         private async void button9_Click(object sender, EventArgs e)
         {
-            bool click = await LordsMobileAPI.Actions.MysteryBox.ClickMysteryBoxAsync(await LordsMobileAPI.UserInfo.Location.GetLocationAsync());
+            bool click = await LordsMobileAPI.MysteryBox.Actions.ClickMysteryBoxAsync(await LordsMobileAPI.UserInfo.Location.GetLocationAsync());
                 if (click)
-                await LordsMobileAPI.Actions.MysteryBox.ColectAsync();
+                await LordsMobileAPI.MysteryBox.Actions.ColectAsync();
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
             LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
             if (location.type == LordsMobileAPI.UserInfo.Location.Locations.MerchantShip)
-                await LordsMobileAPI.Actions.MerchantShip.BuyAsync(location, LordsMobileAPI.Actions.MerchantShip.BuySlots.Slot1);
+                await LordsMobileAPI.MerchantShip.Actions.BuyAsync(location, LordsMobileAPI.MerchantShip.Actions.BuySlots.Slot1);
             else MessageBox.Show("Вы не находитесь в торгов корабле");
         }
 
@@ -359,7 +350,7 @@ namespace LordsAPI_Example
         {
             LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
             if (location.type == LordsMobileAPI.UserInfo.Location.Locations.MerchantShip)
-                await LordsMobileAPI.Actions.MerchantShip.BuyAsync(location, LordsMobileAPI.Actions.MerchantShip.BuySlots.Slot2);
+                await LordsMobileAPI.MerchantShip.Actions.BuyAsync(location, LordsMobileAPI.MerchantShip.Actions.BuySlots.Slot2);
             else MessageBox.Show("Вы не находитесь в торгов корабле");
         }
 
@@ -367,7 +358,7 @@ namespace LordsAPI_Example
         {
             LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
             if (location.type == LordsMobileAPI.UserInfo.Location.Locations.MerchantShip)
-                await LordsMobileAPI.Actions.MerchantShip.BuyAsync(location, LordsMobileAPI.Actions.MerchantShip.BuySlots.Slot3);
+                await LordsMobileAPI.MerchantShip.Actions.BuyAsync(location, LordsMobileAPI.MerchantShip.Actions.BuySlots.Slot3);
             else MessageBox.Show("Вы не находитесь в торгов корабле");
         }
 
@@ -375,8 +366,14 @@ namespace LordsAPI_Example
         {
             LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
             if (location.type == LordsMobileAPI.UserInfo.Location.Locations.MerchantShip)
-                await LordsMobileAPI.Actions.MerchantShip.BuyAsync(location, LordsMobileAPI.Actions.MerchantShip.BuySlots.Slot4);
+                await LordsMobileAPI.MerchantShip.Actions.BuyAsync(location, LordsMobileAPI.MerchantShip.Actions.BuySlots.Slot4);
             else MessageBox.Show("Вы не находитесь в торгов корабле");
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            DebugWindow debugWindow = new DebugWindow();
+            debugWindow.Show();
         }
     }
 }
