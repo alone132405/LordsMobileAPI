@@ -39,3 +39,11 @@ C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\LordsAP
 C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.TrustInfo.xml
 C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.exe.manifest
 C:\Users\Nekiplay\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.application
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.csprojAssemblyReference.cache
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI_Example.DebugWindow.resources
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI_Example.Form1.resources
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI_Example.Properties.Resources.resources
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.csproj.GenerateResource.cache
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.csproj.CoreCompileInputs.cache
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.exe
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.pdb

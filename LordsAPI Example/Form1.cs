@@ -259,44 +259,56 @@ namespace LordsAPI_Example
         }
         private async void button8_Click(object sender, EventArgs e)
         {
-            Size resolution = await LordsMobileAPI.Settings.Resolution.GetAsync();
-            if (resolution.Width != 1616 && resolution.Height != 939)
-                await LordsMobileAPI.Settings.Resolution.ChangeAsync(new Size(1616, 939));
-
-            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
-            Console.WriteLine(location);
-            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle || location.type == LordsMobileAPI.UserInfo.Location.Locations.Map)
-            {
-                string level = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Level);
-                Console.WriteLine("Уровень: " + level);
-                label3.Text = "Уровень: " + level;
-                string power = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Power);
-                Console.WriteLine("Сила: " + power);
-                label1.Text = "Сила: " + power;
-                string gems = await LordsMobileAPI.UserInfo.Statistic.GetInfomationAsync(LordsMobileAPI.UserInfo.Statistic.Statistics.Gems);
-                Console.WriteLine("Самоцветы: " + gems);
-                label2.Text = "Самоцветы: " + gems;
-                /* Resource */
-                string food = await LordsMobileAPI.UserInfo.Resources.Food.GetCountAsync();
-                Console.WriteLine("Еда: " + food);
-                label5.Text = "Еда: " + food;
-                string stone = await LordsMobileAPI.UserInfo.Resources.Stone.GetCountAsync();
-                Console.WriteLine("Камень: " + stone);
-                label7.Text = "Камень: " + stone;
-                string wood = await LordsMobileAPI.UserInfo.Resources.Wood.GetCountAsync();
-                Console.WriteLine("Дерево: " + wood);
-                label6.Text = "Дерево: " + wood;
-                string ore = await LordsMobileAPI.UserInfo.Resources.Ore.GetCountAsync();
-                Console.WriteLine("Руда: " + ore);
-                label8.Text = "Руда: " + ore;
-                string gold = await LordsMobileAPI.UserInfo.Resources.Gold.GetCountAsync();
-                Console.WriteLine("Золото: " + gold);
-                label9.Text = "Золото: " + gold;
-            }
-            else
-            {
-                Console.WriteLine(location);
-            }
+            int energy = await LordsMobileAPI.UserInfo.Statistic.Energy.GetAsync();
+            label11.Text = "Энергия: " + energy.ToString();
+            int stamina = await LordsMobileAPI.UserInfo.Statistic.Stamina.GetAsync();
+            label10.Text = "Выносливость: " + stamina.ToString() + "/120";
+            int gems = await LordsMobileAPI.UserInfo.Statistic.Gems.GetAsync();
+            label2.Text = "Самоцветы: " + gems.ToString();
+            int power = await LordsMobileAPI.UserInfo.Statistic.Power.GetAsync();
+            label1.Text = "Сила: " + power.ToString();
+            int xp = await LordsMobileAPI.UserInfo.Statistic.Level.Experience.GetAsync();
+            int xpneed = await LordsMobileAPI.UserInfo.Statistic.Level.Experience.Need.GetAsync();
+            label12.Text = "Опыт: " + xp.ToString() + "/" + xpneed.ToString();
+            //Size resolution = await LordsMobileAPI.Settings.Resolution.GetAsync();
+            //if (resolution.Width != 1616 && resolution.Height != 939)
+            //    await LordsMobileAPI.Settings.Resolution.ChangeAsync(new Size(1616, 939));
+            //
+            //LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
+            //Console.WriteLine(location);
+            //if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle || location.type == LordsMobileAPI.UserInfo.Location.Locations.Map)
+            //{
+            //
+            //    //label10.Text = LordsMobileAPI.UserInfo.Statistic.Stamina.Get();
+            //    int energy = await LordsMobileAPI.UserInfo.Statistic.Energy.GetAsync();
+            //    label11.Text = energy.ToString();
+            /* Resource */
+            int round = 0;
+            double food = await LordsMobileAPI.UserInfo.Resources.Food.GetCountAsync();
+            double food1 = Math.Round(food, round);
+            Console.WriteLine("Еда: " + food1);
+            label5.Text = "Еда: " + food1;
+            double stone = await LordsMobileAPI.UserInfo.Resources.Stone.GetCountAsync();
+            double stone1 = Math.Round(stone, round);
+            Console.WriteLine("Камень: " + stone1);
+            label7.Text = "Камень: " + stone1;
+            double wood = await LordsMobileAPI.UserInfo.Resources.Wood.GetCountAsync();
+            double wood1 = Math.Round(wood, round);
+            Console.WriteLine("Дерево: " + wood1);
+            label6.Text = "Дерево: " + wood1;
+            double ore = await LordsMobileAPI.UserInfo.Resources.Ore.GetCountAsync();
+            double ore1 = Math.Round(ore, round);
+            Console.WriteLine("Руда: " + ore1);
+            label8.Text = "Руда: " + ore1;
+            double gold = await LordsMobileAPI.UserInfo.Resources.Gold.GetCountAsync();
+            double gold1 = Math.Round(gold, round);
+            Console.WriteLine("Золото: " + gold1);
+            label9.Text = "Золото: " + gold1;
+            //}
+            //else
+            //{
+            //    Console.WriteLine(location);
+            //}
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -374,6 +386,11 @@ namespace LordsAPI_Example
         {
             DebugWindow debugWindow = new DebugWindow();
             debugWindow.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(LordsMobileAPI.UserInfo.Statistic.Energy.Get());
         }
     }
 }

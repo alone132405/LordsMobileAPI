@@ -120,3 +120,4 @@ C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI Example.exe
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI Example.pdb
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Release\LordsAPI_Example.DebugWindow.resources
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\Release\VAMemory.dll

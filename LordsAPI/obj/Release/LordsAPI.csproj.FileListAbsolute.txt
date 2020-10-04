@@ -72,3 +72,4 @@ C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\obj\Release\LordsAPI.csproj.
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\obj\Release\LordsAPI.csproj.CopyComplete
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\obj\Release\LordsAPI.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\obj\Release\LordsAPI.pdb
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI\bin\Release\MemorySharp.dll

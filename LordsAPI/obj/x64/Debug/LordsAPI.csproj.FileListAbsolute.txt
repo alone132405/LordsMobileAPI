@@ -1,0 +1,1 @@
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI\obj\x64\Debug\LordsAPI.csproj.CoreCompileInputs.cache

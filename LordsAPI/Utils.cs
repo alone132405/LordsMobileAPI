@@ -6,8 +6,11 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Binarysharp.MemoryManagement;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
@@ -30,6 +33,41 @@ namespace LordsAPI
                     map.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
                 }
             return map;
+        }
+    }
+    public static class Stringtils
+    {
+        public static string Format(this string text)
+        {
+            int countbalance = text.ToCharArray().Length;
+            Console.WriteLine(countbalance);
+            if (countbalance > 12 & countbalance >= 15)
+            {
+                int formatedbalanceT = Convert.ToInt32(Regex.Match(text, "(.*)[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]").Groups[1].Value);
+                int formatedbalanceB = Convert.ToInt32(Regex.Match(text, formatedbalanceT + "(.*)[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]").Groups[1].Value);
+                int formatedbalanceM = Convert.ToInt32(Regex.Match(text, formatedbalanceB + "(.*)[0-9][0-9][0-9][0-9][0-9][0-9]").Groups[1].Value);
+                int formatedbalanceK = Convert.ToInt32(Regex.Match(text, formatedbalanceM + "(.*)[0-9][0-9][0-9]").Groups[1].Value);
+                text = text + "" + formatedbalanceT + "," + "" + formatedbalanceB + "," + "" + formatedbalanceM + "," + "" + formatedbalanceK + "";
+            }
+            else if (countbalance > 9)
+            {
+                int formatedbalanceB = Convert.ToInt32(Regex.Match(text, "(.*)[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]").Groups[1].Value);
+                int formatedbalanceM = Convert.ToInt32(Regex.Match(text, formatedbalanceB + "(.*)[0-9][0-9][0-9][0-9][0-9][0-9]").Groups[1].Value);
+                int formatedbalanceK = Convert.ToInt32(Regex.Match(text, formatedbalanceM + "(.*)[0-9][0-9][0-9]").Groups[1].Value);
+                text = text + "" + formatedbalanceM + "," + "" + formatedbalanceK + "," + "" + formatedbalanceK + "";
+            }
+            else if (countbalance > 6)
+            {
+                int formatedbalanceM = Convert.ToInt32(Regex.Match(text, "(.*)[0-9][0-9][0-9][0-9][0-9][0-9]").Groups[1].Value);
+                int formatedbalanceK = Convert.ToInt32(Regex.Match(text, formatedbalanceM + "(.*)[0-9][0-9][0-9]").Groups[1].Value);
+                text = text + "" + formatedbalanceM + "," + "" + formatedbalanceK + "";
+            }
+            else if (countbalance > 3)
+            {
+                int formatedbalanceK = Convert.ToInt32(Regex.Match(text, "(.*)[0-9][0-9][0-9]").Groups[1].Value);
+                text = text + "" + formatedbalanceK + "";
+            }
+            return text;
         }
     }
 
@@ -143,6 +181,29 @@ namespace LordsAPI
             image.Dispose();
 
             return cropBmp;
+        }
+        public static IntPtr PointRead(IntPtr baseAddres, int[] offsets)
+        {
+            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+            for (int i = 0; i < offsets.Count() - 1; i++)
+            {
+                baseAddres = (IntPtr)vam.ReadInt64(IntPtr.Add(baseAddres, offsets[i]));
+            }
+            return baseAddres + offsets[offsets.Count() - 1];
+        }
+        public static IntPtr getModuleAdress(string modulname, Process proc)
+        {
+            IntPtr result = IntPtr.Zero;
+            for (int i = 0; i < proc.Modules.Count; i++)
+            {
+                if (proc.Modules[i].ModuleName == modulname)
+                {
+                    result = proc.Modules[i].BaseAddress;
+                    Console.WriteLine(result);
+                    break;
+                }
+            }
+            return result;
         }
     }
 }

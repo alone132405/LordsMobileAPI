@@ -1,5 +1,4 @@
 ﻿using Binarysharp.MemoryManagement;
-using OpenTK.Graphics.OpenGL;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -133,12 +132,16 @@ namespace LordsAPI
                         if (slot == BuySlots.Slot1)
                             window.Mouse.MoveTo(game.Width - (450 + 713), game.Height - 365);
                         else if (slot == BuySlots.Slot2)
+                        {
                             window.Mouse.MoveTo(game.Width - 450, game.Height - 365);
+                        }
                         else if (slot == BuySlots.Slot3)
                             window.Mouse.MoveTo(game.Width - (450 + 713), game.Height - (365 - 250));
                         else if (slot == BuySlots.Slot4)
                             window.Mouse.MoveTo(game.Width - 450, game.Height - (365 - 250));
-                        window.Mouse.ClickLeft();
+                        window.Activate();
+                        window.PostMessage(Binarysharp.MemoryManagement.Native.WindowsMessages.LButtonDown, UIntPtr.Zero, UIntPtr.Zero);
+                        window.PostMessage(Binarysharp.MemoryManagement.Native.WindowsMessages.LButtonUp, UIntPtr.Zero, UIntPtr.Zero);
                         sharp.Dispose();
                         return true;
                     }
@@ -289,66 +292,45 @@ namespace LordsAPI
                 }
                 public class Food
                 {
-                    public static string GetCount()
+                    public static double GetCount()
                     {
-                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
-                        //window.Mouse.MoveTo(game.Width - 170, game.Height - 893);
-                        Bitmap crop = Utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893, X, 30));
-                        crop.ImageToGray();
-                        crop.Save("Food.png", System.Drawing.Imaging.ImageFormat.Png);
-                        string power = Utils.GetTextFromImage(crop, mode);
-                        crop.Dispose();
-                        game.Dispose();
-                        power = Replacer(power);
-                        if (power != string.Empty)
-                            return power;
-                        else return "0";
+                        double hpint = 0;
+                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x0222B9F8, 0x280, 0x428, 0x78, 0x6b0, 0x10 });
+                        hpint = vam.ReadDouble(hp);
+                        return hpint;
                     }
-                    public static async Task<string> GetCountAsync()
+                    public static async Task<double> GetCountAsync()
                     {
                         return await Task.Run(() => GetCount());
                     }
                 }
                 public class Stone
                 {
-                    public static string GetCount()
+                    public static double GetCount()
                     {
-                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
-                        //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50);
-                        Bitmap crop = Utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893 + 50, X, 30));
-                        crop.ImageToGray();
-                        crop.Save("Stone.png", System.Drawing.Imaging.ImageFormat.Png);
-                        string power = Utils.GetTextFromImage(crop, mode);
-                        crop.Dispose();
-                        game.Dispose();
-                        power = Replacer(power);
-                        if (power != string.Empty)
-                            return power;
-                        else return "0";
+                        double hpint = 0;
+                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F6800, 0xb8, 0x0, 0x4d0, 0x5d8, 0x6a0 });
+                        hpint = vam.ReadDouble(hp);
+                        return hpint;
                     }
-                    public static async Task<string> GetCountAsync()
+                    public static async Task<double> GetCountAsync()
                     {
                         return await Task.Run(() => GetCount());
                     }
                 }
                 public class Wood
                 {
-                    public static string GetCount()
+                    public static double GetCount()
                     {
-                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
-                        //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50 + 50);
-                        Bitmap crop = Utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893 + 50 + 50, X, 30));
-                        crop.ImageToGray();
-                        crop.Save("Wood.png", System.Drawing.Imaging.ImageFormat.Png);
-                        string power = Utils.GetTextFromImage(crop, mode);
-                        crop.Dispose();
-                        game.Dispose();
-                        power = Replacer(power);
-                        if (power != string.Empty)
-                            return power;
-                        else return "0";
+                        double hpint = 0;
+                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021DA058, 0x28, 0x730, 0x0, 0x7d0, 0x100 });
+                        hpint = vam.ReadDouble(hp);
+                        return hpint;
                     }
-                    public static async Task<string> GetCountAsync()
+                    public static async Task<double> GetCountAsync()
                     {
                         return await Task.Run(() => GetCount());
                     }
@@ -356,44 +338,30 @@ namespace LordsAPI
                 }
                 public class Ore
                 {
-                    public static string GetCount()
+                    public static double GetCount()
                     {
-                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
-                        //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50 + 50 + 50);
-                        Bitmap crop = Utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893 + 50 + 50 + 50, X, 30));
-                        crop.ImageToGray();
-                        crop.Save("Ore.png", System.Drawing.Imaging.ImageFormat.Png);
-                        string power = Utils.GetTextFromImage(crop, mode);
-                        crop.Dispose();
-                        game.Dispose();
-                        power = Replacer(power);
-                        if (power != string.Empty)
-                            return power;
-                        else return "0";
+                        double hpint = 0;
+                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021DA058, 0x28, 0x7d0, 0x0, 0x798, 0xb0 });
+                        hpint = vam.ReadDouble(hp);
+                        return hpint;
                     }
-                    public static async Task<string> GetCountAsync()
+                    public static async Task<double> GetCountAsync()
                     {
                         return await Task.Run(() => GetCount());
                     }
                 }
                 public class Gold
                 {
-                    public static string GetCount()
+                    public static double GetCount()
                     {
-                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
-                        //window.Mouse.MoveTo(game.Width - 170, game.Height - 893 + 50 + 50 + 50 + 50);
-                        Bitmap crop = Utils.Crop(game, new Rectangle(game.Width - Width, game.Height - 893 + 50 + 50 + 50 + 50, X, 30));
-                        crop.ImageToGray();
-                        crop.Save("Gold.png", System.Drawing.Imaging.ImageFormat.Png);
-                        string power = Utils.GetTextFromImage(crop, mode);
-                        crop.Dispose();
-                        game.Dispose();
-                        power = Replacer(power);
-                        if (power != string.Empty)
-                            return power;
-                        else return "0";
+                        double hpint = 0;
+                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F67B0, 0xb8, 0x18, 0xe8, 0x798, 0x650 });
+                        hpint = vam.ReadDouble(hp);
+                        return hpint;
                     }
-                    public static async Task<string> GetCountAsync()
+                    public static async Task<double> GetCountAsync()
                     {
                         return await Task.Run(() => GetCount());
                     }
@@ -401,89 +369,100 @@ namespace LordsAPI
             }
             public class Statistic
             {
-                private static readonly Tesseract.EngineMode mode = Tesseract.EngineMode.Default;
-                private static string Replacer(string text)
+                
+                public class Stamina
                 {
-                    if (text.StartsWith(".") || text.StartsWith(",") || text.StartsWith("\\"))
-                        return text.Remove(0, 1).Replace("Mt ", "").Replace("‘", "").Replace("(", "").Replace(" ", "").Replace(Environment.NewLine, "").Trim();
-                    else return text.Replace("Mt ", "").Replace("‘", "").Replace("(", "").Replace(" ", "").Replace(Environment.NewLine, "").Trim();
+                   public static int Get()
+                   {
+                       int hpint = 0;
+                       VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                       var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x550, 0x260, 0x40, 0x20, 0x328 });
+                       hpint = vam.ReadInt32(hp);
+                       return hpint;
+                   }
+                    public static async Task<int> GetAsync()
+                    {
+                        return await Task.Run(() => Get());
+                    }
                 }
-                public static async Task<string> GetInfomationAsync(Statistics stat)
+                public class Power
                 {
-                    return await Task.Run(() => GetInfomation(stat));
+                    public static int Get()
+                    {
+                        int hpint = 0;
+                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x2b0, 0x180, 0x40, 0x20, 0x3d8 });
+                        hpint = vam.ReadInt32(hp);
+                        return hpint;
+                    }
+                    public static async Task<int> GetAsync()
+                    {
+                        return await Task.Run(() => Get());
+                    }
                 }
-                public static string GetInfomation(Statistics stat)
+                public class Energy
                 {
-                    
-                    if (stat == Statistics.Power)
+                    public static int Get()
                     {
-                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
-                        Bitmap crop = Utils.Crop(game, new Rectangle(game.Width - 1480, game.Height - 892, 200, 30));
-                        string power = Utils.GetTextFromImage(crop, mode);
-                        return Replacer(power);
+                        int hpint = 0;
+                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x2b0, 0x470 });
+                        hpint = vam.ReadInt32(hp);
+                        return hpint;
                     }
-                    else if (stat == Statistics.Gems)
+                    public static async Task<int> GetAsync()
                     {
-                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
-                        // Get the window
-                        Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\power.png");
-                        find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                        List<Rectangle> done = Utils.Find(game, find, 0.7);
-                        if (done.Count >= 1)
+                        return await Task.Run(() => Get());
+                    }
+                }
+                public class Gems
+                {
+                    public static int Get()
+                    {
+                        int hpint = 0;
+                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x4e0, 0x198, 0x40, 0x20, 0x364 });
+                        hpint = vam.ReadInt32(hp);
+                        return hpint;
+                    }
+                    public static async Task<int> GetAsync()
+                    {
+                        return await Task.Run(() => Get());
+                    }
+                }
+                public class Level
+                {
+                    public class Experience
+                    {
+                        public class Need
                         {
-                            Bitmap crop = Utils.Crop(game, new Rectangle(done[0].X + 155, done[0].Y + 50, 150, 30));
-                            crop.Save("Gems.png", System.Drawing.Imaging.ImageFormat.Png);
-                            string power = Utils.GetTextFromImage(crop, mode);
-                            return Replacer(power);
+                            public static int Get()
+                            {
+                                int hpint = 0;
+                                VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x0222B988, 0x210, 0x330, 0x78, 0x30, 0x38c });
+                                hpint = vam.ReadInt32(hp);
+                                return hpint;
+                            }
+                            public static async Task<int> GetAsync()
+                            {
+                                return await Task.Run(() => Get());
+                            }
                         }
-                        else return string.Empty;
-                    }
-                    else if (stat == Statistics.Level)
-                    {
-                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
-                        // Get the window
-                        Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\power.png");
-                        find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                        List<Rectangle> done = Utils.Find(game, find, 0.7);
-                        if (done.Count >= 1)
-                        {
-                            //window.Mouse.MoveTo(done[0].X + 10, done[0].Y + 156);
-                            Bitmap crop = Utils.Crop(game, new Rectangle(done[0].X + 10, done[0].Y + 156, 33, 25));
-                            crop.Save("Level.png", System.Drawing.Imaging.ImageFormat.Png);
-                            string power = Utils.GetTextFromImage(crop, mode);
-                            return Utils.TruncateLongString(power, 2, "");
-                        }
-                        else return string.Empty;
-                    }
-                    else if (stat == Statistics.MysteryBox)
-                    {
-                        Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
 
-                        Bitmap crop = Utils.Crop(game, new Rectangle(game.Width - 235, game.Height - 185, 100, 30));
-                        crop.Save("Crop.png", System.Drawing.Imaging.ImageFormat.Png);
-                        string power = Utils.GetTextFromImage(crop, mode);
-                        power = power.Replace("_", "");
-                        string power2 = Utils.TruncateLongString(power, 7, "");
-                        power = power.Replace("L", "");
-                        if (power2 == "3a6paTs" && power.Contains("3a6paTs"))
+                        public static int Get()
                         {
-                            return "Done";
+                            int hpint = 0;
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x240, 0x198, 0x40, 0x90, 0x324 });
+                            hpint = vam.ReadInt32(hp);
+                            return hpint;
                         }
-                        else if (power.Contains(":"))
+                        public static async Task<int> GetAsync()
                         {
-                            power2 = Utils.TruncateLongString(power, 5, "");
-                            return power2;
+                            return await Task.Run(() => Get());
                         }
-                        else return string.Empty;
                     }
-                    else return string.Empty;
-                }
-                public enum Statistics
-                {
-                    Power,
-                    Gems,
-                    Level,
-                    MysteryBox,
                 }
             }
         }
