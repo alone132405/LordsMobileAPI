@@ -47,3 +47,39 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI E
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.csproj.CoreCompileInputs.cache
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.exe
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.pdb
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\x86\liblept1753.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\x86\libtesseract3052.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\x64\liblept1753.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\x64\libtesseract3052.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\LordsAPI Example.exe.config
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\LordsAPI Example.exe.manifest
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\LordsAPI Example.application
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\LordsAPI Example.exe
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\LordsAPI Example.pdb
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\LordsAPI.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\MemorySharp.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\Tesseract.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\ZedGraph.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\VAMemory.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\Emgu.CV.World.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\Fasm.NET.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\LordsAPI.pdb
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\ZedGraph.xml
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\Emgu.CV.World.xml
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\de\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\es\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\fr\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\hu\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\it\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\ja\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\pt\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\ru\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\sk\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\sv\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\tr\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\zh-cn\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.TrustInfo.xml
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.exe.manifest
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.application
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\Debug\LordsAPI Example.csproj.CopyComplete

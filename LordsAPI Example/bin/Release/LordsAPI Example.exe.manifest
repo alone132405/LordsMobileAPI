@@ -67,26 +67,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="573440">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="572416">
       <assemblyIdentity name="LordsAPI Example" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9NmDlOwnKHAr9ocgPfsbFVkrhGM+qDlv8U5605kbLSs=</dsig:DigestValue>
+        <dsig:DigestValue>N9gk6yeO4CAC+oUj6HgaE6mpa8XRCOmpDOWqeu9YyZ0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI.dll" size="31232">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI.dll" size="30720">
       <assemblyIdentity name="LordsAPI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ABGIJ1V5NEmoOxz/bzopLoM4206jnma72WLER9PGezg=</dsig:DigestValue>
+        <dsig:DigestValue>0pA/AG5t+ZYWgW9IA56uEYmhimSakkLZxWiorB7Jyts=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

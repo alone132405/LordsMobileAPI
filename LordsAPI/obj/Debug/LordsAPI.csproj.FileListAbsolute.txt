@@ -75,3 +75,6 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI\bin\Debug\tr\ZedGraph.resour
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI\bin\Debug\zh-cn\ZedGraph.resources.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI\bin\Debug\zh-tw\ZedGraph.resources.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI\obj\Debug\LordsAPI.csproj.CopyComplete
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\bin\Debug\MemorySharp.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\bin\Debug\VAMemory.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\bin\Debug\MemorySharp.xml

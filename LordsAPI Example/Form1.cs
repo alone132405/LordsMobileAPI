@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -327,15 +328,14 @@ namespace LordsAPI_Example
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            Size resolution = await LordsMobileAPI.Settings.Resolution.GetAsync();
-            if (resolution.Width != 1616 && resolution.Height != 939)
-                await LordsMobileAPI.Settings.Resolution.ChangeAsync(new Size(1616, 939));
-
-            LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
-            if (location.type == LordsMobileAPI.UserInfo.Location.Locations.Castle)
-            {
-                label4.Text = "Коробка: " + await LordsMobileAPI.MysteryBox.Get.TimeAsync();
-            }
+            string time = await LordsMobileAPI.MysteryBox.Get.TimeAsync();
+            if (time == "Забрать")
+                time = "Done";
+            label4.Text = "Коробка: " + time;
+            string time2 = await LordsMobileAPI.Academy.GetResearchTimeAsync();
+            label13.Text = "Иследование: " + time2;
+            string time3 = await LordsMobileAPI.Build.GetBuildAsync();
+            label14.Text = "Строительство: " + time3;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -354,7 +354,9 @@ namespace LordsAPI_Example
         {
             LordsMobileAPI.UserInfo.Location location = await LordsMobileAPI.UserInfo.Location.GetLocationAsync();
             if (location.type == LordsMobileAPI.UserInfo.Location.Locations.MerchantShip)
+            {
                 await LordsMobileAPI.MerchantShip.Actions.BuyAsync(location, LordsMobileAPI.MerchantShip.Actions.BuySlots.Slot1);
+            }
             else MessageBox.Show("Вы не находитесь в торгов корабле");
         }
 
@@ -391,6 +393,20 @@ namespace LordsAPI_Example
         private void button13_Click(object sender, EventArgs e)
         {
             Console.WriteLine(LordsMobileAPI.UserInfo.Statistic.Energy.Get());
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void button9_Click_1(object sender, EventArgs e)
+        {
+            int money = await LordsMobileAPI.Guild.GetMoneyCountAsync();
+            label17.Text = "Монет: " + money;
+            int keys = await LordsMobileAPI.Guild.GetKeysCountAsync();
+            label15.Text = "Ключен: " + keys;
+            label16.Text = "Сила: " + await LordsMobileAPI.Guild.GetPowerCountAsync();
         }
     }
 }

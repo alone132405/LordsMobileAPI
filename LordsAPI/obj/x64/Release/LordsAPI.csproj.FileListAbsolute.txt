@@ -38,3 +38,4 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI\obj\x64\Release\LordsAPI.pdb
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI\obj\x64\Release\LordsAPI.csprojAssemblyReference.cache
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\bin\x64\Release\MemorySharp.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\bin\x64\Release\VAMemory.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\bin\x64\Release\MemorySharp.xml

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,9 @@ namespace LordsAPI_Example
 
         private async void DebugWindow_Load(object sender, EventArgs e)
         {
-            Size resolution = await LordsMobileAPI.Settings.Resolution.GetAsync();
-            if (resolution.Width != 1616 && resolution.Height != 939)
-                await LordsMobileAPI.Settings.Resolution.ChangeAsync(new Size(1616, 939));
+            //Size resolution = await LordsMobileAPI.Settings.Resolution.GetAsync();
+            //if (resolution.Width != 1616 && resolution.Height != 939)
+            //    await LordsMobileAPI.Settings.Resolution.ChangeAsync(new Size(1616, 939));
 
             Bitmap image = Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess());
             pictureBox1.Image = image;
@@ -39,7 +40,7 @@ namespace LordsAPI_Example
         {
             if (checkBox1.Checked)
             {
-                MemorySharp sharp = new MemorySharp(LordsMobileAPI.Settings.GetProcess());
+                MemorySharp sharp = new MemorySharp(Process.GetProcessesByName("Lords Mobile").FirstOrDefault());
                 var window = sharp.Windows.MainWindow;
                 window.SendMessage(Binarysharp.MemoryManagement.Native.WindowsMessages.LButtonDown, UIntPtr.Zero, IntPtr.Zero);
                 hold = true;

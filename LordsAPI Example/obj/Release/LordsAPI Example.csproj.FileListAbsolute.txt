@@ -88,7 +88,6 @@ C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Release\LordsAPI
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Release\LordsAPI Example.pdb
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Release\Fasm.NET.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Release\LordsAPI.dll
-C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Release\MemorySharp.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Release\Tesseract.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Release\ZedGraph.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\Release\Emgu.CV.World.dll

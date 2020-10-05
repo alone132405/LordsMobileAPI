@@ -67,26 +67,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="566784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="576000">
       <assemblyIdentity name="LordsAPI Example" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ubdzy0CG7svI/69BdF8XOUOoRyAaZiZgjuB5I8B3W2I=</dsig:DigestValue>
+        <dsig:DigestValue>gsJ5FsVSvMuHYqYbOjPMx3Fm+HkISKTk8pqKLDO+oy8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI.dll" size="20480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI.dll" size="33280">
       <assemblyIdentity name="LordsAPI" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JyEywq3TOpTvc6wgH4W9ycIPbZSwNTn7txjKjKzuB80=</dsig:DigestValue>
+        <dsig:DigestValue>5nHJ1t82bj2MPUVa8dg1j2OXjU1npxvWjjfIdT7us30=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -111,6 +111,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>EYwQ0A5bNmze9F4zT/koUTo8bh9V0Z3rOhUneWxco7Q=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VAMemory.dll" size="14848">
+      <assemblyIdentity name="VAMemory" version="1.2.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>exL/e0AgnSwxhf5fgcPzDr8lcxYNJv7Q/tGeDw6hFwI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
