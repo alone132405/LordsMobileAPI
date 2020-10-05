@@ -18,7 +18,9 @@ namespace LordsAPI
             public static Process GetProcess()
             {
                 Process[] processes = Process.GetProcessesByName("Lords Mobile");
-                return processes[0];
+                if (processes.Count() > 0)
+                    return processes[0];
+                else return Process.GetCurrentProcess();
             }
             public class Resolution
             {
@@ -176,7 +178,7 @@ namespace LordsAPI
             {
                 int hpint = 0;
                 VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x2b0, 0x60, 0x40, 0x20, 0x528 });
+                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x550, 0x60, 0x40, 0x20, 0x528 });
                 hpint = vam.ReadInt32(hp);
                 return hpint;
             }
@@ -188,7 +190,7 @@ namespace LordsAPI
             {
                 int hpint = 0;
                 VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x5c0, 0x188, 0x40, 0x20, 0x548 });
+                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x550, 0x188, 0x40, 0x20, 0x548 });
                 hpint = vam.ReadInt32(hp);
                 return hpint;
             }
@@ -200,7 +202,7 @@ namespace LordsAPI
             {
                 int hpint = 0;
                 VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x2b0, 0x188, 0x40, 0x20, 0x520 });
+                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x550, 0x188, 0x40, 0x20, 0x520 });
                 hpint = vam.ReadInt32(hp);
                 return hpint;
             }
@@ -464,7 +466,7 @@ namespace LordsAPI
                     {
                         int hpint = 0;
                         VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x2b0, 0x180, 0x40, 0x20, 0x3d8 });
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x550, 0x180, 0x40, 0x20, 0x3d8 });
                         hpint = vam.ReadInt32(hp);
                         return hpint;
                     }
@@ -494,7 +496,7 @@ namespace LordsAPI
                     {
                         int hpint = 0;
                         VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x4e0, 0x198, 0x40, 0x20, 0x364 });
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x630, 0x198, 0x40, 0x20, 0x364 });
                         hpint = vam.ReadInt32(hp);
                         return hpint;
                     }
@@ -527,7 +529,7 @@ namespace LordsAPI
                         {
                             int hpint = 0;
                             VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x240, 0x198, 0x40, 0x90, 0x324 });
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x550, 0x188, 0x40, 0x20, 0x324 });
                             hpint = vam.ReadInt32(hp);
                             return hpint;
                         }

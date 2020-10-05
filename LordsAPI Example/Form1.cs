@@ -408,7 +408,7 @@ namespace LordsAPI_Example
             int money = await LordsMobileAPI.Guild.GetMoneyCountAsync();
             label17.Text = "Монет: " + money;
             int keys = await LordsMobileAPI.Guild.GetKeysCountAsync();
-            label15.Text = "Ключен: " + keys;
+            label15.Text = "Ключей: " + keys;
             label16.Text = "Сила: " + await LordsMobileAPI.Guild.GetPowerCountAsync();
         }
     }
