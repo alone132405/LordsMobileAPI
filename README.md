@@ -12,6 +12,6 @@ Required Lords Mobile settings:
 
 API Example screenshot:
 
-![alt text](https://i.ibb.co/CnbsGXk/image.png)
+![alt text](https://i.ibb.co/tMqsFN2/image.png)
 
 ![alt text](https://i.ibb.co/714J1wb/image.png)
