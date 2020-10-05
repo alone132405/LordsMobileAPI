@@ -503,22 +503,6 @@ namespace LordsAPI
                 {
                     public class Experience
                     {
-                        public class Need
-                        {
-                            public static int Get()
-                            {
-                                int hpint = 0;
-                                VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x0222B988, 0x210, 0x330, 0x78, 0x30, 0x38c });
-                                hpint = vam.ReadInt32(hp);
-                                return hpint;
-                            }
-                            public static async Task<int> GetAsync()
-                            {
-                                return await Task.Run(() => Get());
-                            }
-                        }
-
                         public static int Get()
                         {
                             int hpint = 0;

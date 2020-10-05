@@ -270,8 +270,7 @@ namespace LordsAPI_Example
             int power = await LordsMobileAPI.UserInfo.Statistic.Power.GetAsync();
             label1.Text = "Сила: " + power.ToString();
             int xp = await LordsMobileAPI.UserInfo.Statistic.Level.Experience.GetAsync();
-            int xpneed = await LordsMobileAPI.UserInfo.Statistic.Level.Experience.Need.GetAsync();
-            label12.Text = "Опыт: " + xp.ToString() + "/" + xpneed.ToString();
+            label12.Text = "Опыт: " + xp.ToString();
             //Size resolution = await LordsMobileAPI.Settings.Resolution.GetAsync();
             //if (resolution.Width != 1616 && resolution.Height != 939)
             //    await LordsMobileAPI.Settings.Resolution.ChangeAsync(new Size(1616, 939));
