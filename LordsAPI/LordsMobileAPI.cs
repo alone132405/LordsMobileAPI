@@ -210,35 +210,17 @@ namespace LordsAPI
             {
                 return await Task.Run(() => GetPowerCount());
             }
-        }
-        public class Build
-        {
-            public static string GetBuildTime()
+            public static int GetHelpOtherUsersCount()
             {
-                string hpint = "00:00:00";
+                int hpint = 0;
                 VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x0222B9F8, 0x3d0, 0x760, 0x1a8, 0x5e8, 0x14 });
-                hpint = vam.ReadStringUnicode(hp, 32);
+                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021EFCF0, 0x40, 0x50, 0xb8, 0x28, 0x7f8 });
+                hpint = vam.ReadInt32(hp);
                 return hpint;
             }
-            public static async Task<string> GetBuildAsync()
+            public static async Task<int> GetHelpOtherUsersCountAsync()
             {
-                return await Task.Run(() => GetBuildTime());
-            }
-        }
-        public class Academy
-        {
-            public static string GetResearchTime()
-            {
-                string hpint = "00:00:00";
-                VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x0222B9F8, 0x3d0, 0x760, 0xe8, 0x4f8, 0x14 });
-                hpint = vam.ReadStringUnicode(hp, 32);
-                return hpint;
-            }
-            public static async Task<string> GetResearchTimeAsync()
-            {
-                return await Task.Run(() => GetResearchTime());
+                return await Task.Run(() => GetHelpOtherUsersCount());
             }
         }
         public class UserInfo
@@ -264,7 +246,19 @@ namespace LordsAPI
                     Guild,
                     GuildShop,
                 }
-                public static Location GetLocation()
+                public static string GetDistanceToCaste()
+                {
+                    string hpint = "4.4 км";
+                    VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                    var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x0222B9F8, 0x280, 0x2d8, 0x158, 0x18, 0x14 });
+                    hpint = vam.ReadStringUnicode(hp, 32);
+                    return hpint;
+                }
+                public static async Task<string> GetDistanceToCasteAsync()
+                {
+                    return await Task.Run(() => GetDistanceToCaste());
+                }
+            public static Location GetLocation()
                 {
                     
                     Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(LordsMobileAPI.Settings.GetProcess()));
@@ -481,7 +475,7 @@ namespace LordsAPI
                     {
                         int hpint = 0;
                         VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x2b0, 0x470 });
+                        var hp = Utils.PointRead(Utils.getModuleAdress("UnityPlayer.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x014E16E0, 0x510, 0x4f0, 0x130, 0x20, 0x470 });
                         hpint = vam.ReadInt32(hp);
                         return hpint;
                     }

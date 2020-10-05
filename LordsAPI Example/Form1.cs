@@ -261,6 +261,7 @@ namespace LordsAPI_Example
         private async void button8_Click(object sender, EventArgs e)
         {
             int energy = await LordsMobileAPI.UserInfo.Statistic.Energy.GetAsync();
+            Console.WriteLine("Энергия: " + energy);
             label11.Text = "Энергия: " + energy.ToString();
             int stamina = await LordsMobileAPI.UserInfo.Statistic.Stamina.GetAsync();
             label10.Text = "Выносливость: " + stamina.ToString() + "/120";
@@ -333,12 +334,9 @@ namespace LordsAPI_Example
         {
             string time = await LordsMobileAPI.MysteryBox.Get.TimeAsync();
             if (time == "Забрать")
-                time = "Done";
+                time = "Collect";
             label4.Text = "Коробка: " + time;
-            string time2 = await LordsMobileAPI.Academy.GetResearchTimeAsync();
-            label13.Text = "Иследование: " + time2;
-            string time3 = await LordsMobileAPI.Build.GetBuildAsync();
-            label14.Text = "Строительство: " + time3;
+            label20.Text = "Дистанция: " + await LordsMobileAPI.UserInfo.Location.GetDistanceToCasteAsync();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -410,6 +408,7 @@ namespace LordsAPI_Example
             int keys = await LordsMobileAPI.Guild.GetKeysCountAsync();
             label15.Text = "Ключей: " + keys;
             label16.Text = "Сила: " + await LordsMobileAPI.Guild.GetPowerCountAsync();
+            label19.Text = "Рук: " + await LordsMobileAPI.Guild.GetHelpOtherUsersCountAsync();
         }
     }
 }
