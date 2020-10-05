@@ -54,60 +54,6 @@ namespace LordsAPI_Example
 
             }
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked == true && checkBox2.Checked == true)
-            {
-                Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
-                MemorySharp sharp = new MemorySharp(process);
-                // Get the window
-                var window = sharp.Windows.MainWindow;
-                Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
-                //Console.WriteLine(game.Width);
-                //Console.WriteLine(game.Height);
-                game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\wood2.png");
-                find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = Utils.Find(game, find, 0.5);
-                Console.WriteLine("Деревьев: " + done.Count);
-                if (done.Count >= 1)
-                {
-                    window.Activate();
-                    window.Mouse.MoveTo(done[0].X + 64, done[0].Y + 64);
-                    window.Mouse.ClickLeft();
-                }
-                else
-                {
-
-                }
-            }
-            if (checkBox1.Checked == true && checkBox3.Checked == true)
-            {
-                Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
-                MemorySharp sharp = new MemorySharp(process);
-                // Get the window
-                var window = sharp.Windows.MainWindow;
-                Bitmap game = Utils.ConvertImagePixelType(Utils.GetProgrammImage(process));
-                //Console.WriteLine(game.Width);
-                //Console.WriteLine(game.Height);
-                game.Save("game.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
-                Bitmap find = (Bitmap)Bitmap.FromFile(@"game\\gold2.png");
-                find.Save("find.png", System.Drawing.Imaging.ImageFormat.Png);
-                List<Rectangle> done = Utils.Find(game, find, 0.5f);
-                if (done.Count >= 1)
-                {
-                    window.Activate();
-                    window.Mouse.MoveTo(done[0].X + 64, done[0].Y + 64);
-                    window.Mouse.ClickLeft();
-                }
-                else
-                {
-
-                }
-            }
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Process process = Process.GetProcessesByName("Lords Mobile").FirstOrDefault();
