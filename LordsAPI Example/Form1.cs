@@ -305,6 +305,9 @@ namespace LordsAPI_Example
             double gold1 = Math.Round(gold, round);
             Console.WriteLine("Золото: " + gold1);
             label9.Text = "Золото: " + gold1;
+            double anima = await LordsMobileAPI.UserInfo.Resources.Anima.GetCountAsync();
+            double anima1 = Math.Round(anima, round);
+            label18.Text = "Анима: " + anima1;
             //}
             //else
             //{

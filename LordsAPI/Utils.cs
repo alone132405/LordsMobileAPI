@@ -199,7 +199,6 @@ namespace LordsAPI
                 if (proc.Modules[i].ModuleName == modulname)
                 {
                     result = proc.Modules[i].BaseAddress;
-                    Console.WriteLine(result);
                     break;
                 }
             }

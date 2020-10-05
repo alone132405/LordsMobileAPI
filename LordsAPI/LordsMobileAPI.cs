@@ -91,7 +91,7 @@ namespace LordsAPI
                 {
                     string hpint = "00:00:00";
                     VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                    var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F89C0, 0x3f0, 0x1f8, 0xc8, 0x648, 0x14 });
+                    var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x0222B9F8, 0x280, 0x2d8, 0x760, 0xc0, 0x14 });
                     hpint = vam.ReadStringUnicode(hp, 14);
                     return hpint;
                 }
@@ -200,7 +200,7 @@ namespace LordsAPI
             {
                 int hpint = 0;
                 VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
-                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x240, 0x188, 0x40, 0x20, 0x520 });
+                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F06C8, 0x2b0, 0x188, 0x40, 0x20, 0x520 });
                 hpint = vam.ReadInt32(hp);
                 return hpint;
             }
@@ -416,6 +416,21 @@ namespace LordsAPI
                         double hpint = 0;
                         VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
                         var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F67B0, 0xb8, 0x18, 0xe8, 0x798, 0x650 });
+                        hpint = vam.ReadDouble(hp);
+                        return hpint;
+                    }
+                    public static async Task<double> GetCountAsync()
+                    {
+                        return await Task.Run(() => GetCount());
+                    }
+                }
+                public class Anima
+                {
+                    public static double GetCount()
+                    {
+                        double hpint = 0;
+                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess()), new[] { 0x021F6798, 0xb8, 0x0, 0x660, 0x318, 0x7e0 });
                         hpint = vam.ReadDouble(hp);
                         return hpint;
                     }

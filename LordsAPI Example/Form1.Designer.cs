@@ -70,6 +70,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -168,9 +169,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(168, 114);
+            this.button8.Location = new System.Drawing.Point(168, 116);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(156, 23);
+            this.button8.Size = new System.Drawing.Size(156, 21);
             this.button8.TabIndex = 9;
             this.button8.Text = "Обновить";
             this.button8.UseVisualStyleBackColor = true;
@@ -345,6 +346,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.label5);
@@ -352,7 +354,7 @@
             this.groupBox6.Controls.Add(this.label7);
             this.groupBox6.Location = new System.Drawing.Point(168, 19);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(156, 89);
+            this.groupBox6.Size = new System.Drawing.Size(156, 96);
             this.groupBox6.TabIndex = 14;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ресурсы";
@@ -508,6 +510,15 @@
             this.label16.TabIndex = 16;
             this.label16.Text = "Сила: 0";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 81);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(52, 13);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "Анима: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,6 +593,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
     }
 }
 
