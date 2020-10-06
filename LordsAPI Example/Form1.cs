@@ -1,6 +1,9 @@
 ﻿
 using Binarysharp.MemoryManagement;
+using DirectX_Renderer;
 using LordsAPI;
+using SharpDX.Direct2D1;
+using SharpDX.DirectWrite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,8 +19,8 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tesseract;
-
+using Factory = SharpDX.Direct2D1.Factory;
+using FontFactory = SharpDX.DirectWrite.Factory;
 namespace LordsAPI_Example
 {
     public partial class Form1 : Form
@@ -30,16 +33,16 @@ namespace LordsAPI_Example
         private LordsMobileAPI api = new LordsMobileAPI();
         private async void button8_Click(object sender, EventArgs e)
         {
-            int energy = await LordsMobileAPI.UserInfo.Statistic.Energy.GetAsync();
+            int energy = await LordsMobileAPI.API.LocalUser.Statistic.Energy.Get.CountAsync();
             Console.WriteLine("Энергия: " + energy);
             label11.Text = "Энергия: " + energy.ToString();
-            int stamina = await LordsMobileAPI.UserInfo.Statistic.Stamina.GetAsync();
+            int stamina = await LordsMobileAPI.API.LocalUser.Statistic.Stamina.Get.CountAsync();
             label10.Text = "Выносливость: " + stamina.ToString() + "/120";
-            int gems = await LordsMobileAPI.UserInfo.Statistic.Gems.GetAsync();
+            int gems = await LordsMobileAPI.API.LocalUser.Statistic.Gems.Get.CountAsync();
             label2.Text = "Самоцветы: " + gems.ToString();
-            int power = await LordsMobileAPI.UserInfo.Statistic.Power.GetAsync();
+            int power = await LordsMobileAPI.API.LocalUser.Statistic.Power.Get.CountAsync();
             label1.Text = "Сила: " + power.ToString();
-            int xp = await LordsMobileAPI.UserInfo.Statistic.Level.Experience.GetAsync();
+            int xp = await LordsMobileAPI.API.LocalUser.Statistic.Level.Experience.Get.CountAsync();
             label12.Text = "Опыт: " + xp.ToString();
             //Size resolution = await LordsMobileAPI.Settings.Resolution.GetAsync();
             //if (resolution.Width != 1616 && resolution.Height != 939)
@@ -55,27 +58,27 @@ namespace LordsAPI_Example
             //    label11.Text = energy.ToString();
             /* Resource */
             int round = 0;
-            double food = await LordsMobileAPI.UserInfo.Resources.Food.GetCountAsync();
+            double food = await LordsMobileAPI.API.LocalUser.Castle.Resources.Food.Get.CountAsync();
             double food1 = Math.Round(food, round);
             Console.WriteLine("Еда: " + food1);
             label5.Text = "Еда: " + food1;
-            double stone = await LordsMobileAPI.UserInfo.Resources.Stone.GetCountAsync();
+            double stone = await LordsMobileAPI.API.LocalUser.Castle.Resources.Stone.Get.CountAsync();
             double stone1 = Math.Round(stone, round);
             Console.WriteLine("Камень: " + stone1);
             label7.Text = "Камень: " + stone1;
-            double wood = await LordsMobileAPI.UserInfo.Resources.Wood.GetCountAsync();
+            double wood = await LordsMobileAPI.API.LocalUser.Castle.Resources.Wood.Get.CountAsync();
             double wood1 = Math.Round(wood, round);
             Console.WriteLine("Дерево: " + wood1);
             label6.Text = "Дерево: " + wood1;
-            double ore = await LordsMobileAPI.UserInfo.Resources.Ore.GetCountAsync();
+            double ore = await LordsMobileAPI.API.LocalUser.Castle.Resources.Ore.Get.CountAsync();
             double ore1 = Math.Round(ore, round);
             Console.WriteLine("Руда: " + ore1);
             label8.Text = "Руда: " + ore1;
-            double gold = await LordsMobileAPI.UserInfo.Resources.Gold.GetCountAsync();
+            double gold = await LordsMobileAPI.API.LocalUser.Castle.Resources.Gold.Get.CountAsync();
             double gold1 = Math.Round(gold, round);
             Console.WriteLine("Золото: " + gold1);
             label9.Text = "Золото: " + gold1;
-            double anima = await LordsMobileAPI.UserInfo.Resources.Anima.GetCountAsync();
+            double anima = await LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.CountAsync();
             double anima1 = Math.Round(anima, round);
             label18.Text = "Анима: " + anima1;
             //}
@@ -101,11 +104,11 @@ namespace LordsAPI_Example
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            string time = await LordsMobileAPI.MysteryBox.Get.TimeAsync();
+            string time = await LordsMobileAPI.API.LocalUser.Castle.MysteryBox.Get.TimeAsync();
             if (time == "Забрать")
                 time = "Collect";
             label4.Text = "Коробка: " + time;
-            label20.Text = "Дистанция: " + await LordsMobileAPI.UserInfo.Location.GetDistanceToCasteAsync();
+            label20.Text = "Дистанция: " + await LordsMobileAPI.API.LocalUser.Castle.Get.DistanceToCasteAsync();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -120,12 +123,48 @@ namespace LordsAPI_Example
 
         private async void button9_Click_1(object sender, EventArgs e)
         {
-            int money = await LordsMobileAPI.Guild.GetMoneyCountAsync();
+            int money = await LordsMobileAPI.API.LocalUser.Guild.Shop.Get.MoneyAsync();
             label17.Text = "Монет: " + money;
-            int keys = await LordsMobileAPI.Guild.GetKeysCountAsync();
+            int keys = await LordsMobileAPI.API.LocalUser.Guild.Gifts.Get.KeysAsync();
             label15.Text = "Ключей: " + keys;
-            label16.Text = "Сила: " + await LordsMobileAPI.Guild.GetPowerCountAsync();
-            label19.Text = "Рук: " + await LordsMobileAPI.Guild.GetHelpOtherUsersCountAsync();
+            label19.Text = "Рук: " + await LordsMobileAPI.API.LocalUser.Guild.Help.OtherUser.Get.CountAsync();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Overlay_SharpDX overlay = new Overlay_SharpDX(LordsMobileAPI.Settings.GetProcess());
+            Thread thread1 = new Thread(() => {
+                while (true)
+                {
+                    if (overlay.device != null)
+                    {
+                        overlay.device.BeginDraw();
+                        overlay.device.Clear(new SharpDX.Mathematics.Interop.RawColor4(0, 0, 0, 0));
+                        overlay.device.TextAntialiasMode = SharpDX.Direct2D1.TextAntialiasMode.Aliased;
+
+                        overlay.device.FillRectangle(new SharpDX.Mathematics.Interop.RawRectangleF(0, 0, 150, 45), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 0, 132, 256)));
+                        overlay.device.DrawText("Server: " + LordsMobileAPI.API.Server.Get.IP(), new TextFormat(new FontFactory(), "Arial", 15.0f), new SharpDX.Mathematics.Interop.RawRectangleF(15, 15, 300, 0), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 255, 0, 255)));
+                        overlay.device.DrawText("Коробка: " + LordsMobileAPI.API.LocalUser.Castle.MysteryBox.Get.Time(), new TextFormat(new FontFactory(), "Arial", 15.0f), new SharpDX.Mathematics.Interop.RawRectangleF(15, 15, 300, 20), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 255, 0, 255)));
+                        overlay.device.DrawText("Анима: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.Count(), 0), new TextFormat(new FontFactory(), "Arial", 15.0f), new SharpDX.Mathematics.Interop.RawRectangleF(15, 30, 300, 60), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 255, 0, 255)));
+                        
+
+                        overlay.device.EndDraw();
+                    }
+                }
+            });
+            thread1.Priority = ThreadPriority.AboveNormal;
+            thread1.IsBackground = true;
+            if (checkBox1.Checked)
+            {
+                overlay.Show();
+                thread1.Start();
+            }
+            else
+            {
+                
+                overlay.Exit(null, null);
+                thread1.Abort();
+            }
         }
     }
 }
