@@ -10,10 +10,8 @@ Required Lords Mobile settings:
 
 ![alt text](https://i.ibb.co/qY1HDYY/image.png)
 
-![alt text](https://i.ibb.co/tJ7p3v7/image.png)
-
 API Example screenshot:
 
-![alt text](https://i.ibb.co/CnbsGXk/image.png)
+![alt text](https://i.ibb.co/tMqsFN2/image.png)
 
-![alt text](https://i.ibb.co/714J1wb/image.png)
+![alt text](https://i.ibb.co/BnCWYTM/image.png)
