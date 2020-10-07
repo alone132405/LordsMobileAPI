@@ -37,6 +37,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using LordsAPI_Example;
+using LordsAPI;
 
 namespace DirectX_Renderer
 {
@@ -92,9 +93,10 @@ namespace DirectX_Renderer
         {
             this.Close();
         }
-
+        private Overlay_SharpDX overlay_;
         public Overlay_SharpDX(Process process)
         {
+            overlay_ = this;
             game = process;
             process.Exited += Exit;
             this.handle = Handle;
@@ -107,27 +109,23 @@ namespace DirectX_Renderer
 
             this.FormBorderStyle = FormBorderStyle.None;
         }
-
+        public void UpdatePos()
+        {
+            Utils.ProcessUtils.RECT screen = LordsAPI.Utils.ProcessUtils.GetProgrammRect(game);
+            this.Width = screen.Right - 32;
+            this.Height = screen.Bottom - 32;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new System.Drawing.Point(screen.Left + 6, screen.Top + 0);
+        }
         // Remember change the values of the form in the designer.
         private void Overlay_SharpDX_Load(object sender, EventArgs e)
         {
             this.MinimizeBox = false;
             this.MaximizeBox = false;
-            System.Drawing.Rectangle screeng = Utilities.GetScreen(this);
-            System.Drawing.Bitmap screen = LordsAPI.Utils.GetProgrammImage(game);
-            this.Width = screeng.Width - 24;
-            this.Height = screeng.Height - 24;
-            this.Location = new System.Drawing.Point(0, 0);
-            this.StartPosition = FormStartPosition.Manual;
+            UpdatePos();
 
             this.DoubleBuffered = true; // reduce the flicker
-            this.SetStyle(ControlStyles.OptimizedDoubleBuffer |// reduce the flicker too
-                ControlStyles.AllPaintingInWmPaint |
-                ControlStyles.DoubleBuffer |
-                ControlStyles.UserPaint |
-                ControlStyles.Opaque |
-                ControlStyles.ResizeRedraw |
-                ControlStyles.SupportsTransparentBackColor, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer | ControlStyles.UserPaint | ControlStyles.Opaque | ControlStyles.ResizeRedraw | ControlStyles.SupportsTransparentBackColor, true);
             this.TopMost = true;
             this.Visible = true;
             var exStyle = User32.GetWindowLong(this.Handle, User32.GWL_EXSTYLE);
@@ -152,11 +150,11 @@ namespace DirectX_Renderer
             font = new TextFormat(fontFactory, fontFamily, fontSize);
 
 
-            //threadDX = new Thread(new ParameterizedThreadStart(_loop_DXThread));
-
-            //threadDX.Priority = ThreadPriority.Highest;
-            //threadDX.IsBackground = true;
-            //threadDX.Start();
+            threadDX = new Thread(new ParameterizedThreadStart(_loop_DXThread));
+            
+            threadDX.Priority = ThreadPriority.Highest;
+            threadDX.IsBackground = true;
+            threadDX.Start();
 
             device.BeginDraw();
             device.Clear(new SharpDX.Mathematics.Interop.RawColor4(0, 0, 0, 0));
@@ -173,13 +171,14 @@ namespace DirectX_Renderer
         {
             while (true)
             {
-                device.BeginDraw();
-                device.Clear(new SharpDX.Mathematics.Interop.RawColor4(0, 0, 0, 0));
-                device.TextAntialiasMode = SharpDX.Direct2D1.TextAntialiasMode.Aliased;
-
-                device.DrawText("Overlay text using direct draw with DirectX", new TextFormat(new FontFactory(), "Arial", 25.0f), new SharpDX.Mathematics.Interop.RawRectangleF(5, 0, 300, 0), new SolidColorBrush(device, new SharpDX.Mathematics.Interop.RawColor4(255, 0, 0, 255)));
-                //place your rendering things here
-                device.EndDraw();
+                if (Utils.ProcessUtils.IsActivate(LordsMobileAPI.Settings.GetProcess()))
+                {
+                    Thread.Sleep(500);
+                }
+                else
+                {
+                    Thread.Sleep(1000);
+                }
             }
         }
 

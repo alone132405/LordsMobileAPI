@@ -33,6 +33,7 @@ namespace LordsAPI_Example
         private LordsMobileAPI api = new LordsMobileAPI();
         private async void button8_Click(object sender, EventArgs e)
         {
+
             int energy = await LordsMobileAPI.API.LocalUser.Statistic.Energy.Get.CountAsync();
             Console.WriteLine("Энергия: " + energy);
             label11.Text = "Энергия: " + energy.ToString();
@@ -81,11 +82,8 @@ namespace LordsAPI_Example
             double anima = await LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.CountAsync();
             double anima1 = Math.Round(anima, round);
             label18.Text = "Анима: " + anima1;
-            //}
-            //else
-            //{
-            //    Console.WriteLine(location);
-            //}
+
+            label13.Text = "IGG ID: " + await LordsMobileAPI.API.LocalUser.Auth.Get.IGGIDAsync();
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -138,21 +136,34 @@ namespace LordsAPI_Example
                 {
                     if (overlay.device != null)
                     {
-                        overlay.device.BeginDraw();
-                        overlay.device.Clear(new SharpDX.Mathematics.Interop.RawColor4(0, 0, 0, 0));
-                        overlay.device.TextAntialiasMode = SharpDX.Direct2D1.TextAntialiasMode.Aliased;
+                        if (!Utils.ProcessUtils.IsActivate(LordsMobileAPI.Settings.GetProcess()))
+                        {
+                            overlay.device.BeginDraw();
+                            overlay.device.Clear(new SharpDX.Mathematics.Interop.RawColor4(0, 0, 0, 0));
+                            overlay.device.EndDraw();
+                        }
+                        else
+                        {
+                            overlay.device.BeginDraw();
+                            overlay.Invoke((MethodInvoker)delegate
+                            {
+                                overlay.UpdatePos();
+                            });
 
-                        overlay.device.FillRectangle(new SharpDX.Mathematics.Interop.RawRectangleF(0, 0, 150, 45), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 0, 132, 256)));
-                        overlay.device.DrawText("Server: " + LordsMobileAPI.API.Server.Get.IP(), new TextFormat(new FontFactory(), "Arial", 15.0f), new SharpDX.Mathematics.Interop.RawRectangleF(15, 15, 300, 0), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 255, 0, 255)));
-                        overlay.device.DrawText("Коробка: " + LordsMobileAPI.API.LocalUser.Castle.MysteryBox.Get.Time(), new TextFormat(new FontFactory(), "Arial", 15.0f), new SharpDX.Mathematics.Interop.RawRectangleF(15, 15, 300, 20), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 255, 0, 255)));
-                        overlay.device.DrawText("Анима: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.Count(), 0), new TextFormat(new FontFactory(), "Arial", 15.0f), new SharpDX.Mathematics.Interop.RawRectangleF(15, 30, 300, 60), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 255, 0, 255)));
-                        
+                            overlay.device.Clear(new SharpDX.Mathematics.Interop.RawColor4(0, 0, 0, 0));
+                            overlay.device.TextAntialiasMode = SharpDX.Direct2D1.TextAntialiasMode.Cleartype;
 
-                        overlay.device.EndDraw();
+                            overlay.device.FillRectangle(new SharpDX.Mathematics.Interop.RawRectangleF(0, 0, 150, 45), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 0, 132, 256)));
+                            overlay.device.DrawText("Статус армий: " + LordsMobileAPI.API.LocalUser.Castle.ArmyStatus.Trops.Get.Count(), new TextFormat(new FontFactory(), "Arial", 15.0f), new SharpDX.Mathematics.Interop.RawRectangleF(15, 15, 300, 0), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 255, 0, 255)));
+                            overlay.device.DrawText("Коробка: " + LordsMobileAPI.API.LocalUser.Castle.MysteryBox.Get.Time(), new TextFormat(new FontFactory(), "Arial", 15.0f), new SharpDX.Mathematics.Interop.RawRectangleF(15, 15, 300, 20), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 255, 0, 255)));
+                            overlay.device.DrawText("Анима: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.Count(), 0), new TextFormat(new FontFactory(), "Arial", 15.0f), new SharpDX.Mathematics.Interop.RawRectangleF(15, 30, 300, 60), new SolidColorBrush(overlay.device, new SharpDX.Mathematics.Interop.RawColor4(0, 255, 0, 255)));
+
+                            overlay.device.EndDraw();
+                        }
                     }
                 }
             });
-            thread1.Priority = ThreadPriority.AboveNormal;
+            thread1.Priority = ThreadPriority.Highest;
             thread1.IsBackground = true;
             if (checkBox1.Checked)
             {

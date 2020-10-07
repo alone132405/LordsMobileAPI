@@ -73,32 +73,50 @@ namespace LordsAPI
 
     public class Utils
     {
-        [DllImport("user32.dll", SetLastError = true)]
-        static extern bool GetWindowRect(IntPtr hwnd, out RECT lpRect);
-
-        [DllImport("user32.dll")]
-        static extern bool PrintWindow(IntPtr hWnd, IntPtr hdcBlt, int nFlags);
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct RECT
+        public class ProcessUtils
         {
-            public int Left, Top, Right, Bottom;
-        }
-        public static Bitmap GetProgrammImage(Process process)
-        {
-            if (process != null)
+            [DllImport("user32.dll")]
+            static extern IntPtr GetForegroundWindow();
+            [DllImport("user32.dll", SetLastError = true)]
+            static extern bool GetWindowRect(IntPtr hwnd, out RECT lpRect);
+
+            [DllImport("user32.dll")]
+            static extern bool PrintWindow(IntPtr hWnd, IntPtr hdcBlt, int nFlags);
+
+            [StructLayout(LayoutKind.Sequential)]
+            public struct RECT
+            {
+                public int Left, Top, Right, Bottom;
+            }
+            public static Bitmap GetProgrammImage(Process process)
+            {
+                if (process != null)
+                {
+                    var hwnd = process.MainWindowHandle;
+                    RECT rect;
+                    GetWindowRect(hwnd, out rect);
+                    Bitmap image = new Bitmap(rect.Right - rect.Left, rect.Bottom - rect.Top);
+                    var graphics = Graphics.FromImage(image);
+                    var hdcBitmap = graphics.GetHdc();
+                    PrintWindow(hwnd, hdcBitmap, 0);
+                    graphics.ReleaseHdc(hdcBitmap);
+                    return image;
+                }
+                else return null;
+            }
+            public static RECT GetProgrammRect(Process process)
             {
                 var hwnd = process.MainWindowHandle;
                 RECT rect;
                 GetWindowRect(hwnd, out rect);
-                Bitmap image = new Bitmap(rect.Right - rect.Left, rect.Bottom - rect.Top);
-                var graphics = Graphics.FromImage(image);
-                var hdcBitmap = graphics.GetHdc();
-                PrintWindow(hwnd, hdcBitmap, 0);
-                graphics.ReleaseHdc(hdcBitmap);
-                return image;
+                return rect;
             }
-            else return null;
+            public static bool IsActivate(Process process)
+            {
+                var hwnd = process.MainWindowHandle;
+                if (hwnd != GetForegroundWindow())
+                { return false; } else { return true; }
+            }
         }
         public static Bitmap ConvertImagePixelType(Bitmap orig, System.Drawing.Imaging.PixelFormat format = System.Drawing.Imaging.PixelFormat.Format24bppRgb)
         {
