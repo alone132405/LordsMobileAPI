@@ -1,6 +1,4 @@
-﻿
-using Binarysharp.MemoryManagement;
-using DirectX_Renderer;
+﻿using DirectX_Renderer;
 using LordsAPI;
 using SharpDX.Direct2D1;
 using SharpDX.DirectWrite;
@@ -83,7 +81,7 @@ namespace LordsAPI_Example
             double anima1 = Math.Round(anima, round);
             label18.Text = "Анима: " + anima1 + "/" + await LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.MaximumAsync();
 
-            label13.Text = "IGG ID: " + await LordsMobileAPI.API.LocalUser.Auth.Get.IGGIDAsync();
+            label13.Text = "IGG ID: " + await LordsMobileAPI.API.LocalUser.Auth.Get.IGG_IDAsync();
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -130,13 +128,13 @@ namespace LordsAPI_Example
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            Overlay_SharpDX overlay = new Overlay_SharpDX(LordsMobileAPI.Settings.GetProcess());
+            Overlay_SharpDX overlay = new Overlay_SharpDX(LordsMobileAPI.Settings.GetProcess);
             Thread thread1 = new Thread(() => {
                 while (true)
                 {
                     if (overlay != null && overlay.device != null)
                     {
-                        if (!Utils.ProcessUtils.IsActivate(LordsMobileAPI.Settings.GetProcess()))
+                        if (!Utils.ProcessUtils.IsActivate(LordsMobileAPI.Settings.GetProcess))
                         {
                             overlay.device.BeginDraw();
                             overlay.device.Clear(new SharpDX.Mathematics.Interop.RawColor4(0, 0, 0, 0));

@@ -53,7 +53,6 @@ namespace DirectX_Renderer
         private FontFactory fontFactory;
         private const string fontFamily = "Arial";
         private const float fontSize = 25.0f;
-        private Bitmap _bitmap;
 
         private IntPtr handle;
         private Thread threadDX = null;
@@ -171,7 +170,7 @@ namespace DirectX_Renderer
         {
             while (true)
             {
-                if (Utils.ProcessUtils.IsActivate(LordsMobileAPI.Settings.GetProcess()))
+                if (Utils.ProcessUtils.IsActivate(LordsMobileAPI.Settings.GetProcess))
                 {
                     Thread.Sleep(500);
                 }

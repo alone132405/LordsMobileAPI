@@ -10,11 +10,6 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Binarysharp.MemoryManagement;
-using Emgu.CV;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Structure;
-using Tesseract;
 
 namespace LordsAPI
 {
@@ -128,22 +123,7 @@ namespace LordsAPI
             }
             return clone;
         }
-        public static string GetTextFromImage(Bitmap imgsource, EngineMode mode = EngineMode.TesseractAndCube)
-        {
-            var ocrtext = string.Empty;
-            using (var engine = new TesseractEngine(@"./tessdata", "eng", mode))
-            {
-                using (var img = PixConverter.ToPix(imgsource))
-                {
-                    using (var page = engine.Process(img))
-                    {
-                        ocrtext = page.GetText();
-                    }
-                }
-            }
 
-            return ocrtext;
-        }
         public static Bitmap ResizeImage(Bitmap imgToResize, Size size)
         {
             return (new Bitmap(imgToResize, size));
@@ -160,30 +140,7 @@ namespace LordsAPI
             return truncatedString;
 
         }
-        public static List<Rectangle> Find(Bitmap fromimg, Bitmap img, double quality = 0.9)
-        {
-            List<Rectangle> rectangles = new List<Rectangle>();
-            Image<Bgr, byte> sourceImage = new Image<Bgr, byte>(fromimg);
-            Image<Bgr, byte> templateImage = new Image<Bgr, byte>(img);
-            Image<Bgr, byte> imageToShow = sourceImage.Copy();
-            using (Image<Gray, float> result = sourceImage.MatchTemplate(templateImage, TemplateMatchingType.CcoeffNormed))
-            {
-                double[] minValues, maxValues;
-                Point[] minLocations, maxLocations;
-                result.MinMax(out minValues, out maxValues, out minLocations, out maxLocations);
-
-                // You can try different values of the threshold. I guess somewhere between 0.75 and 0.95 would be good.
-                int int2 = 0;
-                foreach (Point bd in maxLocations)
-                {
-                    if (maxValues[int2] > quality)
-                        rectangles.Add(new Rectangle(bd, templateImage.Size));
-                    int2++;
-                }
-            }
-            imageToShow.Save("результат.bmp");
-            return rectangles;
-        }
+      
         public static Bitmap Crop(Bitmap image, Rectangle selection)
         {
             Bitmap bmp = image;
@@ -202,7 +159,7 @@ namespace LordsAPI
         }
         public static IntPtr PointRead(IntPtr baseAddres, int[] offsets)
         {
-            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess().ProcessName);
+            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess.ProcessName);
             for (int i = 0; i < offsets.Count() - 1; i++)
             {
                 baseAddres = (IntPtr)vam.ReadInt64(IntPtr.Add(baseAddres, offsets[i]));

@@ -2,7 +2,7 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using Tesseract;
+using static LordsAPI.Utils.ProcessUtils;
 
 namespace LordsAPI_Example
 {
@@ -46,7 +46,7 @@ namespace LordsAPI_Example
         /// a window's client area, the coordinates of the upper-left corner are (0,0).
         /// </summary>
         [DllImport("user32.dll", SetLastError = true)]
-        public static extern bool GetClientRect(IntPtr hWnd, out Rect lpRect);
+        public static extern bool GetClientRect(IntPtr hWnd, out RECT lpRect);
 
         /// <summary>
         /// Retrieves a handle to the foreground window (the window with which the user is currently working).

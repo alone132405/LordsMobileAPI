@@ -1,33 +1,10 @@
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\x86\liblept1753.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\x86\libtesseract3052.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\x64\liblept1753.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\x64\libtesseract3052.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsAPI Example.exe.config
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsAPI Example.exe.manifest
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsAPI Example.application
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsAPI Example.exe
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsAPI Example.pdb
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\Fasm.NET.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsAPI.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\Tesseract.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\ZedGraph.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\Emgu.CV.World.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsAPI.pdb
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\ZedGraph.xml
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\Emgu.CV.World.xml
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\de\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\es\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\fr\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\hu\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\it\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\ja\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\pt\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\ru\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\sk\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\sv\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\tr\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\zh-cn\ZedGraph.resources.dll
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\zh-tw\ZedGraph.resources.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.csprojAssemblyReference.cache
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.Form1.resources
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.Properties.Resources.resources
@@ -40,7 +17,6 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\Lord
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.exe
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.pdb
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\VAMemory.dll
-C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\MemorySharp.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.Direct2D1.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.DXGI.dll
