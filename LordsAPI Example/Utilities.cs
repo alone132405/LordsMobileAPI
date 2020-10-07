@@ -49,14 +49,16 @@ namespace DirectX_Renderer
             return Screen.FromControl(referenceControl).Bounds;
         }
 
-        public static Bitmap LoadFromFile(RenderTarget renderTarget, string file)
+        public static Bitmap LoadFromFile(RenderTarget renderTarget, string file, int Wight = 0, int Height = 0)
         {
             // Loads from file using System.Drawing.Image
             using (var bitmap = (System.Drawing.Bitmap)System.Drawing.Image.FromFile(file))
             {
                 var sourceArea = new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height);
                 var bitmapProperties = new BitmapProperties(new SharpDX.Direct2D1.PixelFormat(Format.R8G8B8A8_UNorm, SharpDX.Direct2D1.AlphaMode.Premultiplied));
-                var size = new Size2(bitmap.Width, bitmap.Height);
+                var size = new Size2(Wight, Height);
+                if (Wight == 0 && Height == 0)
+                    size = new Size2(bitmap.Width, bitmap.Height);
 
                 // Transform pixels from BGRA to RGBA
                 int stride = bitmap.Width * sizeof(int);

@@ -302,6 +302,7 @@
             this.groupBox8.TabIndex = 19;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Меню";
+            this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
             // 
             // checkBox1
             // 

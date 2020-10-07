@@ -29,7 +29,6 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\tr\Z
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\zh-cn\ZedGraph.resources.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\zh-tw\ZedGraph.resources.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.csprojAssemblyReference.cache
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.DebugWindow.resources
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.Form1.resources
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.Properties.Resources.resources
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.csproj.GenerateResource.cache
@@ -42,3 +41,12 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\Lord
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.pdb
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\VAMemory.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\MemorySharp.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.Direct2D1.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.DXGI.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.pdb
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.Direct2D1.pdb
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.Direct2D1.xml
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.DXGI.pdb
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.DXGI.xml
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\DirectX_Renderer.Overlay_SharpDX.resources
