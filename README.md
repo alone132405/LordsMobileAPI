@@ -6,10 +6,6 @@
 
 API Lords Mobile (Steam version for Windows only x64 bit)
 
-Required Lords Mobile settings:
-
-![alt text](https://i.ibb.co/qY1HDYY/image.png)
-
 API Example screenshot:
 
 ![alt text](https://i.ibb.co/tMqsFN2/image.png)
