@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Nekiplay</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/Nekiplay/LordsMobileAPI</projectUrl>
+    <iconUrl>https://www.apkmirror.com/wp-content/uploads/2019/06/5d0cba7571f90.png</iconUrl>
+    <description>API for LordsMobile Steam</description>
+    <releaseNotes>First release.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>LordsMobile API LordsMobileAPI C#</tags>
+  </metadata>
+</package>
