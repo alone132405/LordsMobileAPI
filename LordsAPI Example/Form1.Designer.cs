@@ -62,6 +62,7 @@
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Users;
             this.iconButton2.IconColor = System.Drawing.Color.White;
             this.iconButton2.IconSize = 32;
@@ -82,6 +83,7 @@
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.iconButton1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FortAwesome;
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconSize = 32;
@@ -157,6 +159,7 @@
             // 
             // panelDesktop
             // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(78)))));
             this.panelDesktop.Location = new System.Drawing.Point(200, 61);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(725, 468);

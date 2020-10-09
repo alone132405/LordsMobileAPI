@@ -27,6 +27,10 @@ namespace LordsAPI_Example.Forms
             }).Start();
             new Thread(() =>
             {
+                label2.Invoke((MethodInvoker)(() => label2.Text = "Power: " + LordsMobileAPI.API.LocalUser.Guild.Statistic.Get.Power));
+            }).Start();
+            new Thread(() =>
+            {
                 label4.Invoke((MethodInvoker)(() => label4.Text = "Keys: " + LordsMobileAPI.API.LocalUser.Guild.Gifts.Get.Keys));
             }).Start();
             new Thread(() =>
