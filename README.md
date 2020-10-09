@@ -10,6 +10,6 @@ API Lords Mobile (Steam version for Windows only x64 bit)
 
 API Example screenshot:
 
-![alt text](https://i.ibb.co/KqB0z7D/image.png)
+![alt text](https://i.ibb.co/bHBsDph/image.png)
 
 ![alt text](https://i.ibb.co/BtYq7gx/image.png)
