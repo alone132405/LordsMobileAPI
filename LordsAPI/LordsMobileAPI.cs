@@ -34,6 +34,21 @@ namespace LordsAPI
                     {
                         return await Task.Run(() => IP);
                     }
+                    public static string Nickname
+                    {
+                        get
+                        {
+                            string ip = "";
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess.ProcessName);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x0222B9F8, 0x280, 0x450, 0x108, 0x760, 0x4d4 });
+                            ip = vam.ReadStringUnicode(hp, 22);
+                            return ip;
+                        }
+                    }
+                    public static async Task<string> NicknameAsync()
+                    {
+                        return await Task.Run(() => Nickname);
+                    }
                 }
             }
             public class LocalUser
