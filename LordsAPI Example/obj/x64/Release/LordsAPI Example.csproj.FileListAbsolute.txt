@@ -26,3 +26,6 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\Shar
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.DXGI.pdb
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.DXGI.xml
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\DirectX_Renderer.Overlay_SharpDX.resources
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\FontAwesome.Sharp.dll
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.Castle.resources
+C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.Forms.Guild.resources

@@ -43,14 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="568832">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FontAwesome.Sharp.dll" size="452608">
+      <assemblyIdentity name="FontAwesome.Sharp" version="5.14.1.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>OQilDxF9tpO0+eQUJAXwZAfsunluwdTD6ALFbrdZzvU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="638464">
       <assemblyIdentity name="LordsAPI Example" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gemDNILkeHsO9nfE1TDcRFwgU5zmQKUl/PZ/pvEz+N8=</dsig:DigestValue>
+        <dsig:DigestValue>eKIYSquMTNiylNmgKe48FiPF/oeaEV6VHGASC0QH6pc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Jlk//wFxSUKDU78o3bYK6TXtnrpiGvFHlxufTH7pTDA=</dsig:DigestValue>
+        <dsig:DigestValue>14ZWTiOonFpM+LVpkLGQgqjDvZ/7QDv6vpl4SeOk3qQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
