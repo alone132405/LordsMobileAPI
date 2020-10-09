@@ -16,7 +16,6 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\Lord
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.csproj.CopyComplete
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.exe
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.pdb
-C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\VAMemory.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.Direct2D1.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\SharpDX.DXGI.dll

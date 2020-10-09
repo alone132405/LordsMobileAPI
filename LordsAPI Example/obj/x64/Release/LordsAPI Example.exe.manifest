@@ -62,19 +62,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4jUqdZNURvYNupOrKpU9h631R/Ff9xe8gdPE0ed6lBo=</dsig:DigestValue>
+        <dsig:DigestValue>OuOtAkn2lYsRagfRrsIIfEyBjCB9pYFWZkIsqyBjCW8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI.dll" size="34816">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI.dll" size="45568">
       <assemblyIdentity name="LordsAPI" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>f0WohRA+1SPEbnF0xSTAhSbAgiGBeUlKkK8qO5VrZSE=</dsig:DigestValue>
+        <dsig:DigestValue>jK8zjQqoj4rRD2JmG69QGoC1+A87UozFk+mReCB70gA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -111,18 +111,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>vAJDE0yTxV6hBdDpwqQ7YDDpcykNCgYc86YZhqImiog=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="VAMemory.dll" size="14848">
-      <assemblyIdentity name="VAMemory" version="1.2.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>exL/e0AgnSwxhf5fgcPzDr8lcxYNJv7Q/tGeDw6hFwI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
