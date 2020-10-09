@@ -30,7 +30,6 @@ namespace LordsAPI_Example
             InitializeComponent();
 
             leftBorderBtn = new Panel();
-            leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
 
             this.Text = "";
@@ -156,6 +155,7 @@ namespace LordsAPI_Example
                 //Left border button
                 leftBorderBtn.BackColor = color;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Size = new Size(7, currentBtn.Size.Height);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
                 //Current Child Form Icon
@@ -176,13 +176,19 @@ namespace LordsAPI_Example
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new Castle());
+            new Thread(() =>
+            {
+                panelDesktop.Invoke((MethodInvoker)(() => OpenChildForm(new Castle())));
+            }).Start();
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new Guild());
+            new Thread(() =>
+            {
+                panelDesktop.Invoke((MethodInvoker)(() => OpenChildForm(new Guild())));
+            }).Start();
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)

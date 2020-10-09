@@ -53,7 +53,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 519);
+            this.panelMenu.Size = new System.Drawing.Size(142, 519);
             this.panelMenu.TabIndex = 20;
             // 
             // iconButton2
@@ -67,10 +67,10 @@
             this.iconButton2.IconColor = System.Drawing.Color.White;
             this.iconButton2.IconSize = 32;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 156);
+            this.iconButton2.Location = new System.Drawing.Point(0, 136);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(200, 60);
+            this.iconButton2.Size = new System.Drawing.Size(142, 40);
             this.iconButton2.TabIndex = 1;
             this.iconButton2.Text = "Guild";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -91,7 +91,7 @@
             this.iconButton1.Location = new System.Drawing.Point(0, 90);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(200, 60);
+            this.iconButton1.Size = new System.Drawing.Size(142, 40);
             this.iconButton1.TabIndex = 0;
             this.iconButton1.Text = "Castle";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -105,8 +105,8 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.Size = new System.Drawing.Size(118, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
@@ -117,9 +117,9 @@
             this.panel2.Controls.Add(this.iconPictureBox2);
             this.panel2.Controls.Add(this.iconPictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Location = new System.Drawing.Point(142, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(725, 61);
+            this.panel2.Size = new System.Drawing.Size(720, 61);
             this.panel2.TabIndex = 21;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -160,9 +160,10 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(78)))));
-            this.panelDesktop.Location = new System.Drawing.Point(200, 61);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDesktop.Location = new System.Drawing.Point(142, 61);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(725, 468);
+            this.panelDesktop.Size = new System.Drawing.Size(720, 468);
             this.panelDesktop.TabIndex = 22;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
@@ -170,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 519);
+            this.ClientSize = new System.Drawing.Size(862, 519);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel2);
