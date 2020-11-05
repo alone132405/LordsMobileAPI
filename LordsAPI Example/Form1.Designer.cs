@@ -35,14 +35,11 @@
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,8 +133,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.iconPictureBox2);
             this.panel2.Controls.Add(this.iconPictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(142, 0);
@@ -145,27 +140,6 @@
             this.panel2.Size = new System.Drawing.Size(720, 61);
             this.panel2.TabIndex = 21;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(44, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Home";
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox2.Location = new System.Drawing.Point(6, 13);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox2.TabIndex = 1;
-            this.iconPictureBox2.TabStop = false;
             // 
             // iconPictureBox1
             // 
@@ -209,8 +183,6 @@
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -224,8 +196,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Panel panelDesktop;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButton3;
     }
 }

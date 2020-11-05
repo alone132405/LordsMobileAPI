@@ -10,7 +10,17 @@ namespace LordsAPI_GiftActivator
             IGG_ID,
             Nickname,
         }
-        public static bool Activate(Methods method, string igg_id, string promo)
+        public enum Results
+        {
+            Invalid_Code,
+            Expired_Code,
+            Invalid_Nickname,
+            Invalid_IGG_ID,
+            Sucess,
+            System_Error,
+            Already_Activated,
+        }
+        public static Results Activate(Methods method, string igg_id, string promo)
         {
             if (method == Methods.IGG_ID)
             {
@@ -42,15 +52,40 @@ namespace LordsAPI_GiftActivator
                     submit.Click();
 
                     var donemsg = driver.FindElement(doneMessageElement);
-                    driver.Close();
-                    driver.Quit();
                     if (donemsg.Text != "Время действия кода истекло.[base]" && donemsg.Text != "Этот код уже был активирован!" && donemsg.Text != "Вы ввели неверный код.[C02]")
-                        return true;
-                    else return false;
+                    {
+                        driver.Close();
+                        driver.Quit();
+                        return Results.Sucess;
+                    }
+                    else if (donemsg.Text == "Вы ввели неверный код.[C02]")
+                    {
+                        driver.Close();
+                        driver.Quit();
+                        return Results.Invalid_Code;
+                    }
+                    else if (donemsg.Text == "Время действия кода истекло.[base]")
+                    {
+                        driver.Close();
+                        driver.Quit();
+                        return Results.Expired_Code;
+                    }
+                    else if (donemsg.Text == "Этот код уже был активирован!")
+                    {
+                        driver.Close();
+                        driver.Quit();
+                        return Results.Already_Activated;
+                    }
+                    else
+                    {
+                        driver.Close();
+                        driver.Quit();
+                        return Results.System_Error;
+                    }
                 }
                 catch
                 {
-                    return false;
+                    return Results.System_Error;
                 }
             }
             else if (method == Methods.Nickname)
@@ -84,27 +119,50 @@ namespace LordsAPI_GiftActivator
                         submit2.Click();
 
                         var donemsg2 = driver.FindElement(By.Id("msg"));
-                        driver.Close();
-                        driver.Quit();
                         if (donemsg2.Text != "Время действия кода истекло.[base]" && donemsg2.Text != "Этот код уже был активирован!" && donemsg2.Text != "Вы ввели неверный код.[C02]")
                         {
-                            return true;
+                            driver.Close();
+                            driver.Quit();
+                            return Results.Sucess;
                         }
-                        else return true;
+                        else if (donemsg2.Text == "Вы ввели неверный код.[C02]")
+                        {
+                            driver.Close();
+                            driver.Quit();
+                            return Results.Invalid_Code;
+                        }
+                        else if (donemsg2.Text == "Время действия кода истекло.[base]")
+                        {
+                            driver.Close();
+                            driver.Quit();
+                            return Results.Expired_Code;
+                        }
+                        else if (donemsg2.Text == "Этот код уже был активирован!")
+                        {
+                            driver.Close();
+                            driver.Quit();
+                            return Results.Already_Activated;
+                        }
+                        else
+                        {
+                            driver.Close();
+                            driver.Quit();
+                            return Results.System_Error;
+                        }
                     }
                     else
                     {
                         driver.Close();
                         driver.Quit();
-                        return false;
+                        return Results.Invalid_Nickname;
                     }
                 }
                 catch
                 {
-                    return false;
+                    return Results.System_Error;
                 }
             }
-            else return false;
+            else return Results.System_Error;
         }
     }
 }

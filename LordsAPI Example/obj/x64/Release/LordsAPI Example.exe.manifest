@@ -62,19 +62,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CHeetyh/AMCJQnz/OBUhfKSTE8QTrej9766BlFkn3HU=</dsig:DigestValue>
+        <dsig:DigestValue>9haMpx2nGZB9v7TPhzrti8f3ss0yqYrA2DMKqgnCJKk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI GiftActivator.dll" size="6144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI GiftActivator.dll" size="6656">
       <assemblyIdentity name="LordsAPI GiftActivator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UbAbpQMC+MX2MMbKdyrBIfhSD58Nxi/ZzmP38c0/YxU=</dsig:DigestValue>
+        <dsig:DigestValue>r+imwwPWNiIEFPjc2prUY5O2397m/B7geyXyVzK6ZmY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
