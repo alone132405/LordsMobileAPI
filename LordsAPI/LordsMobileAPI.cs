@@ -57,7 +57,7 @@ namespace LordsAPI
                         return ip;
                     }
                 }
-                public static string IPandPort
+                public static string IP
                 {
                     get
                     {
@@ -65,12 +65,12 @@ namespace LordsAPI
                         VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
                         var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AF3A8, 0x40, 0x98, 0x118, 0x18, 0xB8, 0xD8, 0x14 });
                         ip = vam.ReadStringUnicode(hp, 42);
-                        return ip + ":5991";
+                        return ip;
                     }
                 }
                 public static async Task<string> IPAsync()
                 {
-                    return await Task.Run(() => IPandPort);
+                    return await Task.Run(() => IP);
                 }
                 public static string Nickname
                 {

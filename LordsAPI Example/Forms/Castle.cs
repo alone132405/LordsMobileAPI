@@ -23,7 +23,7 @@ namespace LordsAPI_Example
         {
             new Thread(() =>
             {
-                label45.Invoke((MethodInvoker)(() => label45.Text = "IP: " + LordsMobileAPI.API.Server.IPandPort));
+                label45.Invoke((MethodInvoker)(() => label45.Text = "IP: " + LordsMobileAPI.API.Server.IP));
             }).Start();
             new Thread(() =>
             {
