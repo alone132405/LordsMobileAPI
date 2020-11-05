@@ -23,23 +23,23 @@ namespace LordsAPI_Example
         {
             new Thread(() =>
             {
-                label45.Invoke((MethodInvoker)(() => label45.Text = "IP: " + LordsMobileAPI.API.Server.Get.IPandPort));
+                label45.Invoke((MethodInvoker)(() => label45.Text = "IP: " + LordsMobileAPI.API.Server.IPandPort));
             }).Start();
             new Thread(() =>
             {
-                label1.Invoke((MethodInvoker)(() => label1.Text = "Gems: " + LordsMobileAPI.API.LocalUser.Statistic.Gems.Get.Count));
+                label1.Invoke((MethodInvoker)(() => label1.Text = "Gems: " + LordsMobileAPI.API.LocalUser.Statistic.Gems.Count));
             }).Start();
             new Thread(() =>
             {
-                label2.Invoke((MethodInvoker)(() => label2.Text = "Power: " + LordsMobileAPI.API.LocalUser.Statistic.Power.Get.Count));
+                label2.Invoke((MethodInvoker)(() => label2.Text = "Power: " + LordsMobileAPI.API.LocalUser.Statistic.Power.Count));
             }).Start();
             new Thread(() =>
             {
-                label3.Invoke((MethodInvoker)(() => label3.Text = "Energy: " + LordsMobileAPI.API.LocalUser.Statistic.Energy.Get.Count));
+                label3.Invoke((MethodInvoker)(() => label3.Text = "Energy: " + LordsMobileAPI.API.LocalUser.Statistic.Energy.Count));
             }).Start();
             new Thread(() =>
             {
-                string treasurebox = LordsMobileAPI.API.LocalUser.Castle.MysteryBox.Get.Time;
+                string treasurebox = LordsMobileAPI.API.LocalUser.Castle.MysteryBox.Time;
                 if (treasurebox.Contains(":"))
                     iconPictureBox4.Invoke((MethodInvoker)(() => iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Box));
                 else
@@ -48,48 +48,48 @@ namespace LordsAPI_Example
             }).Start();
             new Thread(() =>
             {
-                label5.Invoke((MethodInvoker)(() => label5.Text = "Stamina: " + LordsMobileAPI.API.LocalUser.Statistic.Stamina.Get.Count));
+                label5.Invoke((MethodInvoker)(() => label5.Text = "Stamina: " + LordsMobileAPI.API.LocalUser.Statistic.Stamina.Count));
             }).Start();
             new Thread(() =>
             {
-                label6.Invoke((MethodInvoker)(() => label6.Text = "IGG ID: " + LordsMobileAPI.API.LocalUser.Auth.Get.IGG_ID));
+                label6.Invoke((MethodInvoker)(() => label6.Text = "IGG ID: " + LordsMobileAPI.API.LocalUser.Auth.IGG_ID));
             }).Start();
             new Thread(() =>
             {
-                label7.Invoke((MethodInvoker)(() => label7.Text = "Gems: " + LordsMobileAPI.API.LocalUser.Castle.Coliseum.Get.Gems));
+                label7.Invoke((MethodInvoker)(() => label7.Text = "Gems: " + LordsMobileAPI.API.LocalUser.Castle.Coliseum.Gems));
             }).Start();
             /* Resourses */
             new Thread(() =>
             {
-                label9.Invoke((MethodInvoker)(() => label9.Text = "Food: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Food.Get.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Food.Get.Maximum));
+                label9.Invoke((MethodInvoker)(() => label9.Text = "Food: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Food.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Food.Maximum));
             }).Start();
             new Thread(() =>
             {
-                label12.Invoke((MethodInvoker)(() => label12.Text = "Stone: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Stone.Get.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Stone.Get.Maximum));
+                label12.Invoke((MethodInvoker)(() => label12.Text = "Stone: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Stone.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Stone.Maximum));
             }).Start();
             new Thread(() =>
             {
-                label13.Invoke((MethodInvoker)(() => label13.Text = "Wood: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Wood.Get.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Wood.Get.Maximum));
+                label13.Invoke((MethodInvoker)(() => label13.Text = "Wood: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Wood.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Wood.Maximum));
             }).Start();
             new Thread(() =>
             {
-                label8.Invoke((MethodInvoker)(() => label8.Text = "Ore: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Ore.Get.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Ore.Get.Maximum));
+                label8.Invoke((MethodInvoker)(() => label8.Text = "Ore: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Ore.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Ore.Maximum));
             }).Start();
             new Thread(() =>
             {
-                label11.Invoke((MethodInvoker)(() => label11.Text = "Gold: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Gold.Get.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Gold.Get.Maximum));
+                label11.Invoke((MethodInvoker)(() => label11.Text = "Gold: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Gold.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Gold.Maximum));
             }).Start();
             new Thread(() =>
             {
-                label10.Invoke((MethodInvoker)(() => label10.Text = "Anima: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.Maximum));
+                label10.Invoke((MethodInvoker)(() => label10.Text = "Anima: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Maximum));
             }).Start();
             new Thread(() =>
             {
-                label17.Invoke((MethodInvoker)(() => label17.Text = "Rank: " + LordsMobileAPI.API.LocalUser.Castle.Coliseum.Get.Rank));
+                label17.Invoke((MethodInvoker)(() => label17.Text = "Rank: " + LordsMobileAPI.API.LocalUser.Castle.Coliseum.Rank));
             }).Start();
             new Thread(() =>
             {
-                label44.Invoke((MethodInvoker)(() => label44.Text = "Version: " + LordsMobileAPI.API.Server.Get.Version));
+                label44.Invoke((MethodInvoker)(() => label44.Text = "Version: " + LordsMobileAPI.API.Server.Version));
             }).Start();
             /* Army */
             new Thread(() =>
@@ -146,7 +146,7 @@ namespace LordsAPI_Example
             }).Start();
             new Thread(() =>
             {
-                label46.Invoke((MethodInvoker)(() => label46.Text = "Activated: " + string.Join(", ", LordsMobileAPI.API.Server.Get.ActatedPromoCodes)));
+                label46.Invoke((MethodInvoker)(() => label46.Text = "Activated: " + string.Join(", ", LordsMobileAPI.API.Server.ActatedPromoCodes)));
             }).Start();
         }
 
