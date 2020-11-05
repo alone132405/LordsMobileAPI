@@ -55,14 +55,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="740864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI Example.exe" size="742400">
       <assemblyIdentity name="LordsAPI Example" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iezX+B9Mno+POWJ1lTItfOYyqsT1HqW+Mt002ifQmLQ=</dsig:DigestValue>
+        <dsig:DigestValue>qxxfUTaIeCaFmDooXVEVpCQMqnaPt3pGbk+r9MmlriY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsAPI GiftActivator.dll" size="5632">
+      <assemblyIdentity name="LordsAPI GiftActivator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>c84h8USx1VFXVJL7uNuMsXm7T11SP1PDCQt8zxTKUkM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -75,18 +87,6 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>ZOWZCKwN6HecLyoHENFmTuhvXHPPBry88xOpuxr3hu0=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LordsMobileGiftActivator.dll" size="5632">
-      <assemblyIdentity name="LordsMobileGiftActivator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oTkOTPiGr3YkFoYqLas8iytEIyF0L5Q4LcGQTv21EH4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

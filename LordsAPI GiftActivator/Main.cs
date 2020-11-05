@@ -1,8 +1,9 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Threading;
 
-namespace LordsMobileGiftActivator
+namespace LordsAPI_GiftActivator
 {
     public class LordsMobileGift
     {
@@ -17,7 +18,14 @@ namespace LordsMobileGiftActivator
             {
                 try
                 {
-                    IWebDriver driver = new OpenQA.Selenium.Chrome.ChromeDriver();
+                    ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+                    service.HideCommandPromptWindow = true;
+
+                    var options = new ChromeOptions();
+                    options.AddArgument("--window-position=-32000,-32000");
+
+                    IWebDriver driver = new OpenQA.Selenium.Chrome.ChromeDriver(service, options);
+                    driver.Manage().Window.Minimize();
                     driver.Navigate().GoToUrl("https://lordsmobile.igg.com/gifts/");
 
                     By igg_idInputElement = By.XPath("//input[@class='myname']");
@@ -37,6 +45,7 @@ namespace LordsMobileGiftActivator
 
                     var donemsg = driver.FindElement(doneMessageElement);
                     driver.Close();
+                    driver.Quit();
                     return true;
                 }
                 catch
@@ -48,7 +57,14 @@ namespace LordsMobileGiftActivator
             {
                 try
                 {
-                    IWebDriver driver = new OpenQA.Selenium.Chrome.ChromeDriver();
+                    ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+                    service.HideCommandPromptWindow = true;
+
+                    var options = new ChromeOptions();
+                    options.AddArgument("--window-position=-32000,-32000");
+
+                    IWebDriver driver = new OpenQA.Selenium.Chrome.ChromeDriver(service, options);
+                    driver.Manage().Window.Minimize();
                     driver.Navigate().GoToUrl("https://lordsmobile.igg.com/gifts/");
 
                     var methodfind = driver.FindElement(By.ClassName("tab-list-2"));
@@ -69,11 +85,13 @@ namespace LordsMobileGiftActivator
 
                         var donemsg2 = driver.FindElement(By.Id("msg"));
                         driver.Close();
+                        driver.Quit();
                         return true;
                     }
                     else
                     {
                         driver.Close();
+                        driver.Quit();
                         return false;
                     }
                 }
