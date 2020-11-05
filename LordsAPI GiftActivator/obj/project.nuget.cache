@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D9TOxMyGVZrEBIUepQUsHv5hUqnVw0QmOQlRsLQAhPFwXybYqoBCTl/vWBJ8AmBxx7AgNYgOon+j5x/uusHG9Q==",
+  "dgSpecHash": "KdugPrakFlNGg1aYDZsbtC7ijj3LrE7uzPJlB8L1TPndz81gTKVk2/oVpX9Ge66Drtqa/5vUJwy/1NCBlCid8w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsMobileGiftActivator\\LordsMobileGiftActivator.csproj",
+  "projectFilePath": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Herob\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\Herob\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

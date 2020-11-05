@@ -130,8 +130,8 @@
     <Reference Include="FontAwesome.Sharp, Version=5.14.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.14.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="LordsMobileGiftActivator">
-      <HintPath>..\LordsMobileGiftActivator\bin\Release\netstandard2.0\LordsMobileGiftActivator.dll</HintPath>
+    <Reference Include="LordsAPI GiftActivator">
+      <HintPath>..\LordsAPI GiftActivator\bin\Release\netstandard2.0\LordsAPI GiftActivator.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

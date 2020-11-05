@@ -3205,11 +3205,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsMobileGiftActivator\\LordsMobileGiftActivator.csproj",
-      "projectName": "LordsMobileGiftActivator",
-      "projectPath": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsMobileGiftActivator\\LordsMobileGiftActivator.csproj",
+      "projectUniqueName": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj",
+      "projectName": "LordsAPI GiftActivator",
+      "projectPath": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj",
       "packagesPath": "C:\\Users\\Herob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsMobileGiftActivator\\obj\\",
+      "outputPath": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsAPI GiftActivator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Herob\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -7,13 +7,13 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "LordsMobileGiftActivator/1.0.0": {
+      "LordsAPI GiftActivator/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Selenium.WebDriver": "3.141.0"
         },
         "runtime": {
-          "LordsMobileGiftActivator.dll": {}
+          "LordsAPI GiftActivator.dll": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -557,7 +557,7 @@
     }
   },
   "libraries": {
-    "LordsMobileGiftActivator/1.0.0": {
+    "LordsAPI GiftActivator/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

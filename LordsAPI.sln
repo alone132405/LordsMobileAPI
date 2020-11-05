@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LordsAPI Example", "LordsAP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LordsAPI", "LordsAPI\LordsAPI.csproj", "{E6950BC1-D186-4954-AAD4-3CED484249A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LordsMobileGiftActivator", "LordsMobileGiftActivator\LordsMobileGiftActivator.csproj", "{1508B077-759C-43AF-BB8D-298989572652}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LordsAPI GiftActivator", "LordsAPI GiftActivator\LordsAPI GiftActivator.csproj", "{1508B077-759C-43AF-BB8D-298989572652}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,18 @@
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsMobileGiftActivator\bin\Release\netstandard2.0\LordsAPI GiftActivator.deps.json
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsMobileGiftActivator\bin\Release\netstandard2.0\LordsAPI GiftActivator.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsMobileGiftActivator\bin\Release\netstandard2.0\LordsAPI GiftActivator.pdb
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsMobileGiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.csprojAssemblyReference.cache
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsMobileGiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.AssemblyInfoInputs.cache
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsMobileGiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.AssemblyInfo.cs
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsMobileGiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.csproj.CoreCompileInputs.cache
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsMobileGiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsMobileGiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.pdb
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI GiftActivator\bin\Release\netstandard2.0\LordsAPI GiftActivator.deps.json
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI GiftActivator\bin\Release\netstandard2.0\LordsAPI GiftActivator.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI GiftActivator\bin\Release\netstandard2.0\LordsAPI GiftActivator.pdb
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI GiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.csprojAssemblyReference.cache
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI GiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.AssemblyInfoInputs.cache
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI GiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.AssemblyInfo.cs
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI GiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.csproj.CoreCompileInputs.cache
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI GiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI GiftActivator\obj\Release\netstandard2.0\LordsAPI GiftActivator.pdb
