@@ -53,7 +53,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(142, 519);
+            this.panelMenu.Size = new System.Drawing.Size(142, 543);
             this.panelMenu.TabIndex = 20;
             // 
             // iconButton2
@@ -163,7 +163,7 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDesktop.Location = new System.Drawing.Point(142, 61);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(720, 468);
+            this.panelDesktop.Size = new System.Drawing.Size(720, 499);
             this.panelDesktop.TabIndex = 22;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
@@ -171,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 519);
+            this.ClientSize = new System.Drawing.Size(862, 543);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panel2);
