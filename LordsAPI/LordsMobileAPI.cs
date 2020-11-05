@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace LordsAPI
@@ -93,10 +94,32 @@ namespace LordsAPI
                     {
                         get
                         {
+                            string doneid = "";
                             VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
                             var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022A6F50, 0xB8, 0x18, 0x18, 0x100, 0x228, 0x8E0, 0x14 });
                             string iggid = vam.ReadStringUnicode(hp, 26);
-                            return iggid;
+                            StringBuilder sb = new StringBuilder(iggid.Length);
+
+                            foreach (char ch in iggid)
+                            {
+                                if (ch >= '0' && ch <= '9')
+                                {
+
+                                    sb.Append(ch);
+                                }
+                                else
+
+                                {
+
+                                    // ... "подсчеты"
+
+                                }
+
+                            }
+
+                            doneid = sb.ToString();
+
+                            return doneid;
                         }
                     }
                     public static async Task<string> IGG_IDAsync()

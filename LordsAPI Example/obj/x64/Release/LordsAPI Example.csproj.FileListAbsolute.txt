@@ -28,3 +28,7 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\Dire
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\FontAwesome.Sharp.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.Castle.resources
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.Forms.Guild.resources
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsMobileGiftActivator.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsMobileGiftActivator.pdb
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\WebDriver.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\Newtonsoft.Json.dll
