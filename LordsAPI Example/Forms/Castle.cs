@@ -146,7 +146,7 @@ namespace LordsAPI_Example
             }).Start();
             new Thread(() =>
             {
-                label46.Invoke((MethodInvoker)(() => label46.Text = "Activated: " + string.Join(", ", LordsMobileAPI.API.Server.ActatedPromoCodes)));
+                label46.Invoke((MethodInvoker)(() => label46.Text = "Activated: " + string.Join(", ", LordsMobileAPI.API.LocalUser.PromoCodes.Activated)));
             }).Start();
         }
 

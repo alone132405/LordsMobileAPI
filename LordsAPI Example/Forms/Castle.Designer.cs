@@ -105,8 +105,8 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label73 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.label76 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
@@ -523,8 +523,8 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.panel10);
             this.panel4.Controls.Add(this.panel9);
-            this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel7);
+            this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.label18);
@@ -697,7 +697,7 @@
             this.panel7.Controls.Add(this.label31);
             this.panel7.Controls.Add(this.label32);
             this.panel7.Controls.Add(this.label33);
-            this.panel7.Location = new System.Drawing.Point(120, 22);
+            this.panel7.Location = new System.Drawing.Point(10, 126);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(104, 91);
             this.panel7.TabIndex = 33;
@@ -760,7 +760,7 @@
             this.panel6.Controls.Add(this.label26);
             this.panel6.Controls.Add(this.label27);
             this.panel6.Controls.Add(this.label28);
-            this.panel6.Location = new System.Drawing.Point(10, 126);
+            this.panel6.Location = new System.Drawing.Point(120, 22);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(104, 91);
             this.panel6.TabIndex = 32;
@@ -966,16 +966,6 @@
             this.panel12.TabIndex = 36;
             this.panel12.Paint += new System.Windows.Forms.PaintEventHandler(this.panel12_Paint);
             // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label76.Location = new System.Drawing.Point(7, 6);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(67, 13);
-            this.label76.TabIndex = 0;
-            this.label76.Text = "PromoCodes";
-            // 
             // label46
             // 
             this.label46.AutoSize = true;
@@ -985,6 +975,16 @@
             this.label46.Size = new System.Drawing.Size(64, 13);
             this.label46.TabIndex = 32;
             this.label46.Text = "Activated: 0";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label76.Location = new System.Drawing.Point(7, 6);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(67, 13);
+            this.label76.TabIndex = 0;
+            this.label76.Text = "PromoCodes";
             // 
             // Castle
             // 

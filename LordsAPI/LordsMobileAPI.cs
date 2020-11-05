@@ -18,34 +18,6 @@ namespace LordsAPI
         {
             public class Server
             {
-                public static string[] ActatedPromoCodes
-                {
-                    get
-                    {
-                        List<string> codes = new List<string>();
-                        codes.Add("LM001");
-                        codes.Add("LM648");
-                        codes.Add("3N7YUXV6");
-                        codes.Add("6XEK34RJ");
-                        codes.Add("8FBC9J");
-                        return codes.ToArray();
-
-                    }
-                }
-                public static string[] PromoCodes
-                {
-                    get
-                    {
-                        string ip = "";
-                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022B3138, 0x58, 0x50, 0x48, 0xE38, 0x78, 0xB20 });
-                        ip = vam.ReadStringUnicode(hp, 9000);
-                        List<string> codes = new List<string>();
-                        ip = ip.Replace(" ", "");
-                        codes.AddRange(ip.Split(','));
-                        return codes.ToArray();
-                    }
-                }
                 public static string Version
                 {
                     get
@@ -90,9 +62,39 @@ namespace LordsAPI
             }
             public class LocalUser
             {
+                public class PromoCodes
+                {
+                    public static string[] Activated
+                    {
+                        get
+                        {
+                            string ip = "";
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022B3138, 0x58, 0x50, 0x48, 0xE38, 0x78, 0xB20 });
+                            ip = vam.ReadStringUnicode(hp, 9000);
+                            List<string> codes = new List<string>();
+                            ip = ip.Replace(" ", "");
+                            codes.AddRange(ip.Split(','));
+                            return codes.ToArray();
+                        }
+                    }
+                    public static string[] All
+                    {
+                        get
+                        {
+                            List<string> codes = new List<string>();
+                            codes.Add("LM001");
+                            codes.Add("LM648");
+                            codes.Add("3N7YUXV6");
+                            codes.Add("6XEK34RJ");
+                            codes.Add("8FBC9J");
+                            return codes.ToArray();
+
+                        }
+                    }
+                }
                 public class Auth
                 {
-
                     public static string IGG_ID
                     {
                         get
