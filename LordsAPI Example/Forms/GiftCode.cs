@@ -23,11 +23,13 @@ namespace LordsAPI_Example.Forms
             Enum.TryParse(comboBox1.Text, out method);
             await Task.Run(async() =>
             {
-                LordsAPI_GiftActivator.LordsMobileGift.Results complitestatus = LordsAPI_GiftActivator.LordsMobileGift.Activate(method, textBox1.Text, textBox2.Text);
+                string s1 = textBox1.Text;
+                string s2 = textBox2.Text;
+                LordsAPI_GiftActivator.LordsMobileGift.Results complitestatus = LordsAPI_GiftActivator.LordsMobileGift.Activate(method, s1, s2);
                 if (method == LordsAPI_GiftActivator.LordsMobileGift.Methods.IGG_ID)
-                    Console.WriteLine("[Gift Result] Method: " + method + " IGG ID: " + textBox1.Text + " Code: " + textBox2.Text + " Result: " + complitestatus);
+                    Console.WriteLine("[Gift Result] Method: " + method + " IGG ID: " + s1 + " Code: " + s2 + " Result: " + complitestatus);
                 if (method == LordsAPI_GiftActivator.LordsMobileGift.Methods.Nickname)
-                    Console.WriteLine("[Gift Result] Method: " + method + " Nickname: " + textBox1.Text + " Code: " + textBox2.Text + " Result: " + complitestatus);
+                    Console.WriteLine("[Gift Result] Method: " + method + " Nickname: " + s1 + " Code: " + s2 + " Result: " + complitestatus);
             });
         }
     }
