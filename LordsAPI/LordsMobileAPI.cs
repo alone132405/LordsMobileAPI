@@ -54,7 +54,7 @@ namespace LordsAPI
                         {
                             string ip = "";
                             VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AB450, 0x40, 0xB8, 0x90, 0x10, 0x1E0, 0x340, 0x14 });
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AA630, 0x98, 0x58, 0x18, 0xB8, 0x88, 0xA0, 0x14 });
                             ip = vam.ReadStringUnicode(hp, 22);
                             return ip;
                         }
@@ -102,7 +102,7 @@ namespace LordsAPI
                             get
                             {
                                 VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x021DA058, 0xb0, 0x6e0, 0x2c0, 0x710, 0x14 });
+                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022A6F50, 0xB8, 0x18, 0x18, 0x100, 0x228, 0x8E0, 0x14 });
                                 string iggid = vam.ReadStringUnicode(hp, 26);
                                 return iggid;
                             }
@@ -578,7 +578,7 @@ namespace LordsAPI
                                 {
                                     string hpint = "00:00:00";
                                     VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                                    var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022ABC30, 0xB8, 0x0, 0x10, 0xE8, 0x208, 0x178, 0x14 });
+                                    var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022B6928, 0xB8, 0x0, 0x10, 0x7A0, 0x348, 0xC8, 0x14 });
                                     hpint = vam.ReadStringUnicode(hp, 14);
                                     return hpint;
                                 }
