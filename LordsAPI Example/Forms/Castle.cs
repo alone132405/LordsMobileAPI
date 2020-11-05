@@ -23,6 +23,10 @@ namespace LordsAPI_Example
         {
             new Thread(() =>
             {
+                label45.Invoke((MethodInvoker)(() => label45.Text = "IP: " + LordsMobileAPI.API.Server.Get.IPandPort));
+            }).Start();
+            new Thread(() =>
+            {
                 label1.Invoke((MethodInvoker)(() => label1.Text = "Gems: " + LordsMobileAPI.API.LocalUser.Statistic.Gems.Get.Count));
             }).Start();
             new Thread(() =>
@@ -52,7 +56,7 @@ namespace LordsAPI_Example
             }).Start();
             new Thread(() =>
             {
-                label7.Invoke((MethodInvoker)(() => label7.Text = "Gems in the colosseum: " + LordsMobileAPI.API.LocalUser.Castle.Coliseum.Get.Gems));
+                label7.Invoke((MethodInvoker)(() => label7.Text = "Gems: " + LordsMobileAPI.API.LocalUser.Castle.Coliseum.Get.Gems));
             }).Start();
             /* Resourses */
             new Thread(() =>
@@ -78,6 +82,67 @@ namespace LordsAPI_Example
             new Thread(() =>
             {
                 label10.Invoke((MethodInvoker)(() => label10.Text = "Anima: " + Math.Round(LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.Count, 0) + "/" + LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Get.Maximum));
+            }).Start();
+            new Thread(() =>
+            {
+                label17.Invoke((MethodInvoker)(() => label17.Text = "Rank: " + LordsMobileAPI.API.LocalUser.Castle.Coliseum.Get.Rank));
+            }).Start();
+            new Thread(() =>
+            {
+                label44.Invoke((MethodInvoker)(() => label44.Text = "Version: " + LordsMobileAPI.API.Server.Get.Version));
+            }).Start();
+            /* Army */
+            new Thread(() =>
+            {
+                label20.Invoke((MethodInvoker)(() => label20.Text = "Infantry: " + LordsMobileAPI.API.LocalUser.Castle.Army.Infantry.T1.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label21.Invoke((MethodInvoker)(() => label21.Text = "Archer: " + LordsMobileAPI.API.LocalUser.Castle.Army.Archer.T1.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label22.Invoke((MethodInvoker)(() => label22.Text = "Rider: " + LordsMobileAPI.API.LocalUser.Castle.Army.Rider.T1.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label23.Invoke((MethodInvoker)(() => label23.Text = "Ballista: " + LordsMobileAPI.API.LocalUser.Castle.Army.Ballista.T1.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label24.Invoke((MethodInvoker)(() => label24.Text = "Ballista: " + LordsMobileAPI.API.LocalUser.Castle.Army.Ballista.T2.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label25.Invoke((MethodInvoker)(() => label25.Text = "Rider: " + LordsMobileAPI.API.LocalUser.Castle.Army.Rider.T2.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label26.Invoke((MethodInvoker)(() => label26.Text = "Archer: " + LordsMobileAPI.API.LocalUser.Castle.Army.Archer.T2.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label27.Invoke((MethodInvoker)(() => label27.Text = "Infantry: " + LordsMobileAPI.API.LocalUser.Castle.Army.Infantry.T2.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label32.Invoke((MethodInvoker)(() => label32.Text = "Infantry: " + LordsMobileAPI.API.LocalUser.Castle.Army.Infantry.T3.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label31.Invoke((MethodInvoker)(() => label31.Text = "Archer: " + LordsMobileAPI.API.LocalUser.Castle.Army.Archer.T3.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label30.Invoke((MethodInvoker)(() => label30.Text = "Rider: " + LordsMobileAPI.API.LocalUser.Castle.Army.Rider.T3.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label29.Invoke((MethodInvoker)(() => label29.Text = "Ballista: " + LordsMobileAPI.API.LocalUser.Castle.Army.Ballista.T3.Count));
+            }).Start();
+            new Thread(() =>
+            {
+                label47.Invoke((MethodInvoker)(() => label47.Text = "Total: " + LordsMobileAPI.API.LocalUser.Castle.Army.TotalCount));
             }).Start();
         }
     }

@@ -21,20 +21,16 @@ namespace LordsAPI_Example.Forms
 
         private void Guild_Load(object sender, EventArgs e)
         {
-            new Thread(() =>
-            {
+            new Thread(() => {
                 label1.Invoke((MethodInvoker)(() => label1.Text = "Money: " + LordsMobileAPI.API.LocalUser.Guild.Shop.Get.Money));
             }).Start();
-            new Thread(() =>
-            {
+            new Thread(() => {
                 label2.Invoke((MethodInvoker)(() => label2.Text = "Power: " + LordsMobileAPI.API.LocalUser.Guild.Statistic.Get.Power));
             }).Start();
-            new Thread(() =>
-            {
-                label4.Invoke((MethodInvoker)(() => label4.Text = "Keys: " + LordsMobileAPI.API.LocalUser.Guild.Gifts.Get.Keys));
+            new Thread(() => {
+                label4.Invoke((MethodInvoker)(() => label4.Text = "Keys: " + LordsMobileAPI.API.LocalUser.Guild.Gifts.Get.Keys)); 
             }).Start();
-            new Thread(() =>
-            {
+            new Thread(() => {
                 label3.Invoke((MethodInvoker)(() => label3.Text = "Help: " + LordsMobileAPI.API.LocalUser.Guild.Help.OtherUser.Get.Count));
             }).Start();
         }

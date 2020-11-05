@@ -160,7 +160,7 @@ namespace LordsAPI
         }
         public static IntPtr PointRead(IntPtr baseAddres, int[] offsets)
         {
-            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess.ProcessName);
+            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
             for (int i = 0; i < offsets.Count() - 1; i++)
             {
                 baseAddres = (IntPtr)vam.ReadInt64(IntPtr.Add(baseAddres, offsets[i]));

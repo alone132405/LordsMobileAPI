@@ -112,20 +112,22 @@ namespace LordsAPI_Example
         }
         private void OpenChildForm(Form childForm)
         {
-            //open only form
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            //End
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
+
+                //open only form
+                if (currentChildForm != null)
+                {
+                    currentChildForm.Close();
+                }
+                currentChildForm = childForm;
+                //End
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+                panelDesktop.Controls.Clear();
+                panelDesktop.Controls.Add(childForm);
+                panelDesktop.Tag = childForm;
+                childForm.BringToFront();
+                childForm.Show();
         }
         private FontAwesome.Sharp.IconButton currentBtn;
         private Panel leftBorderBtn;
@@ -141,7 +143,7 @@ namespace LordsAPI_Example
         }
         private void ActivateButton(object senderBtn, Color color)
         {
-            if (senderBtn != null)
+            if (senderBtn != null && senderBtn != currentBtn)
             {
                 DisableButton();
                 //Button
@@ -173,22 +175,18 @@ namespace LordsAPI_Example
                 currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
+        private Guild guild = new Guild();
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            new Thread(() =>
-            {
-                panelDesktop.Invoke((MethodInvoker)(() => OpenChildForm(new Castle())));
-            }).Start();
+            OpenChildForm(new Castle());
+
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            new Thread(() =>
-            {
-                panelDesktop.Invoke((MethodInvoker)(() => OpenChildForm(new Guild())));
-            }).Start();
+            OpenChildForm(new Guild());
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)

@@ -1,7 +1,6 @@
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI\obj\x64\Debug\LordsAPI.csproj.CoreCompileInputs.cache
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\bin\x64\Debug\LordsAPI.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\bin\x64\Debug\LordsAPI.pdb
-C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\obj\x64\Debug\LordsAPI.csproj.CopyComplete
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\obj\x64\Debug\LordsAPI.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\obj\x64\Debug\LordsAPI.pdb
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI\obj\x64\Debug\LordsAPI.csprojAssemblyReference.cache

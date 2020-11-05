@@ -9,7 +9,6 @@ C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\LordsA
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\LordsAPI Example.exe
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\LordsAPI Example.pdb
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\LordsAPI.dll
-C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\VAMemory.dll
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\LordsAPI.pdb
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x64\Debug\LordsAPI Example.TrustInfo.xml
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x64\Debug\LordsAPI Example.exe.manifest
@@ -26,3 +25,6 @@ C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\SharpD
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\SharpDX.DXGI.pdb
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\SharpDX.DXGI.xml
 C:\Users\Herob\Source\Repos\LordsMobileAPI\LordsAPI Example\obj\x64\Debug\DirectX_Renderer.Overlay_SharpDX.resources
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Debug\FontAwesome.Sharp.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Debug\LordsAPI_Example.Castle.resources
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Debug\LordsAPI_Example.Forms.Guild.resources
