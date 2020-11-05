@@ -17,12 +17,15 @@ namespace LordsAPI_Example.Forms
             InitializeComponent();
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private async void iconButton1_Click(object sender, EventArgs e)
         {
             LordsAPI_GiftActivator.LordsMobileGift.Methods method = LordsAPI_GiftActivator.LordsMobileGift.Methods.IGG_ID;
             Enum.TryParse(comboBox1.Text, out method);
-            bool complitestatus = LordsAPI_GiftActivator.LordsMobileGift.Activate(method, textBox1.Text, textBox2.Text);
-            Console.WriteLine("GiftCode result: " + complitestatus);
+            await Task.Run(async() =>
+            {
+                bool complitestatus = LordsAPI_GiftActivator.LordsMobileGift.Activate(method, textBox1.Text, textBox2.Text);
+                Console.WriteLine("GiftCode result: " + complitestatus);
+            });
         }
     }
 }

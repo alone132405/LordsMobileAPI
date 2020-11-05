@@ -1,7 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
-using System.Threading;
 
 namespace LordsAPI_GiftActivator
 {
@@ -46,7 +44,9 @@ namespace LordsAPI_GiftActivator
                     var donemsg = driver.FindElement(doneMessageElement);
                     driver.Close();
                     driver.Quit();
-                    return true;
+                    if (donemsg.Text != "Время действия кода истекло.[base]" && donemsg.Text != "Этот код уже был активирован!" && donemsg.Text != "Вы ввели неверный код.[C02]")
+                        return true;
+                    else return false;
                 }
                 catch
                 {
@@ -86,7 +86,11 @@ namespace LordsAPI_GiftActivator
                         var donemsg2 = driver.FindElement(By.Id("msg"));
                         driver.Close();
                         driver.Quit();
-                        return true;
+                        if (donemsg2.Text != "Время действия кода истекло.[base]" && donemsg2.Text != "Этот код уже был активирован!" && donemsg2.Text != "Вы ввели неверный код.[C02]")
+                        {
+                            return true;
+                        }
+                        else return true;
                     }
                     else
                     {
