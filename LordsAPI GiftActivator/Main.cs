@@ -30,7 +30,8 @@ namespace LordsAPI_GiftActivator
                     service.HideCommandPromptWindow = true;
 
                     var options = new ChromeOptions();
-                    options.AddArgument("--window-position=-32000,-32000");
+                    options.AddArgument("--window-position=-32000,-32000,performance");
+                    options.AddArgument("--headless");
 
                     IWebDriver driver = new OpenQA.Selenium.Chrome.ChromeDriver(service, options);
                     driver.Manage().Window.Minimize();
@@ -97,6 +98,7 @@ namespace LordsAPI_GiftActivator
 
                     var options = new ChromeOptions();
                     options.AddArgument("--window-position=-32000,-32000");
+                    options.AddArgument("--headless");
 
                     IWebDriver driver = new OpenQA.Selenium.Chrome.ChromeDriver(service, options);
                     driver.Manage().Window.Minimize();
