@@ -1,4 +1,5 @@
 ﻿using DirectX_Renderer;
+using DiscordRPC;
 using LordsAPI;
 using LordsAPI_Example.Forms;
 using SharpDX.Direct2D1;
@@ -43,10 +44,30 @@ namespace LordsAPI_Example
         {
 
         }
-
+        private static int discordPipe = -1;
+        DiscordRpcClient client;
         private void Form1_Load(object sender, EventArgs e)
         {
+            // == Create the client
+            client = new DiscordRpcClient("774038118046367784", pipe: discordPipe);
 
+
+            // == Initialize
+            client.Initialize();
+
+            // == Set the presence
+            client.SetPresence(new RichPresence()
+            {
+                Details = "IGG ID: " + LordsAPI.LordsMobileAPI.API.LocalUser.Auth.IGG_ID,
+                State = "In Game, and using API",
+                Assets = new Assets()
+                {
+                    LargeImageKey = "igg_android_lordsmobile",
+                    LargeImageText = "In Game, and using API",
+                    SmallImageKey = "igg_android_lordsmobile",
+                    SmallImageText = "In Game, and using API"
+                }
+            });
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -198,6 +219,161 @@ namespace LordsAPI_Example
         {
             ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new GiftCode());
+        }
+        private int timertype = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (timertype == 0)
+                {
+                    client.SetPresence(new RichPresence()
+                    {
+                        Details = "IGG ID: " + LordsAPI.LordsMobileAPI.API.LocalUser.Auth.IGG_ID,
+                        State = "In Game, and using API",
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "igg_android_lordsmobile",
+                            LargeImageText = "In Game, and using API",
+                            SmallImageKey = "igg_android_lordsmobile",
+                            SmallImageText = "In Game, and using API"
+                        }
+                    });
+                    timertype++;
+                }
+                else if (timertype == 1)
+                {
+                    client.SetPresence(new RichPresence()
+                    {
+                        Details = "Power: " + LordsAPI.LordsMobileAPI.API.LocalUser.Statistic.Power.Count,
+                        State = "In Game, and using API",
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "igg_android_lordsmobile",
+                            LargeImageText = "In Game, and using API",
+                            SmallImageKey = "igg_android_lordsmobile",
+                            SmallImageText = "In Game, and using API"
+                        }
+                    });
+                    timertype++;
+                }
+                else if (timertype == 2)
+                {
+                    client.SetPresence(new RichPresence()
+                    {
+                        Details = "Gems: " + LordsAPI.LordsMobileAPI.API.LocalUser.Statistic.Gems.Count,
+                        State = "In Game, and using API",
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "igg_android_lordsmobile",
+                            LargeImageText = "In Game, and using API",
+                            SmallImageKey = "igg_android_lordsmobile",
+                            SmallImageText = "In Game, and using API"
+                        }
+                    });
+                    timertype++;
+                }
+                else if (timertype == 3)
+                {
+                    client.SetPresence(new RichPresence()
+                    {
+                        Details = "Food: " + Math.Round(LordsAPI.LordsMobileAPI.API.LocalUser.Castle.Resources.Food.Count, 0),
+                        State = "In Game, and using API",
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "igg_android_lordsmobile",
+                            LargeImageText = "In Game, and using API",
+                            SmallImageKey = "igg_android_lordsmobile",
+                            SmallImageText = "In Game, and using API"
+                        }
+                    });
+                    timertype++;
+                }
+                else if (timertype == 4)
+                {
+                    client.SetPresence(new RichPresence()
+                    {
+                        Details = "Stone: " + Math.Round(LordsAPI.LordsMobileAPI.API.LocalUser.Castle.Resources.Stone.Count, 0),
+                        State = "In Game, and using API",
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "igg_android_lordsmobile",
+                            LargeImageText = "In Game, and using API",
+                            SmallImageKey = "igg_android_lordsmobile",
+                            SmallImageText = "In Game, and using API"
+                        }
+                    });
+                    timertype++;
+                }
+                else if (timertype == 5)
+                {
+                    client.SetPresence(new RichPresence()
+                    {
+                        Details = "Wood: " + Math.Round(LordsAPI.LordsMobileAPI.API.LocalUser.Castle.Resources.Wood.Count, 0),
+                        State = "In Game, and using API",
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "igg_android_lordsmobile",
+                            LargeImageText = "In Game, and using API",
+                            SmallImageKey = "igg_android_lordsmobile",
+                            SmallImageText = "In Game, and using API"
+                        }
+                    });
+                    timertype++;
+                }
+                else if (timertype == 6)
+                {
+                    client.SetPresence(new RichPresence()
+                    {
+                        Details = "Ore: " + Math.Round(LordsAPI.LordsMobileAPI.API.LocalUser.Castle.Resources.Ore.Count, 0),
+                        State = "In Game, and using API",
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "igg_android_lordsmobile",
+                            LargeImageText = "In Game, and using API",
+                            SmallImageKey = "igg_android_lordsmobile",
+                            SmallImageText = "In Game, and using API"
+                        }
+                    });
+                    timertype++;
+                }
+                else if (timertype == 7)
+                {
+                    client.SetPresence(new RichPresence()
+                    {
+                        Details = "Gold: " + Math.Round(LordsAPI.LordsMobileAPI.API.LocalUser.Castle.Resources.Gold.Count, 0),
+                        State = "In Game, and using API",
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "igg_android_lordsmobile",
+                            LargeImageText = "In Game, and using API",
+                            SmallImageKey = "igg_android_lordsmobile",
+                            SmallImageText = "In Game, and using API"
+                        }
+                    });
+                    timertype++;
+                }
+                else if (timertype == 8)
+                {
+                    client.SetPresence(new RichPresence()
+                    {
+                        Details = "Anima: " + Math.Round(LordsAPI.LordsMobileAPI.API.LocalUser.Castle.Resources.Anima.Count, 0),
+                        State = "In Game, and using API",
+                        Assets = new Assets()
+                        {
+                            LargeImageKey = "igg_android_lordsmobile",
+                            LargeImageText = "In Game, and using API",
+                            SmallImageKey = "igg_android_lordsmobile",
+                            SmallImageText = "In Game, and using API"
+                        }
+                    });
+                    timertype = 0;
+                }
+            }
+            catch
+            {
+
+            }
         }
     }
 }

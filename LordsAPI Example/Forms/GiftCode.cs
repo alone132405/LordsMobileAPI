@@ -26,11 +26,11 @@ namespace LordsAPI_Example.Forms
             {
                 string s1 = textBox1.Text;
                 string s2 = textBox2.Text;
-                LordsAPI_GiftActivator.LordsMobileGift.Results complitestatus = LordsAPI_GiftActivator.LordsMobileGift.Activate(method, s1, s2);
+                var complitestatus = LordsAPI_GiftActivator.LordsMobileGift.Activate(method, s1, s2);
                 if (method == LordsAPI_GiftActivator.LordsMobileGift.Methods.IGG_ID)
-                    Console.WriteLine("[Gift Result] Method: " + method + ", IGG ID: " + s1 + ", Code: " + s2 + ", Result: " + complitestatus);
+                    Console.WriteLine("[Gift Result] Method: " + method + ", IGG ID: " + s1 + ", Code: " + s2 + ", Result: " + complitestatus.Result);
                 if (method == LordsAPI_GiftActivator.LordsMobileGift.Methods.Nickname)
-                    Console.WriteLine("[Gift Result] Method: " + method + ", Nickname: " + s1 + ", Code: " + s2 + ", Result: " + complitestatus);
+                    Console.WriteLine("[Gift Result] Method: " + method + ", Nickname: " + s1 + ", Code: " + s2 + ", Result: " + complitestatus.Result + ", " + s1 + " Power: " + complitestatus.Power + ", Kingdom: " + complitestatus.Kingdom);
             });
         }
 
@@ -40,17 +40,22 @@ namespace LordsAPI_Example.Forms
             Enum.TryParse(comboBox1.Text, out method);
             await Task.Run(async () =>
             {
-                LordsAPI_GiftActivator.LordsMobileGift.Results complitestatus = LordsAPI_GiftActivator.LordsMobileGift.Activate(method, s1, s2);
+                var complitestatus = LordsAPI_GiftActivator.LordsMobileGift.Activate(method, s1, s2);
                 if (method == LordsAPI_GiftActivator.LordsMobileGift.Methods.IGG_ID)
-                    Console.WriteLine("[Gift Result] Method: " + method + ", IGG ID: " + s1 + ", Code: " + s2 + ", Result: " + complitestatus);
+                    Console.WriteLine("[Gift Result] Method: " + method + ", IGG ID: " + s1 + ", Code: " + s2 + ", Result: " + complitestatus.Result);
                 if (method == LordsAPI_GiftActivator.LordsMobileGift.Methods.Nickname)
-                    Console.WriteLine("[Gift Result] Method: " + method + ", Nickname: " + s1 + ", Code: " + s2 + ", Result: " + complitestatus);
+                    Console.WriteLine("[Gift Result] Method: " + method + ", Nickname: " + s1 + ", Code: " + s2 + ", Result: " + complitestatus.Result + ", " + s1 + " Power: " + complitestatus.Power + ", Kingdom: " + complitestatus.Kingdom);
             });
         }
         private async void iconButton2_Click(object sender, EventArgs e)
         {
             string s1 = textBox1.Text;
-            foreach (string promo in LordsAPI.LordsMobileAPI.API.LocalUser.PromoCodes.All)
+            List<string> promos = new List<string>();
+            promos.Add("3N7YUXV6");
+            promos.Add("6XEK34RJ");
+            promos.Add("LM001");
+            promos.Add("LM648");
+            foreach (string promo in promos)
             {
                 Activate(s1, promo);
             }

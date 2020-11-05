@@ -92,7 +92,7 @@
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconSize = 16;
-            this.iconButton2.Location = new System.Drawing.Point(234, 66);
+            this.iconButton2.Location = new System.Drawing.Point(233, 64);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Rotation = 0D;
             this.iconButton2.Size = new System.Drawing.Size(122, 23);

@@ -33,3 +33,8 @@ C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\Newt
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsAPI GiftActivator.dll
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\LordsAPI GiftActivator.pdb
 C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI_Example.Forms.GiftCode.resources
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\DiscordRPC.dll
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\DiscordRPC.pdb
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\DiscordRPC.xml
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\bin\x64\Release\Newtonsoft.Json.xml
+C:\Users\Herob\source\repos\LordsMobileAPI\LordsAPI Example\obj\x64\Release\LordsAPI Example.exe.config
