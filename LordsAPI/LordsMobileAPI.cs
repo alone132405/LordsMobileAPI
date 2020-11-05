@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace LordsAPI
@@ -64,32 +65,25 @@ namespace LordsAPI
             {
                 public class PromoCodes
                 {
-                    public static string[] Activated
-                    {
-                        get
-                        {
-                            string ip = "";
-                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022B3138, 0x58, 0x50, 0x48, 0xE38, 0x78, 0xB20 });
-                            ip = vam.ReadStringUnicode(hp, 9000);
-                            List<string> codes = new List<string>();
-                            ip = ip.Replace(" ", "");
-                            codes.AddRange(ip.Split(','));
-                            return codes.ToArray();
-                        }
-                    }
                     public static string[] All
                     {
                         get
                         {
-                            List<string> codes = new List<string>();
-                            codes.Add("LM001");
-                            codes.Add("LM648");
-                            codes.Add("3N7YUXV6");
-                            codes.Add("6XEK34RJ");
-                            codes.Add("8FBC9J");
-                            return codes.ToArray();
-
+                            List<string> promos = new List<string>();
+                            try
+                            {
+                                string promo;
+                                using (WebClient wc = new WebClient())
+                                {
+                                    promo = wc.DownloadString("https://raw.githubusercontent.com/Nekiplay/LordsMobileAPI/master/ServerSide/WorkingPromoCodes.txt");
+                                }
+                                foreach (string prom in promo.Split(Environment.NewLine.ToCharArray()))
+                                {
+                                    if (prom != "")
+                                        promos.Add(prom);
+                                }
+                                return promos.ToArray();
+                            } catch { return promos.ToArray(); }
                         }
                     }
                 }
