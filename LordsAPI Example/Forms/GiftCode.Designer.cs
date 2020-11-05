@@ -32,6 +32,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // textBox1
@@ -77,11 +78,28 @@
             this.iconButton1.Location = new System.Drawing.Point(12, 64);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(343, 23);
+            this.iconButton1.Size = new System.Drawing.Size(216, 23);
             this.iconButton1.TabIndex = 3;
             this.iconButton1.Text = "Activate";
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconSize = 16;
+            this.iconButton2.Location = new System.Drawing.Point(234, 66);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(122, 23);
+            this.iconButton2.TabIndex = 4;
+            this.iconButton2.Text = "All";
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // GiftCode
             // 
@@ -89,6 +107,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(78)))));
             this.ClientSize = new System.Drawing.Size(368, 101);
+            this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox2);
@@ -106,5 +125,6 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }
