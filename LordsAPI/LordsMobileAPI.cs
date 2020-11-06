@@ -564,7 +564,7 @@ namespace LordsAPI
                             {
                                 string hpint = "00:00:00";
                                 VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022B6928, 0xB8, 0x0, 0x10, 0x7A0, 0x348, 0xC8, 0x14 });
+                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AECB0, 0xB8, 0x10, 0x20, 0x768, 0x18, 0x14 });
                                 hpint = vam.ReadStringUnicode(hp, 14);
                                 return hpint;
                             }

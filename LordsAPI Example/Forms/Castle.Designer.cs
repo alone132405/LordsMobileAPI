@@ -73,18 +73,18 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -127,8 +127,8 @@
             this.panel4.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -626,69 +626,6 @@
             this.label43.TabIndex = 0;
             this.label43.Text = "T5";
             // 
-            // panel8
-            // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.label34);
-            this.panel8.Controls.Add(this.label35);
-            this.panel8.Controls.Add(this.label36);
-            this.panel8.Controls.Add(this.label37);
-            this.panel8.Controls.Add(this.label38);
-            this.panel8.Location = new System.Drawing.Point(120, 126);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(104, 91);
-            this.panel8.TabIndex = 33;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label34.Location = new System.Drawing.Point(7, 69);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(52, 13);
-            this.label34.TabIndex = 31;
-            this.label34.Text = "Ballista: 0";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label35.Location = new System.Drawing.Point(7, 56);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(50, 13);
-            this.label35.TabIndex = 30;
-            this.label35.Text = "Archer: 0";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label36.Location = new System.Drawing.Point(7, 43);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(50, 13);
-            this.label36.TabIndex = 29;
-            this.label36.Text = "Archer: 0";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label37.Location = new System.Drawing.Point(7, 30);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(54, 13);
-            this.label37.TabIndex = 28;
-            this.label37.Text = "Infantry: 0";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label38.Location = new System.Drawing.Point(7, 6);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(20, 13);
-            this.label38.TabIndex = 0;
-            this.label38.Text = "T4";
-            // 
             // panel7
             // 
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -751,6 +688,69 @@
             this.label33.Size = new System.Drawing.Size(20, 13);
             this.label33.TabIndex = 0;
             this.label33.Text = "T3";
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.label34);
+            this.panel8.Controls.Add(this.label35);
+            this.panel8.Controls.Add(this.label36);
+            this.panel8.Controls.Add(this.label37);
+            this.panel8.Controls.Add(this.label38);
+            this.panel8.Location = new System.Drawing.Point(120, 126);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(104, 91);
+            this.panel8.TabIndex = 33;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label34.Location = new System.Drawing.Point(7, 69);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(52, 13);
+            this.label34.TabIndex = 31;
+            this.label34.Text = "Ballista: 0";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label35.Location = new System.Drawing.Point(7, 56);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(50, 13);
+            this.label35.TabIndex = 30;
+            this.label35.Text = "Archer: 0";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label36.Location = new System.Drawing.Point(7, 43);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(50, 13);
+            this.label36.TabIndex = 29;
+            this.label36.Text = "Archer: 0";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label37.Location = new System.Drawing.Point(7, 30);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(54, 13);
+            this.label37.TabIndex = 28;
+            this.label37.Text = "Infantry: 0";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label38.Location = new System.Drawing.Point(7, 6);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(20, 13);
+            this.label38.TabIndex = 0;
+            this.label38.Text = "T4";
             // 
             // panel6
             // 
@@ -1027,10 +1027,10 @@
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
