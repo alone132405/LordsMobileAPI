@@ -26,7 +26,7 @@ namespace LordsAPI
                     {
                         string ip = "";
                         VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0xB8, 0x30, 0x90, 0x880, 0xA0, 0x78, 0xAF0 });
+                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0xB8, 0x30, 0x90, 0x880, 0xA0, 0x78, 0xAD4 });
                         ip = vam.ReadStringUnicode(hp, 22);
                         return ip;
                     }
