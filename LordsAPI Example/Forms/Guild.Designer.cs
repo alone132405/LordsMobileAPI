@@ -147,7 +147,7 @@
             // 
             this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(78)))));
             this.iconPictureBox5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Key;
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Gifts;
             this.iconPictureBox5.IconColor = System.Drawing.Color.Gainsboro;
             this.iconPictureBox5.Location = new System.Drawing.Point(150, 88);
             this.iconPictureBox5.Name = "iconPictureBox5";
