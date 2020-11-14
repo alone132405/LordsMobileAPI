@@ -20,15 +20,32 @@ namespace LordsAPI
         {
             public class Chat
             {
-                public static string LastMessage
+                public class Guild
                 {
-                    get
+                    public static string LastMessage
                     {
-                        string ip = "";
-                        VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                        var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0xB8, 0x30, 0x90, 0x880, 0xA0, 0x78, 0xAD4 });
-                        ip = vam.ReadStringUnicode(hp, 22);
-                        return ip;
+                        get
+                        {
+                            string ip = "";
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0xB8, 0x30, 0x90, 0x880, 0xA0, 0x78, 0xAD4 });
+                            ip = vam.ReadStringUnicode(hp, 512);
+                            return ip;
+                        }
+                    }
+                }
+                public class Global
+                {
+                    public static string LastMessage
+                    {
+                        get
+                        {
+                            string ip = "";
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x021EEF98, 0x420, 0x48, 0x10, 0x4A4 });
+                            ip = vam.ReadStringUnicode(hp, 512);
+                            return ip;
+                        }
                     }
                 }
             }
