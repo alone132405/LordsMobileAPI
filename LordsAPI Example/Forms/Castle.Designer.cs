@@ -107,6 +107,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.label46 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
@@ -536,6 +537,7 @@
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.label49);
             this.panel10.Controls.Add(this.label47);
             this.panel10.Controls.Add(this.label48);
             this.panel10.Location = new System.Drawing.Point(120, 229);
@@ -986,6 +988,16 @@
             this.label76.TabIndex = 0;
             this.label76.Text = "PromoCodes";
             // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label49.Location = new System.Drawing.Point(8, 43);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(55, 13);
+            this.label49.TabIndex = 29;
+            this.label49.Text = "Attacks: 0";
+            // 
             // Castle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1125,5 +1137,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label49;
     }
 }

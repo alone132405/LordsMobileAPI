@@ -332,6 +332,23 @@ namespace LordsAPI
                 }
                 public class Castle
                 {
+                    public class Attack
+                    {
+                        public class Status
+                        {
+                            public static int AttackCount
+                            {
+                                get
+                                {
+                                    int hpint = 0;
+                                    VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                                    var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AEA88, 0x40, 0xB8, 0x8, 0x30, 0x10, 0x50, 0xCB4 });
+                                    hpint = vam.ReadInt32(hp);
+                                    return hpint;
+                                }
+                            }
+                        }
+                    }
                     public class Army
                     {
                         public static int TotalCount

@@ -148,6 +148,10 @@ namespace LordsAPI_Example
             {
                 label46.Invoke((MethodInvoker)(() => label46.Text = "All: " + string.Join(", ", LordsMobileAPI.API.LocalUser.PromoCodes.All)));
             }).Start();
+            new Thread(() =>
+            {
+                label49.Invoke((MethodInvoker)(() => label49.Text = "Attacks: " + LordsMobileAPI.API.LocalUser.Castle.Attack.Status.AttackCount));
+            }).Start();
         }
 
         private void panel12_Paint(object sender, PaintEventArgs e)
