@@ -347,6 +347,17 @@ namespace LordsAPI
                                     return hpint;
                                 }
                             }
+                            public static int ScoutingCount
+                            {
+                                get
+                                {
+                                    int hpint = 0;
+                                    VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                                    var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x0229D5C8, 0xD20, 0xC8, 0x10, 0xB8, 0x20, 0x11C });
+                                    hpint = vam.ReadInt32(hp);
+                                    return hpint;
+                                }
+                            }
                         }
                     }
                     public class Army

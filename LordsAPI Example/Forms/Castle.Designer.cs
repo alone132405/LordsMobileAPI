@@ -108,6 +108,7 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
@@ -537,6 +538,7 @@
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.label50);
             this.panel10.Controls.Add(this.label49);
             this.panel10.Controls.Add(this.label47);
             this.panel10.Controls.Add(this.label48);
@@ -998,6 +1000,16 @@
             this.label49.TabIndex = 29;
             this.label49.Text = "Attacks: 0";
             // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label50.Location = new System.Drawing.Point(8, 58);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(61, 13);
+            this.label50.TabIndex = 30;
+            this.label50.Text = "Scouting: 0";
+            // 
             // Castle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1138,5 +1150,6 @@
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
     }
 }
