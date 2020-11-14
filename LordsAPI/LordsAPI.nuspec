@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.0.7</version>
+    <version>1.0.8</version>
     <title>$title$</title>
     <authors>Nekiplay</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/Nekiplay/LordsMobileAPI</projectUrl>
     <iconUrl>https://www.apkmirror.com/wp-content/uploads/2019/06/5d0cba7571f90.png</iconUrl>
     <description>API for LordsMobile Steam</description>
-    <releaseNotes>For game version v2.29.118, offset updated</releaseNotes>
+    <releaseNotes>For game version v2.29.118, offset updated, bug fixes</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>LordsMobile API LordsMobileAPI C#</tags>
   </metadata>
