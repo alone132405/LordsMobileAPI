@@ -18,37 +18,6 @@ namespace LordsAPI
         }
         public class API
         {
-            public class Chat
-            {
-                public class Guild
-                {
-                    public static string LastMessage
-                    {
-                        get
-                        {
-                            string ip = "";
-                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0xB8, 0x30, 0x90, 0x880, 0xA0, 0x78, 0xAD4 });
-                            ip = vam.ReadStringUnicode(hp, 512);
-                            return ip;
-                        }
-                    }
-                }
-                public class Global
-                {
-                    public static string LastMessage
-                    {
-                        get
-                        {
-                            string ip = "";
-                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x021EEF98, 0x420, 0x48, 0x10, 0x4A4 });
-                            ip = vam.ReadStringUnicode(hp, 512);
-                            return ip;
-                        }
-                    }
-                }
-            }
             public class Server
             {
                 public static string Version
@@ -95,6 +64,37 @@ namespace LordsAPI
             }
             public class LocalUser
             {
+                public class Chat
+                {
+                    public class Guild
+                    {
+                        public static string LastMessage
+                        {
+                            get
+                            {
+                                string ip = "";
+                                VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0xB8, 0x30, 0x90, 0x880, 0xA0, 0x78, 0xAD4 });
+                                ip = vam.ReadStringUnicode(hp, 512);
+                                return ip;
+                            }
+                        }
+                    }
+                    public class Global
+                    {
+                        public static string LastMessage
+                        {
+                            get
+                            {
+                                string ip = "";
+                                VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x021EEF98, 0x420, 0x48, 0x10, 0x4A4 });
+                                ip = vam.ReadStringUnicode(hp, 512);
+                                return ip;
+                            }
+                        }
+                    }
+                }
                 public class Map
                 {
                     public int TropsSended
