@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj": {}
+    "C:\\Users\\Herob\\Source\\Repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj": {
+    "C:\\Users\\Herob\\Source\\Repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj",
+        "projectUniqueName": "C:\\Users\\Herob\\Source\\Repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj",
         "projectName": "LordsAPI GiftActivator",
-        "projectPath": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj",
+        "projectPath": "C:\\Users\\Herob\\Source\\Repos\\LordsMobileAPI\\LordsAPI GiftActivator\\LordsAPI GiftActivator.csproj",
         "packagesPath": "C:\\Users\\Herob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Herob\\source\\repos\\LordsMobileAPI\\LordsAPI GiftActivator\\obj\\",
+        "outputPath": "C:\\Users\\Herob\\Source\\Repos\\LordsMobileAPI\\LordsAPI GiftActivator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Herob\\AppData\\Roaming\\NuGet\\NuGet.Config",
