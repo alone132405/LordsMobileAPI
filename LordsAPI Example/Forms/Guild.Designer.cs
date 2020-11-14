@@ -36,17 +36,20 @@
             this.iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(50, 136);
+            this.label3.Location = new System.Drawing.Point(188, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 15;
@@ -58,7 +61,7 @@
             this.iconPictureBox3.ForeColor = System.Drawing.Color.Gainsboro;
             this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.HandsHelping;
             this.iconPictureBox3.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconPictureBox3.Location = new System.Drawing.Point(12, 126);
+            this.iconPictureBox3.Location = new System.Drawing.Point(150, 12);
             this.iconPictureBox3.Name = "iconPictureBox3";
             this.iconPictureBox3.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox3.TabIndex = 14;
@@ -92,9 +95,9 @@
             this.label4.ForeColor = System.Drawing.Color.Gainsboro;
             this.label4.Location = new System.Drawing.Point(50, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 17;
-            this.label4.Text = "Keys:: 0";
+            this.label4.Text = "Keys: 0";
             // 
             // iconPictureBox4
             // 
@@ -130,12 +133,36 @@
             this.iconPictureBox2.TabIndex = 18;
             this.iconPictureBox2.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label5.Location = new System.Drawing.Point(188, 98);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Gifts: 0";
+            // 
+            // iconPictureBox5
+            // 
+            this.iconPictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(78)))));
+            this.iconPictureBox5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Key;
+            this.iconPictureBox5.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconPictureBox5.Location = new System.Drawing.Point(150, 88);
+            this.iconPictureBox5.Name = "iconPictureBox5";
+            this.iconPictureBox5.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox5.TabIndex = 20;
+            this.iconPictureBox5.TabStop = false;
+            // 
             // Guild
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(40)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(258, 169);
+            this.ClientSize = new System.Drawing.Size(273, 263);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.iconPictureBox5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.label4);
@@ -152,6 +179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +194,7 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox4;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private System.Windows.Forms.Label label5;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
     }
 }

@@ -103,7 +103,7 @@ namespace LordsAPI
                         {
                             int hpint = 0;
                             VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x0229D578, 0xE98, 0xB8, 0x0, 0x18, 0x490, 0x18, 0xA6C });
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AF970, 0x40, 0xB8, 0x0, 0x18, 0x490, 0x18, 0xA6C });
                             hpint = vam.ReadInt32(hp);
                             return hpint;
                         }
@@ -164,7 +164,7 @@ namespace LordsAPI
                         return await Task.Run(() => IGG_ID);
                     }
                 }
-                
+
                 public class Statistic
                 {
                     public class Stamina
@@ -243,25 +243,18 @@ namespace LordsAPI
                     }
                     public class Level
                     {
-                        public class Experience
+                        public static int Current
                         {
-                            public static int Count
+                            get
                             {
-                                get
-                                {
-                                    int hpint = 0;
-                                    VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                                    var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x021F06C8, 0x550, 0x188, 0x40, 0x20, 0x324 });
-                                    hpint = vam.ReadInt32(hp);
-                                    return hpint;
-                                }
-                            }
-                            public static async Task<int> CountAsync()
-                            {
-                                return await Task.Run(() => Count);
+                                int hpint = 0;
+                                VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0x48, 0x40, 0xB8, 0x38, 0x40, 0x38, 0x614 });
+                                hpint = vam.ReadInt32(hp);
+                                return hpint;
                             }
                         }
-                    }                    
+                    }
                 }
                 public class Guild
                 {
@@ -355,8 +348,89 @@ namespace LordsAPI
                         }
                     }
                 }
+                public class WatchTower
+                {
+                    public static int Level
+                    {
+                        get
+                        {
+                            int hpint = 0;
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0xB8, 0x18, 0x240, 0xD8, 0xA0, 0x10, 0x1B4 });
+                            hpint = vam.ReadInt32(hp);
+                            return hpint;
+                        }
+                    }
+                }
+                public class WorkShop
+                {
+                    public static int Level
+                    {
+                        get
+                        {
+                            int hpint = 0;
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022B8458, 0xB8, 0x0, 0x1D8, 0x38, 0xA0, 0x10, 0x1F0 });
+                            hpint = vam.ReadInt32(hp);
+                            return hpint;
+                        }
+                    }
+                }
+                public class Factory
+                {
+                    public static int Level
+                    {
+                        get
+                        {
+                            int hpint = 0;
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022B8458, 0xB8, 0x0, 0x1E0, 0x88, 0xA0, 0x10, 0x234 });
+                            hpint = vam.ReadInt32(hp);
+                            return hpint;
+                        }
+                    }
+                }
+                public class Cellar
+                {
+                    public static int Level
+                    {
+                        get
+                        {
+                            int hpint = 0;
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022B8458, 0xB8, 0x0, 0x1E0, 0x88, 0xA0, 0x10, 0x134 });
+                            hpint = vam.ReadInt32(hp);
+                            return hpint;
+                        }
+                    }
+                }
+                public class Wall
+                {
+                    public static int Level
+                    {
+                        get
+                        {
+                            int hpint = 0;
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0x40, 0xB8, 0x38, 0x90, 0x20, 0x10, 0x194 });
+                            hpint = vam.ReadInt32(hp);
+                            return hpint;
+                        }
+                    }
+                }
                 public class Castle
                 {
+                    public static int Level
+                    {
+                        get
+                        {
+                            int hpint = 0;
+                            VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
+                            var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0x40, 0xB8, 0x38, 0x90, 0x20, 0x10, 0x114 });
+                            hpint = vam.ReadInt32(hp);
+                            return hpint;
+                        }
+                    }
                     public class Attack
                     {
                         public class Status
@@ -854,10 +928,6 @@ namespace LordsAPI
                             }
                         }
                     }
-                }
-                public class Map
-                {
-
                 }
             }
         }
