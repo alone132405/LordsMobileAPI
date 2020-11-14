@@ -285,7 +285,7 @@ namespace LordsAPI
                             {
                                 int hpint = 0;
                                 VAMemory vam = new VAMemory(LordsMobileAPI.Settings.GetProcess);
-                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0xB8, 0x18, 0x228, 0x20, 0x40, 0x538 });
+                                var hp = Utils.PointRead(Utils.getModuleAdress("GameAssembly.dll", LordsMobileAPI.Settings.GetProcess), new[] { 0x022AE928, 0xB8, 0x18, 0x228, 0x20, 0x40, 0x20, 0x538 });
                                 hpint = vam.ReadInt32(hp);
                                 return hpint;
                             }
